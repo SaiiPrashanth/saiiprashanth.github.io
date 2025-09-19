@@ -14,6 +14,7 @@
 	import { NAMED_COLORS } from '$lib/data/colors';
 	import EducationData from '$lib/data/education';
 	import ExperienceData from '$lib/data/experience';
+	import GalleryData from '$lib/data/gallery';
 	import ProjectsData from '$lib/data/projects';
 	import SkillsData from '$lib/data/skills';
 	import { href } from '$lib/utils';
@@ -54,6 +55,13 @@
 				it.degree.toLowerCase().includes(q) ||
 				it.location.toLowerCase().includes(q) ||
 				it.organization.toLowerCase().includes(q)
+		);
+
+		const gallery = GalleryData.items.filter(
+			(it) =>
+				it.name.toLowerCase().includes(q.toLowerCase()) ||
+				it.description.toLowerCase().includes(q) ||
+				it.tags.some((tag) => tag.toLowerCase().includes(q))
 		);
 
 		const groups: Array<Group> = [];
@@ -106,6 +114,19 @@
 					logo: $mode === 'dark' ? it.logo.dark : it.logo.light,
 					link: `/education/${it.slug}`,
 					color: NAMED_COLORS.gray
+				}))
+			});
+		}
+
+		if (gallery.length) {
+			groups.push({
+				icon: 'i-carbon-image',
+				name: 'Gallery',
+				items: gallery.map((it) => ({
+					name: it.name,
+					logo: it.image,
+					link: `/gallery/${it.slug}`,
+					color: NAMED_COLORS.indigo
 				}))
 			});
 		}
