@@ -44,7 +44,15 @@
 						<Tooltip>
 							<TooltipTrigger>
 								<Button variant="outline" size="icon">
-									<Icon icon={item.icon} className="text-lg" />
+									{#if item.iconImage}
+										<img 
+											src={item.iconImage} 
+											alt={item.label} 
+											class="h-4 w-4 dark:invert" 
+										/>
+									{:else if item.icon}
+										<Icon icon={item.icon} className="text-lg" />
+									{/if}
 								</Button>
 							</TooltipTrigger>
 							<TooltipContent side="bottom">{item.label}</TooltipContent>

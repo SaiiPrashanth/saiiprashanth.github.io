@@ -83,6 +83,7 @@ export interface Education<S extends string = string> extends Item<S> {
 	};
 	subjects: Array<string>;
 	degree: string;
+	color: string;
 }
 
 export interface GalleryItem<S extends string = string> extends Omit<Item<S>, 'logo'> {
