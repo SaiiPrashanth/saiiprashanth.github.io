@@ -65,7 +65,7 @@
 		{#if result.length === 0}
 			<EmptyResult />
 		{:else}
-			<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+			<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 				{#each result as item (item.slug)}
 					<GalleryCard {item} />
 				{/each}
