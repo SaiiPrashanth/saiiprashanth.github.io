@@ -73,20 +73,5 @@
 		<Muted class="flex-1 text-sm">
 			{ellipsify(item.shortDescription, 120)}
 		</Muted>
-
-		{#if item.tags && item.tags.length > 0}
-			<div class="flex flex-wrap gap-1">
-				{#each item.tags.slice(0, 4) as tag}
-					<Badge variant="outline" class="text-xs">
-						{tag}
-					</Badge>
-				{/each}
-				{#if item.tags.length > 4}
-					<Badge variant="outline" class="text-xs">
-						+{item.tags.length - 4}
-					</Badge>
-				{/if}
-			</div>
-		{/if}
 	</CardContent>
 </FancyCard>

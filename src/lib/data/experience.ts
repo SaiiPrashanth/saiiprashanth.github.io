@@ -49,6 +49,36 @@ const items: Array<Experience> = [
 		links: [],
 		logo: Assets.Unknown,
 		shortDescription: 'Creating awesome applications for customers.'
+	},
+	{
+		slug: 'bachelors-computer-science',
+		company: 'ISTIC',
+		description: '',
+		contract: ContractType.FullTime,
+		type: 'Education',
+		location: 'Tunisia',
+		period: { from: new Date(2020, 0, 1), to: new Date(2022, 5, 1) },
+		skills: getSkills('python', 'cpp', 'java'),
+		name: 'Bachelor degree of Computer Science',
+		color: '#3b82f6',
+		links: [],
+		logo: Assets.Unknown,
+		shortDescription: ''
+	},
+	{
+		slug: 'phd-computer-science',
+		company: 'MIT',
+		description: '',
+		contract: ContractType.FullTime,
+		type: 'Education',
+		location: 'USA',
+		period: { from: new Date(2023, 0, 1) },
+		skills: getSkills('rust'),
+		name: 'PhD of Computer Science',
+		color: '#8b5cf6',
+		links: [],
+		logo: Assets.Unknown,
+		shortDescription: ''
 	}
 ];
 

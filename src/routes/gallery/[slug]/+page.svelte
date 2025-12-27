@@ -37,16 +37,6 @@
 						{/each}
 					</div>
 				{/if}
-				
-				{#if data.item.tags && data.item.tags.length > 0}
-					<div class="flex flex-row flex-wrap justify-center gap-2">
-						{#each data.item.tags as tag}
-							<Badge variant="outline" class="flex flex-row items-center justify-center gap-2">
-								<Muted>{tag}</Muted>
-							</Badge>
-						{/each}
-					</div>
-				{/if}
 			</div>
 		</FancyBanner>
 		<Separator />
@@ -59,7 +49,7 @@
 		<div class="flex flex-col gap-2 px-4 pt-4">
 			{#if data.item.screenshots && data.item.screenshots.length > 0}
 				<Muted>Images</Muted>
-				<div class="grid grid-cols-1 gap-2 py-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+				<div class="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2 lg:grid-cols-3">
 					{#each data.item.screenshots as img, index (index)}
 						<ScreenshotCard item={img} />
 					{/each}
@@ -69,7 +59,7 @@
 					<img 
 						src={data.item.image} 
 						alt={data.item.name}
-						class="max-h-96 w-auto rounded-lg shadow-lg"
+						class="max-h-[600px] w-auto rounded-lg shadow-lg"
 					/>
 				</div>
 			{/if}
