@@ -1,0 +1,78 @@
+SAI PRASHANTH S P
++91 9025758221⋄Bengaluru, KA
+saiiprashanth23@gmail.com⋄Github⋄Portfolio⋄LinkedIn
+OBJECTIVE
+Aspiring Game Producer with a strong foundation in technical design and operational management. Combines hands
+on Unity development experience with a proven track record of optimizing workflows and managing compliance in
+high stakes environments. Passionate about acting as the functional glue of a team to advocate for player centric
+features while ensuring strict adherence to project schedules and dependencies.
+EDUCATION
+Bachelor of Science - Gaming, Jain University, Bengaluru 2022 - 2025
+Grade 12 (CBSE) - Science Stream (PCMC), Amrita Vidyalayam, Coimbatore 2020 - 2022
+SKILLS
+Core CompetenciesAgile & Scrum, Resource Allocation, Risk Management, Stakeholder Facilitation,
+Player Advocacy, Cross-Functional Leadership, Critical Problem Solving.
+Programming Languages:C++, C#, GLSL, Lua, Python
+Game EnginesUnity3D, Unreal Engine
+Software & ToolsJIRA, Microsoft Office Suite, Git, ComfyUI, RenderDoc
+3D PipelineMaya, 3DS Max, SpeedTree, World Machine, Substance Suite
+Graphics & MediaPhotoshop, Illustrator, Premiere Pro
+RELEVANT EXPERIENCE
+Game Developer Apr 2023 - Dec 2023
+Dnnovate Technologies Remote
+Collaborated with artists and designers to optimize level design and streamline the asset integration process.
+Managed version control via Git and optimized asset pipelines, successfully improving build stability and per-
+formance.
+Integrated monetization SDKs into the game loop, ensuring seamless ad delivery without disrupting player
+experience.
+ADDITIONAL EXPERIENCE
+Operations Associate 2022 - Present
+Capital Dynamics Coimbatore, TN
+Streamlined daily reporting workflows and client onboarding processes, reducing administrative turnaround time.
+Maintained strict data integrity and compliance protocols for client portfolios, identifying and resolving critical
+discrepancies to prevent regulatory issues.
+Represented the firm at exclusive AMC industry meets and head office briefings, strengthening partnerships
+with key financial stakeholders
+Business Strategy Associate2022 - Present
+Glowflo Sports Coimbatore, TN
+Negotiated strategic partnerships with underutilized external venues to expand capacity during peak hours,
+effectively distributing player load.
+Organized competitive tournaments and community events, securing regulatory approvals and significantly in-
+creasing brand visibility.
+Recruited and onboarded professional coaches to launch a training academy, establishing a new recurring revenue
+stream.
+PROJECTS
+Custom Render Engine (Ongoing).Developing a low-level rendering engine using the Vulkan API to master
+memory management, synchronization, and hardware-accelerated graphics pipelines.
+Automated LOD Pipeline Tool.Engineered a 3ds Max automation tool that auto-generates Levels of Detail
+(LODs) and integrates assets seamlessly into UE5, significantly reducing manual import time for artists.
+Decipher.Served as the Technical Artist and Level Designer, implementing scene optimizations and culling strategies
+to maintain stable framerates without sacrificing visual fidelity or gameplay depth.
+Astron.Prototyped a physics-based shooter using simple geometric primitives, implementing vector-based movement
+and collision detection systems from scratch.
+CERTIFICATIONS
+Google Project Management Professional Certification
+Agile with Atlassian Jira
+Unity Cerified Game Developer Certification (Candidate, Est. Feb 2026)
+Electronic Arts - Product Management Job Simulation
+Michigan State University - Game Design and Development Specialization
+Epic Games - Game Design Professional Certificate
+ACHIEVEMENTS & HONOR
+University Gold Medalist:Awarded for securing the highest academic rank in the Department of Animation
+and VR at Jain University.
+Google Play x Unity Game Developer Scholar:Chosen from a competitive pool of thousands to receive
+mentorship and exclusive guidance.
+Research Author:Presented original research at the International Conference (ICRDSTEM)..
+Finance Awards:Earned performance accolades from AMCs such as HDFC,ICICI,Kotak for excellence in
+portfolio management.
+Sports Achievements:National Level Champion in Karate and State Level Player in Badminton.
+EXTRA-CURRICULAR ACTIVITIES
+Open Source Contributions:Contributed to G-Helper(Asus Utility Tool) and Kindle(Amazon) modding
+communities to optimize hardware performance and enhance user experience.
+Technical Head, University Gaming Club:Oversaw technical infrastructure and logistics for large-scale
+campus events, managing resources and ensuring zero downtime during tournaments.
+Industry Community Member:Active participant inIGDC & GAFXforums, engaging with professionals
+to stay updated on evolving production pipelines and workflows.
+Community Welfare:Facilitated academic support for underprivileged students through Mentorship.Led a
+public initiative to secure critical road infrastructure, mobilizing ward signatures to bypass bureaucratic hurdles
+and negotiate directly with the State Authorities.

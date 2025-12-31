@@ -10,15 +10,13 @@
 
 <Tooltip openDelay={100}>
 	<TooltipTrigger class="group">
-		<a href={href(`/skills/${skill.slug}`)}>
-			<Button size="icon" variant="outline">
-				<img
-					class="size-[18px] grayscale-[0.75] group-hover:grayscale-0"
-					src={$mode === 'dark' ? skill.logo.dark : skill.logo.light}
-					alt={skill.name}
-				/>
-			</Button>
-		</a>
+		<Button size="icon" variant="outline">
+			<img
+				class="size-[18px] grayscale-[0.75] group-hover:grayscale-0"
+				src={$mode === 'dark' ? skill.logo.dark : skill.logo.light}
+				alt={skill.name}
+			/>
+		</Button>
 	</TooltipTrigger>
 	<TooltipContent>{skill.name}</TooltipContent>
 </Tooltip>

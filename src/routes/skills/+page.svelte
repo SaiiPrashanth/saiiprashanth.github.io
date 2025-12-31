@@ -36,7 +36,6 @@
 							<FancyCard
 								bgImg={$mode === 'light' ? item.logo.light : item.logo.dark}
 								color={item.color}
-								href={href(`/skills/${item.slug}`)}
 							>
 								<CardContent>
 									<CardTitle>{item.name}</CardTitle>

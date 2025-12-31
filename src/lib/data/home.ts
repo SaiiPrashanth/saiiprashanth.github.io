@@ -11,7 +11,7 @@ const hero: {
 } = {
 	title: `${BaseData.fullName},`,
 	description:
-		'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+		'Aspiring Game Producer with a strong foundation in technical design and operational management. Combines hands-on Unity development experience with a proven track record of optimizing workflows and managing compliance in high-stakes environments. Passionate about acting as the functional glue of a team to advocate for player-centric features while ensuring strict adherence to project schedules and dependencies.',
 	links: [
 		{ label: 'GitHub', href: 'https://github.com/SaiiPrashanth', icon: 'i-carbon-logo-github' },
 		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/saiiprashanth/', icon: 'i-carbon-logo-linkedin' },

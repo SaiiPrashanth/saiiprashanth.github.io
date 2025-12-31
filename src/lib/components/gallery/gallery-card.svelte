@@ -34,7 +34,6 @@
 <FancyCard
 	{color}
 	class="flex h-full flex-col"
-	href={href(`/gallery/${item.slug}`)}
 >
 	<CardHeader class="flex w-full flex-col gap-4">
 		<div class="aspect-video w-full overflow-hidden rounded-lg bg-muted relative group">

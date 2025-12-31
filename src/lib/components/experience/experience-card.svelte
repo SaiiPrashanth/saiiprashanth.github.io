@@ -30,7 +30,7 @@
 	] as const);
 </script>
 
-<FancyCard color={it.color} href={href(`/experience/${it.slug}`)}>
+<FancyCard color={it.color}>
 	<CardContent class="flex flex-col gap-8 sm:flex-row">
 		<Avatar>
 			<AvatarFallback>

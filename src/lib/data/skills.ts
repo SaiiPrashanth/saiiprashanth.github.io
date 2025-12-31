@@ -80,66 +80,124 @@ const title = 'Skills';
 
 const items = [
 	defineSkill({
-		slug: 'js',
+		slug: 'cpp',
+		color: 'blue',
+		description: 'Proficient in C++ for game development and low-level systems programming.',
+		logo: Assets.Cpp,
+		name: 'C++',
+		category: 'pro-lang'
+	}),
+	defineSkill({
+		slug: 'csharp',
+		color: 'purple',
+		description: 'Expert in C# for Unity game development and .NET applications.',
+		logo: Assets.Csharp,
+		name: 'C#',
+		category: 'pro-lang'
+	}),
+	defineSkill({
+		slug: 'glsl',
+		color: 'green',
+		description: 'Experience with GLSL for shader programming and graphics rendering.',
+		logo: Assets.Unknown,
+		name: 'GLSL',
+		category: 'pro-lang'
+	}),
+	defineSkill({
+		slug: 'lua',
+		color: 'blue',
+		description: 'Scripting in Lua for game logic and automation.',
+		logo: Assets.Unknown,
+		name: 'Lua',
+		category: 'pro-lang'
+	}),
+	defineSkill({
+		slug: 'python',
 		color: 'yellow',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.JavaScript,
-		name: 'Javascript',
+		description: 'Python for automation, tools development, and scripting.',
+		logo: Assets.Python,
+		name: 'Python',
 		category: 'pro-lang'
 	}),
 	defineSkill({
-		slug: 'ts',
-		color: 'blue',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.TypeScript,
-		name: 'Typescript',
-		category: 'pro-lang'
-	}),
-	defineSkill({
-		slug: 'css',
-		color: 'blue',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.CSS,
-		name: 'CSS',
-		category: 'markup-style'
-	}),
-	defineSkill({
-		slug: 'html',
-		color: 'orange',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.HTML,
-		name: 'HTML',
-		category: 'markup-style'
-	}),
-	defineSkill({
-		slug: 'sass',
-		color: 'pink',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.Sass,
-		name: 'Sass',
-		category: 'markup-style'
-	}),
-	defineSkill({
-		slug: 'reactjs',
+		slug: 'unity',
 		color: 'cyan',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
-		logo: Assets.ReactJs,
-		name: 'React Js',
-		category: 'library'
+		description: 'Professional experience with Unity3D game engine for game development.',
+		logo: Assets.Unknown,
+		name: 'Unity3D',
+		category: 'framework'
 	}),
 	defineSkill({
-		slug: 'svelte',
+		slug: 'unreal',
+		color: 'purple',
+		description: 'Experience with Unreal Engine for game and real-time 3D development.',
+		logo: Assets.Unknown,
+		name: 'Unreal Engine',
+		category: 'framework'
+	}),
+	defineSkill({
+		slug: 'git',
 		color: 'orange',
-		description: svelteMd,
-		logo: Assets.Svelte,
-		name: 'Svelte',
-		category: 'library'
+		description: 'Version control and collaborative development using Git.',
+		logo: Assets.Unknown,
+		name: 'Git',
+		category: 'devtools'
+	}),
+	defineSkill({
+		slug: 'jira',
+		color: 'blue',
+		description: 'Agile project management and issue tracking with JIRA.',
+		logo: Assets.Unknown,
+		name: 'JIRA',
+		category: 'devtools'
+	}),
+	defineSkill({
+		slug: 'maya',
+		color: 'teal',
+		description: '3D modeling and animation using Autodesk Maya.',
+		logo: Assets.Unknown,
+		name: 'Maya',
+		category: 'design'
+	}),
+	defineSkill({
+		slug: '3dsmax',
+		color: 'teal',
+		description: '3D modeling and visualization with 3DS Max.',
+		logo: Assets.Unknown,
+		name: '3DS Max',
+		category: 'design'
+	}),
+	defineSkill({
+		slug: 'substance',
+		color: 'orange',
+		description: 'Material creation and texturing with Substance Painter.',
+		logo: Assets.Unknown,
+		name: 'Substance Painter',
+		category: 'design'
+	}),
+	defineSkill({
+		slug: 'photoshop',
+		color: 'blue',
+		description: 'Image editing and graphics design using Adobe Photoshop.',
+		logo: Assets.Unknown,
+		name: 'Photoshop',
+		category: 'design'
+	}),
+	defineSkill({
+		slug: 'illustrator',
+		color: 'orange',
+		description: 'Vector graphics and illustration with Adobe Illustrator.',
+		logo: Assets.Unknown,
+		name: 'Illustrator',
+		category: 'design'
+	}),
+	defineSkill({
+		slug: 'premiere',
+		color: 'purple',
+		description: 'Video editing and post-production with Adobe Premiere Pro.',
+		logo: Assets.Unknown,
+		name: 'Premiere Pro',
+		category: 'design'
 	})
 ] as const;
 
