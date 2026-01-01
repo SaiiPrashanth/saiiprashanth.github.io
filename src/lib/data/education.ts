@@ -7,7 +7,7 @@ const items: Array<Education> = [
 	{
 		degree: 'Google Project Management Professional Certification',
 		description: 'Professional certification demonstrating expertise in project management methodologies and best practices.',
-		location: 'Online',
+		location: 'Coursera',
 		logo: Assets.Unknown,
 		name: 'Google Project Management',
 		organization: 'Google',
@@ -15,12 +15,13 @@ const items: Array<Education> = [
 		shortDescription: 'Project management and agile methodologies certification.',
 		slug: 'google-pm',
 		subjects: ['Project Management', 'Agile', 'Scrum', 'Leadership'],
-		color: '#4285f4'
+		color: '#4285f4',
+		link: 'https://www.coursera.org/account/accomplishments/professional-cert/verify/YOUR_CERT_ID'
 	},
 	{
 		degree: 'Agile with Atlassian Jira',
 		description: 'Certification in agile project management using Atlassian Jira for team collaboration and workflow optimization.',
-		location: 'Online',
+		location: 'Atlassian University',
 		logo: Assets.Unknown,
 		name: 'Agile with Jira',
 		organization: 'Atlassian',
@@ -28,12 +29,13 @@ const items: Array<Education> = [
 		shortDescription: 'Agile workflow and Jira project management certification.',
 		slug: 'agile-jira',
 		subjects: ['Agile', 'Jira', 'Scrum', 'Kanban'],
-		color: '#0052cc'
+		color: '#0052cc',
+		link: 'https://university.atlassian.com/student/award/YOUR_CERT_ID'
 	},
 	{
 		degree: 'Unity Certified Game Developer Certification',
 		description: 'Professional certification validating comprehensive Unity game development skills. Candidate status with estimated completion in February 2026.',
-		location: 'Online',
+		location: 'Credly',
 		logo: Assets.Unknown,
 		name: 'Unity Game Developer',
 		organization: 'Unity Technologies',
@@ -41,12 +43,13 @@ const items: Array<Education> = [
 		shortDescription: 'Unity engine and game development certification.',
 		slug: 'unity-certified',
 		subjects: ['Unity', 'C#', 'Game Development', '3D Graphics', 'Game Design'],
-		color: '#00bcd4'
+		color: '#00bcd4',
+		link: 'https://www.credly.com/badges/YOUR_CERT_ID'
 	},
 	{
 		degree: 'Electronic Arts - Product Management Job Simulation',
 		description: 'Completed EA product management simulation covering game production, stakeholder management, and product lifecycle.',
-		location: 'Online',
+		location: 'Forage',
 		logo: Assets.Unknown,
 		name: 'EA Product Management',
 		organization: 'Electronic Arts',
@@ -54,12 +57,13 @@ const items: Array<Education> = [
 		shortDescription: 'Game production and product management simulation.',
 		slug: 'ea-product-mgmt',
 		subjects: ['Product Management', 'Game Production', 'Stakeholder Management'],
-		color: '#ff0000'
+		color: '#ff0000',
+		link: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/YOUR_CERT_ID.pdf'
 	},
 	{
 		degree: 'Game Design and Development Specialization',
 		description: 'Comprehensive specialization covering game design principles, development processes, and industry best practices.',
-		location: 'Online',
+		location: 'Coursera',
 		logo: Assets.Unknown,
 		name: 'Game Design Specialization',
 		organization: 'Michigan State University',
@@ -67,12 +71,13 @@ const items: Array<Education> = [
 		shortDescription: 'Game design and development specialization.',
 		slug: 'msu-game-design',
 		subjects: ['Game Design', 'Game Development', 'Level Design', 'Game Mechanics'],
-		color: '#22c55e'
+		color: '#22c55e',
+		link: 'https://www.coursera.org/account/accomplishments/specialization/YOUR_CERT_ID'
 	},
 	{
 		degree: 'Game Design Professional Certificate',
 		description: 'Professional certificate program focused on game design principles and development workflows.',
-		location: 'Online',
+		location: 'Coursera',
 		logo: Assets.Unknown,
 		name: 'Epic Games Design Certificate',
 		organization: 'Epic Games',
@@ -80,7 +85,8 @@ const items: Array<Education> = [
 		shortDescription: 'Professional game design certification from Epic Games.',
 		slug: 'epic-game-design',
 		subjects: ['Game Design', 'Unreal Engine', 'Level Design', 'Game Production'],
-		color: '#9333ea'
+		color: '#9333ea',
+		link: 'https://www.coursera.org/account/accomplishments/professional-cert/YOUR_CERT_ID'
 	}
 ];
 

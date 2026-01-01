@@ -29,7 +29,9 @@
 			{#each result as it, index (it.slug)}
 				<div class={`flex ${index % 2 !== 0 ? 'flex-row-reverse' : 'flex-row'} gap-4`}>
 					<div class="flex flex-1 flex-col justify-center lg:py-[50px]">
-						<EducationCard {it} />
+						<a href={it.link || `/education/${it.slug}`} target={it.link ? '_blank' : '_self'} class="block">
+							<EducationCard {it} />
+						</a>
 					</div>
 					<div
 						class="hidden h-[full] min-w-0 flex-shrink-0 flex-col items-center lg:flex"

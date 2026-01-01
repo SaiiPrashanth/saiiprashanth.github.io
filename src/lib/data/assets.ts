@@ -69,7 +69,26 @@ const Assets = {
 	Jest: asset('jest.png'),
 	Unocss: asset('unocss.svg'),
 	Ruvy: asset('ruvy.svg'),
-	Postcss: asset('postcss.svg')
+	Postcss: asset('postcss.svg'),
+	Lua: asset('lua.svg'),
+	Unity: asset('Unity.svg', 'Unity_Dark.svg'),
+	Unreal: asset('Unreal.svg', 'Unreal_Dark.svg'),
+	Git: asset('git.svg'),
+	Jira: asset('jira.svg'),
+	Maya: asset('maya.svg'),
+	ThreeDSMax: asset('3ds-max.svg'),
+	Substance: asset('substance-painter.svg'),
+	Blender: asset('Blender.svg'),
+	ZBrush: asset('z-brush.svg', 'z-brush_Dark.svg'),
+	Houdini: asset('Houdini3D.png'),
+	OpenGL: asset('opengl.svg'),
+	VisualStudio: asset('visual-studio.svg'),
+	VSCode: asset('vscode.svg'),
+	ComfyUI: asset('comfyui.svg'),
+	SpeedTree: asset('Speedtree.svg', 'Speedtree_Dark.svg'),
+	RenderDoc: asset('RenderDoc.svg'),
+	Office: asset('office.svg'),
+	Rider: asset('RIder.svg')
 };
 
 export default Assets;

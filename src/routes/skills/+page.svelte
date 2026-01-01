@@ -33,14 +33,16 @@
 					</div>
 					<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 						{#each group.items as item (item.slug)}
-							<FancyCard
-								bgImg={$mode === 'light' ? item.logo.light : item.logo.dark}
-								color={item.color}
-							>
-								<CardContent>
-									<CardTitle>{item.name}</CardTitle>
-								</CardContent>
-							</FancyCard>
+							<a href={href(`/skills/${item.slug}`)} class="block">
+								<FancyCard
+									bgImg={$mode === 'light' ? item.logo.light : item.logo.dark}
+									color={item.color}
+								>
+									<CardContent>
+										<CardTitle>{item.name}</CardTitle>
+									</CardContent>
+								</FancyCard>
+							</a>
 						{/each}
 					</div>
 				</div>
