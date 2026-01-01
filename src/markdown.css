@@ -135,6 +135,12 @@
 	color: var(--link-text);
 }
 
+.markdown-container a[href="#"] {
+	pointer-events: none;
+	cursor: default;
+	text-decoration: none;
+}
+
 .markdown-container :is(code):not(pre code) {
 	color: var(--link-text);
 	background-color: var(--badge-bg);
