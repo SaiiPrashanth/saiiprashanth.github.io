@@ -40,8 +40,6 @@
 			<img 
 				src={item.image} 
 				alt={item.name}
-				loading="lazy"
-				decoding="async"
 				class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
 			/>
 			<div 

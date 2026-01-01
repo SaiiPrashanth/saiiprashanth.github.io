@@ -1,6 +1,6 @@
 import { base } from '$app/paths';
 
-const url = (file: string) => `${base}/logos/${file}`;
+const url = (file: string) => `${base}/logos/Skills/${file}`;
 
 const asset = (lightFilename: string, darkFilename = lightFilename) => {
 	return { light: url(lightFilename), dark: url(darkFilename) };
