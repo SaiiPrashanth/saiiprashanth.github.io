@@ -159,12 +159,22 @@
 						{#each group.items as item (item.link)}
 							<FancyCard color={item.color} href={href(item.link)}>
 								<CardContent class="flex flex-row items-center gap-4">
-									<Avatar>
-										<AvatarFallback>
-											<img src={Assets.Unknown.light} alt={item.name} />
-										</AvatarFallback>
-										<AvatarImage src={item.logo} />
-									</Avatar>
+									{#if group.name === 'Gallery'}
+										<div class="h-10 w-16 flex-shrink-0 overflow-hidden rounded-md">
+											<img 
+												src={item.logo} 
+												alt={item.name}
+												class="h-full w-full object-cover"
+											/>
+										</div>
+									{:else}
+										<Avatar>
+											<AvatarFallback>
+												<img src={Assets.Unknown.light} alt={item.name} />
+											</AvatarFallback>
+											<AvatarImage src={item.logo} />
+										</Avatar>
+									{/if}
 									<Tooltip openDelay={300}>
 										<TooltipTrigger>
 											<CardTitle class="line-clamp-2 truncate text-ellipsis text-left"

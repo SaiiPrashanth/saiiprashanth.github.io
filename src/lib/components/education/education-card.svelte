@@ -38,7 +38,7 @@
 			<Tooltip openDelay={300}>
 				<TooltipTrigger>
 					<Muted className="flex flex-row items-center gap-2">
-						<Icon icon="i-carbon-badge" />
+						<Icon icon="i-carbon-education" />
 						<div>{location}</div>
 					</Muted>
 				</TooltipTrigger>

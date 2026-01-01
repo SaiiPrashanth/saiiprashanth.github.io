@@ -23,7 +23,7 @@
 
 <div
 	id="navbar"
-	class="border-1 absolute left-0 right-0 top-0 z-10 flex h-[50px] flex-row items-center border-b bg-[--bg] px-4 backdrop-blur-xl sm:px-8"
+	class="border-1 absolute left-0 right-0 top-0 z-50 flex h-[50px] flex-row items-center border-b bg-[--bg] px-4 backdrop-blur-xl sm:px-8"
 	style="--bg : hsl(var(--background) / 0.5)"
 >
 	<div class="sm:flex-1">
