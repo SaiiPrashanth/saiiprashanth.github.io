@@ -16,7 +16,7 @@ const items: Array<Education> = [
 		slug: 'google-pm',
 		subjects: ['Project Management', 'Agile', 'Scrum', 'Leadership'],
 		color: '#4285f4',
-		link: 'https://www.coursera.org/account/accomplishments/professional-cert/verify/YOUR_CERT_ID'
+		link: 'https://www.coursera.org/account/accomplishments/records/VEFHXHX20JCC'
 	},
 	{
 		degree: 'Agile with Atlassian Jira',
@@ -30,7 +30,7 @@ const items: Array<Education> = [
 		slug: 'agile-jira',
 		subjects: ['Agile', 'Jira', 'Scrum', 'Kanban'],
 		color: '#0052cc',
-		link: 'https://university.atlassian.com/student/award/YOUR_CERT_ID'
+		link: 'https://www.coursera.org/account/accomplishments/records/D8KSKB6S48AY'
 	},
 	{
 		degree: 'Unity Certified Game Developer Certification',
@@ -44,7 +44,7 @@ const items: Array<Education> = [
 		slug: 'unity-certified',
 		subjects: ['Unity', 'C#', 'Game Development', '3D Graphics', 'Game Design'],
 		color: '#00bcd4',
-		link: 'https://www.credly.com/badges/YOUR_CERT_ID'
+		link: 'https://lmsfiles.s3.eu-west-1.amazonaws.com/files/u/n/unity_training_docebosaas_com/certificate/255_3_57724_1767268354_Certificate%20of%20Completion_ENG.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJFT5KREJQB24V7YA%2F20260108%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20260108T230152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Signature=ee7bd90957fdfebe3b93ce6cbd0f348aeccbd216d39f92bc7502ad5d536ea81b'
 	},
 	{
 		degree: 'Electronic Arts - Product Management Job Simulation',
@@ -72,7 +72,7 @@ const items: Array<Education> = [
 		slug: 'msu-game-design',
 		subjects: ['Game Design', 'Game Development', 'Level Design', 'Game Mechanics'],
 		color: '#22c55e',
-		link: 'https://www.coursera.org/account/accomplishments/specialization/YOUR_CERT_ID'
+		link: 'https://www.coursera.org/account/accomplishments/records/IGV3WWRQPF6J'
 	},
 	{
 		degree: 'Game Design Professional Certificate',
@@ -86,7 +86,21 @@ const items: Array<Education> = [
 		slug: 'epic-game-design',
 		subjects: ['Game Design', 'Unreal Engine', 'Level Design', 'Game Production'],
 		color: '#9333ea',
-		link: 'https://www.coursera.org/account/accomplishments/professional-cert/YOUR_CERT_ID'
+		link: 'https://www.coursera.org/account/accomplishments/records/JR2UWVNQO1Z9'
+	},
+	{
+		degree: 'Mutual Funds V A Certification',
+		description: 'Professional certification in mutual funds, variable annuities, and investment products.',
+		location: 'SEBI',
+		logo: Assets.Unknown,
+		name: 'Mutual Funds V A',
+		organization: 'NISM',
+		period: { from: new Date(2024, 0, 1) },
+		shortDescription: 'Mutual funds and variable annuities certification.',
+		slug: 'mutual-funds-va',
+		subjects: ['Mutual Funds', 'Variable Annuities', 'Investment Products', 'Financial Planning'],
+		color: '#10b981',
+		link: '/education/mutual-funds-va'
 	}
 ];
 

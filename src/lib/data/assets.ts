@@ -1,9 +1,14 @@
 import { base } from '$app/paths';
 
 const url = (file: string) => `${base}/logos/Skills/${file}`;
+const iconUrl = (file: string) => `${base}/logos/Icons/${file}`;
 
 const asset = (lightFilename: string, darkFilename = lightFilename) => {
 	return { light: url(lightFilename), dark: url(darkFilename) };
+};
+
+const iconAsset = (lightFilename: string, darkFilename = lightFilename) => {
+	return { light: iconUrl(lightFilename), dark: iconUrl(darkFilename) };
 };
 
 const Assets = {
@@ -88,7 +93,10 @@ const Assets = {
 	SpeedTree: asset('Speedtree.svg', 'Speedtree_Dark.svg'),
 	RenderDoc: asset('RenderDoc.svg'),
 	Office: asset('office.svg'),
-	Rider: asset('RIder.svg')
+	Rider: asset('RIder.svg'),
+	GitHub: iconAsset('GitHub.svg', 'GitHub_Dark.svg'),
+	Itch: iconAsset('Itch.svg', 'Itch_Dark.svg'),
+	Artstation: iconAsset('Artstation.svg')
 };
 
 export default Assets;

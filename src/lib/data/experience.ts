@@ -78,7 +78,7 @@ const items: Array<Experience> = [
 		color: '#10b981',
 		links: [],
 		logo: Assets.Unknown,
-		shortDescription: 'CBSE Grade 12 - PCMC'
+		shortDescription: 'Physics, Chemistry, Mathematics, Computer Science'
 	}
 ];
 
