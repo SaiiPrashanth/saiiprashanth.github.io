@@ -32,11 +32,11 @@
 
 <FancyCard color={it.color}>
 	<CardContent class="flex flex-col gap-8 sm:flex-row">
-		<Avatar>
+		<Avatar class="h-16 w-16 rounded-full flex items-center justify-center">
 			<AvatarFallback>
-				<img src={Assets.Unknown.light} alt={it.name} />
+				<img src={Assets.Unknown.light} alt={it.name} class="object-contain" />
 			</AvatarFallback>
-			<AvatarImage src={$mode === 'dark' ? it.logo.dark : it.logo.light} />
+			<AvatarImage src={$mode === 'dark' ? it.logo.dark : it.logo.light} class="object-contain p-2" />
 		</Avatar>
 		<div class="flex flex-col gap-4">
 			<CardTitle>{it.name}</CardTitle>

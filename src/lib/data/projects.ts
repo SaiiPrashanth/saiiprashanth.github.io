@@ -10,11 +10,9 @@ const items: Array<Project> = [
 			'Developing a low-level rendering engine using the Vulkan API to master memory management, synchronization, and hardware-accelerated graphics pipelines. This ongoing project focuses on understanding the fundamentals of modern graphics APIs and building a robust rendering system from the ground up.',
 		shortDescription:
 			'A custom rendering engine built with Vulkan API for advanced graphics programming.',
-		links: [
-			{ to: 'https://github.com/SaiiPrashanth', label: 'GitHub' }
-		],
-		logo: Assets.Unknown,
-		name: 'Custom Render Engine',
+		links: [],
+		logo: Assets.Cpp,
+		name: 'Custom Render Engine (Current)',
 		period: {
 			from: new Date(2024, 0, 1)
 		},
@@ -32,7 +30,7 @@ const items: Array<Project> = [
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/Cubeology', label: 'GitHub' }
 		],
-		logo: Assets.Unknown,
+		logo: Assets.Unity,
 		name: 'Cubeology',
 		period: {
 			from: new Date(2023, 9, 1),
@@ -52,8 +50,8 @@ const items: Array<Project> = [
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/bumble-bee', label: 'Itch.io' }
 		],
-		logo: Assets.Unknown,
-		name: 'Bumble Bee (BeeCraft)',
+		logo: Assets.Unity,
+		name: 'Bumble Bee',
 		period: {
 			from: new Date(2024, 5, 1),
 			to: new Date(2024, 10, 1)
@@ -63,7 +61,7 @@ const items: Array<Project> = [
 		screenshots: []
 	},
 	{
-		slug: 'chess-masters',
+		slug: 'neko-gambit',
 		color: '#d4af37',
 		description:
 			'Neko Gambit is a unique 3D chess game set in ancient Egypt where players command feline deities on a beautifully rendered desert battlefield. Features include a rotating 3D board, divine chess pieces including Anubis-cats and Bastet-bishops, dynamic sandstorm weather events that affect gameplay, and ancient magic artifacts that can change the tide of battle. The game combines classical chess strategy with Egyptian mythology themes.',
@@ -72,8 +70,8 @@ const items: Array<Project> = [
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/chess-masters', label: 'Itch.io' }
 		],
-		logo: Assets.Unknown,
-		name: 'Chess Masters (Neko Gambit)',
+		logo: Assets.Unity,
+		name: 'Neko Gambit',
 		period: {
 			from: new Date(2024, 3, 1),
 			to: new Date(2024, 6, 1)
@@ -83,7 +81,7 @@ const items: Array<Project> = [
 		screenshots: []
 	},
 	{
-		slug: 'boating-all-the-way',
+		slug: 'boating-through',
 		color: '#4ecdc4',
 		description:
 			'Boating Through is an endless river navigation game with one-tap controls. Players guide their boat through an infinite procedurally generated river, changing direction with each tap to avoid falling into the abyss. Features low-poly relaxing aesthetics, high score tracking, unlockable boats and trails through coin collection, and addictive rhythm-based gameplay. The game emphasizes timing and precision with its simple yet challenging zigzag navigation mechanics.',
@@ -92,8 +90,8 @@ const items: Array<Project> = [
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/boating-all-the-way', label: 'Itch.io' }
 		],
-		logo: Assets.Unknown,
-		name: 'Boating All The Way',
+		logo: Assets.Unity,
+		name: 'Boating Through',
 		period: {
 			from: new Date(2024, 1, 1),
 			to: new Date(2024, 4, 1)
@@ -113,7 +111,7 @@ const items: Array<Project> = [
 			{ to: 'https://github.com/SaiiPrashanth/Hungry_Kirby', label: 'GitHub' },
 			{ to: 'https://saiiprashanth.itch.io/hungry-kirby', label: 'Itch.io' }
 		],
-		logo: Assets.Unknown,
+		logo: Assets.Unity,
 		name: 'Hungry Kirby',
 		period: {
 			from: new Date(2023, 8, 1),
@@ -134,7 +132,7 @@ const items: Array<Project> = [
 			{ to: 'https://github.com/SaiiPrashanth/Astron', label: 'GitHub' },
 			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io' }
 		],
-		logo: Assets.Unknown,
+		logo: Assets.JavaScript,
 		name: 'Astron',
 		period: {
 			from: new Date(2022, 6, 1),
@@ -154,7 +152,7 @@ const items: Array<Project> = [
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/Max_LODGenerator', label: 'GitHub' }
 		],
-		logo: Assets.Unknown,
+		logo: Assets.Python,
 		name: 'Automated LOD Pipeline Tool',
 		period: {
 			from: new Date(2023, 6, 1),
@@ -174,7 +172,7 @@ const items: Array<Project> = [
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth', label: 'GitHub' }
 		],
-		logo: Assets.Unknown,
+		logo: Assets.Unity,
 		name: 'Decipher',
 		period: {
 			from: new Date(2023, 0, 1),
@@ -182,6 +180,25 @@ const items: Array<Project> = [
 		},
 		skills: getSkills('unity', 'csharp'),
 		type: 'Game Project',
+		screenshots: []
+	},
+	{
+		slug: 'max-unreal-exporter',
+		color: '#0e76a8',
+		description:
+			'A Python-based export tool for 3ds Max that streamlines the workflow of exporting assets directly to Unreal Engine. This tool automates the export process, handles material conversion, ensures proper naming conventions, and maintains asset hierarchy. Designed to reduce manual steps and potential errors in the 3D asset pipeline, making it easier for artists to iterate quickly between Max and Unreal Engine.',
+		shortDescription:
+			'Python export tool for seamless 3ds Max to Unreal Engine asset pipeline.',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Max_UnrealExporter', label: 'GitHub' }
+		],
+		logo: Assets.Python,
+		name: '3DSMax-Unreal Exporter',
+		period: {
+			from: new Date(2025, 0, 1)
+		},
+		skills: getSkills('python', '3dsmax', 'unreal'),
+		type: 'Tool Development',
 		screenshots: []
 	}
 ];

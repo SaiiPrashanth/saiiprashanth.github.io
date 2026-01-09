@@ -17,7 +17,7 @@ const items: Array<Experience> = [
 		name: 'Game Developer',
 		color: '#ff6b6b',
 		links: [],
-		logo: Assets.Unknown,
+		logo: Assets.Dnnovate,
 		shortDescription: 'Game development with Unity, asset optimization and SDK integration.'
 	},
 	{
@@ -32,7 +32,7 @@ const items: Array<Experience> = [
 		name: 'Operations Associate',
 		color: '#4a90e2',
 		links: [],
-		logo: Assets.Unknown,
+		logo: Assets.CapitalDynamics,
 		shortDescription: 'Financial operations, compliance management and stakeholder relations.'
 	},
 	{
@@ -47,7 +47,7 @@ const items: Array<Experience> = [
 		name: 'Business Strategy Associate',
 		color: '#10b981',
 		links: [],
-		logo: Assets.Unknown,
+		logo: Assets.Glowflo,
 		shortDescription: 'Strategic partnerships, event organization and business development.'
 	},
 	{
@@ -62,7 +62,7 @@ const items: Array<Experience> = [
 		name: 'Bachelor of Science - Gaming',
 		color: '#0066cc',
 		links: [],
-		logo: Assets.Unknown,
+		logo: Assets.JainUniversity,
 		shortDescription: 'B.Sc. Gaming - University Gold Medalist'
 	},
 	{
@@ -77,7 +77,7 @@ const items: Array<Experience> = [
 		name: 'Grade 12 (CBSE) - Science Stream',
 		color: '#10b981',
 		links: [],
-		logo: Assets.Unknown,
+		logo: Assets.AmritaVidyalayam,
 		shortDescription: 'Physics, Chemistry, Mathematics, Computer Science'
 	}
 ];

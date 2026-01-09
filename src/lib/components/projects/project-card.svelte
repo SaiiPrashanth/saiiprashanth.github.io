@@ -39,17 +39,17 @@
 	href={href(`/projects/${project.slug}`)}
 >
 	<CardHeader class="flex w-full flex-col gap-4">
-		<Avatar>
+		<Avatar class="h-14 w-14 flex items-center justify-center">
 			<AvatarFallback>
-				<img src={Assets.Unknown.light} alt={project.name} />
+				<img src={Assets.Unknown.light} alt={project.name} class="object-contain" />
 			</AvatarFallback>
-			<AvatarImage src={$mode === 'dark' ? project.logo.dark : project.logo.light} />
+			<AvatarImage src={$mode === 'dark' ? project.logo.dark : project.logo.light} class="object-contain p-2" />
 		</Avatar>
-		<div class="flex w-full flex-row items-center gap-1 overflow-x-hidden">
-			<CardTitle class="h-auto min-w-0 flex-1 overflow-x-hidden">
+		<div class="flex w-full flex-row items-center gap-1 min-h-[40px]">
+			<CardTitle class="h-auto min-w-0 flex-1 leading-normal">
 				<Tooltip>
 					<TooltipTrigger
-						class="w-full overflow-y-auto overflow-x-hidden truncate text-ellipsis text-nowrap text-left"
+						class="w-full truncate text-ellipsis text-nowrap text-left"
 					>
 						{project.name}
 					</TooltipTrigger>
@@ -74,7 +74,7 @@
 						{/each}
 					</DropdownMenuContent>
 				</DropdownMenu>
-			{:else}
+			{:else if project.links.length > 0}
 				{#each project.links as link (link.to)}
 					<ButtonLink {link} />
 				{/each}

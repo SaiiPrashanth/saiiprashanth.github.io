@@ -2,6 +2,7 @@ import { base } from '$app/paths';
 
 const url = (file: string) => `${base}/logos/Skills/${file}`;
 const iconUrl = (file: string) => `${base}/logos/Icons/${file}`;
+const orgUrl = (file: string) => `${base}/orgs/${file}`;
 
 const asset = (lightFilename: string, darkFilename = lightFilename) => {
 	return { light: url(lightFilename), dark: url(darkFilename) };
@@ -9,6 +10,10 @@ const asset = (lightFilename: string, darkFilename = lightFilename) => {
 
 const iconAsset = (lightFilename: string, darkFilename = lightFilename) => {
 	return { light: iconUrl(lightFilename), dark: iconUrl(darkFilename) };
+};
+
+const orgAsset = (filename: string) => {
+	return { light: orgUrl(filename), dark: orgUrl(filename) };
 };
 
 const Assets = {
@@ -96,7 +101,19 @@ const Assets = {
 	Rider: asset('RIder.svg'),
 	GitHub: iconAsset('GitHub.svg', 'GitHub_Dark.svg'),
 	Itch: iconAsset('Itch.svg', 'Itch_Dark.svg'),
-	Artstation: iconAsset('Artstation.svg')
+	Artstation: iconAsset('Artstation.svg'),
+	JainUniversity: orgAsset('jain.webp'),
+	AmritaVidyalayam: orgAsset('Amrita.webp'),
+	MichiganStateUniversity: orgAsset('MSU.webp'),
+	Google: orgAsset('google.webp'),
+	Atlassian: orgAsset('Atlassian.webp'),
+	Glowflo: orgAsset('Glowflo.webp'),
+	Dnnovate: orgAsset('dnnovate.webp'),
+	CapitalDynamics: orgAsset('CapitalDyna.webp'),
+	ElectronicArts: orgAsset('EA.webp'),
+	EpicGames: orgAsset('epic.webp'),
+	NISM: orgAsset('nism.webp'),
+	UnityTech: orgAsset('unity.webp')
 };
 
 export default Assets;
