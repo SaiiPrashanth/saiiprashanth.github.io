@@ -2,7 +2,7 @@
 	import Assets from '$lib/data/assets';
 	import type { Education } from '$lib/data/types';
 	import { computeExactDuration, getMonthAndYear, href } from '$lib/utils';
-	import { ellipsify } from '@riadh-adrani/utils';
+	import { ellipsify } from '$lib/utils';
 	import { mode } from 'mode-watcher';
 	import { Avatar, AvatarFallback } from '../ui/avatar';
 	import AvatarImage from '../ui/avatar/avatar-image.svelte';

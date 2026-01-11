@@ -124,3 +124,43 @@ export const getMonthAndYear = (date?: Date) => {
 
 	return `${getMonthName(date.getMonth())} ${date.getFullYear()}`;
 };
+
+// Utility type for autocomplete with string
+export type StringWithAutoComplete<T> = T | (string & {});
+
+// Ellipsify function - truncates text with ellipsis
+export function ellipsify(text: string, maxLength: number = 100): string {
+	if (text.length <= maxLength) return text;
+	return text.slice(0, maxLength) + '...';
+}
+
+// Omit function - creates a new object without specified keys
+export function omit<T extends object, K extends keyof T>(
+	obj: T,
+	...keys: K[]
+): Omit<T, K> {
+	const result = { ...obj };
+	keys.forEach(key => delete result[key]);
+	return result;
+}
+
+// Check if a string is a valid hex color
+export function isHexColor(color: string): boolean {
+	return /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(color);
+}
+
+// Change the opacity of a hex color
+export function changeColorOpacity(color: string, opacity: number): string {
+	if (!isHexColor(color)) return color;
+	
+	// Remove # and convert to RGB
+	const hex = color.replace('#', '');
+	const r = parseInt(hex.substring(0, 2), 16);
+	const g = parseInt(hex.substring(2, 4), 16);
+	const b = parseInt(hex.substring(4, 6), 16);
+	
+	// Clamp opacity between 0 and 1
+	const clampedOpacity = Math.max(0, Math.min(1, opacity));
+	
+	return `rgba(${r}, ${g}, ${b}, ${clampedOpacity})`;
+}

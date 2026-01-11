@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { GalleryItem } from '$lib/data/types';
 	import { href } from '$lib/utils';
-	import { ellipsify } from '@riadh-adrani/utils';
+	import { ellipsify } from '$lib/utils';
 	import Badge from '../ui/badge/badge.svelte';
 	import { CardHeader } from '../ui/card';
 	import CardContent from '../ui/card/card-content.svelte';

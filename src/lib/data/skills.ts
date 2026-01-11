@@ -1,6 +1,5 @@
 import type { Skill, SkillCategory } from './types';
-import type { StringWithAutoComplete } from '@riadh-adrani/utils';
-import { omit } from '@riadh-adrani/utils';
+import { omit, type StringWithAutoComplete } from '$lib/utils';
 import Assets from './assets';
 import svelteMd from './md/svelte.md?raw';
 

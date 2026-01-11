@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLAttributes, MouseEventHandler } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';
-	import { changeColorOpacity, isHexColor } from '@riadh-adrani/utils';
+	import { changeColorOpacity, isHexColor } from '$lib/utils';
 	import { convertNamedToHexColor, NAMED_COLORS, type NamedColor } from '$lib/data/colors';
 
 	const {

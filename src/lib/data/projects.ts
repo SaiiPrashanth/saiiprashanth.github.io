@@ -4,71 +4,72 @@ import type { Project } from './types';
 
 const items: Array<Project> = [
 	{
-		slug: 'custom-render-engine',
-		color: '#c72e49',
+		slug: 'eternights',
+		color: '#8b4513',
 		description:
-			'Developing a low-level rendering engine using the Vulkan API to master memory management, synchronization, and hardware-accelerated graphics pipelines. This ongoing project focuses on understanding the fundamentals of modern graphics APIs and building a robust rendering system from the ground up.',
+			'An open-world Souls-like action RPG developed in Unreal Engine 5 and C++, featuring challenging combat and interconnected exploration. This project showcases advanced combat mechanics, enemy AI systems, and a richly detailed world inspired by classic Souls games. Features include stamina-based combat, dodge-rolling mechanics, boss battles, and an interconnected world design with shortcuts and secrets.',
 		shortDescription:
-			'A custom rendering engine built with Vulkan API for advanced graphics programming.',
-		links: [],
-		logo: Assets.Cpp,
-		name: 'Custom Render Engine (Current)',
+			'Open-world Souls-like action RPG in UE5 with challenging combat.',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/EterNights', label: 'GitHub' }
+		],
+		logo: Assets.Unreal,
+		name: 'EterNights',
 		period: {
 			from: new Date(2024, 0, 1)
 		},
-		skills: getSkills('cpp', 'glsl'),
-		type: 'Graphics Engine',
+		skills: getSkills('cpp', 'unreal'),
+		type: 'Action RPG',
 		screenshots: []
 	},
 	{
-		slug: 'cubeology',
-		color: '#8b6f47',
+		slug: 'space-odyssey',
+		color: '#1a1a2e',
 		description:
-			'A high-fidelity Minecraft-style puzzle game featuring voxel-based environments and challenging gameplay mechanics. Built with a focus on creating engaging puzzle experiences within a blocky, procedurally-generated world. Combines creative building elements with strategic problem-solving challenges.',
+			'A 3D arcade rail-shooter built in Unity, featuring dynamic starship piloting and combat mechanics. Players navigate through stunning space environments, engaging in intense dogfights with enemy spacecraft while following a guided rail path. Features include responsive flight controls, varied enemy types, power-up systems, and epic boss battles set against breathtaking cosmic backdrops.',
 		shortDescription:
-			'High-fidelity Minecraft-style puzzle game with voxel environments.',
+			'3D arcade rail-shooter with dynamic space combat and piloting.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Cubeology', label: 'GitHub' }
+			{ to: 'https://github.com/SaiiPrashanth/Space_Odyssey', label: 'GitHub' }
 		],
 		logo: Assets.Unity,
-		name: 'Cubeology',
+		name: 'Space Odyssey',
+		period: {
+			from: new Date(2024, 0, 1)
+		},
+		skills: getSkills('unity', 'csharp'),
+		type: 'Arcade Shooter',
+		screenshots: []
+	},
+	{
+		slug: 'cubeathon',
+		color: '#8b6f47',
+		description:
+			'A creative open-world sandbox game built in Unreal Engine 5, featuring voxel-based building mechanics and vast level construction tools. Players can unleash their creativity in a Minecraft-style environment powered by modern graphics, building elaborate structures in a procedurally generated world. Features include intuitive building tools, creative mode with unlimited resources, and beautiful voxel rendering with UE5\'s advanced lighting.',
+		shortDescription:
+			'Creative voxel sandbox game in UE5 with building mechanics.',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Cubeathon', label: 'GitHub' }
+		],
+		logo: Assets.Unreal,
+		name: 'Cubeathon',
 		period: {
 			from: new Date(2023, 9, 1),
 			to: new Date(2024, 2, 1)
 		},
-		skills: getSkills('unity', 'csharp'),
-		type: 'Puzzle Game',
-		screenshots: []
-	},
-	{
-		slug: 'bumble-bee',
-		color: '#f1c40f',
-		description:
-			'BeeCraft is a unique voxel-based survival and building game where players take on the role of a hardworking bee in a procedurally generated world made of honey blocks and flower structures. Features include infinite voxel worlds, crafting systems, bee colony management, combat against wasps and hostile mobs, multiplayer co-op for up to 4 players, and day/night cycles. Players mine honeycomb blocks, craft tools, build elaborate hives with hexagonal rooms, and defend against enemy invasions while uncovering the mystery of why the flowers are dying.',
-		shortDescription:
-			'Voxel survival game where you build and defend your bee colony in a blocky honey world.',
-		links: [
-			{ to: 'https://saiiprashanth.itch.io/bumble-bee', label: 'Itch.io' }
-		],
-		logo: Assets.Unity,
-		name: 'Bumble Bee',
-		period: {
-			from: new Date(2024, 5, 1),
-			to: new Date(2024, 10, 1)
-		},
-		skills: getSkills('unity', 'csharp'),
-		type: 'Survival Game',
+		skills: getSkills('unreal'),
+		type: 'Sandbox Game',
 		screenshots: []
 	},
 	{
 		slug: 'neko-gambit',
 		color: '#d4af37',
 		description:
-			'Neko Gambit is a unique 3D chess game set in ancient Egypt where players command feline deities on a beautifully rendered desert battlefield. Features include a rotating 3D board, divine chess pieces including Anubis-cats and Bastet-bishops, dynamic sandstorm weather events that affect gameplay, and ancient magic artifacts that can change the tide of battle. The game combines classical chess strategy with Egyptian mythology themes.',
+			'A stylized 3D Chess game built in Unity, set in a mystical desert kingdom ruled by Cat Pharaohs. Features a rotating 3D board, divine chess pieces including Anubis-cats and Bastet-bishops, dynamic sandstorm weather events that affect gameplay, and ancient magic artifacts that can change the tide of battle. The game combines classical chess strategy with Egyptian mythology themes and beautiful stylized art.',
 		shortDescription:
-			'3D chess game featuring Egyptian cat deities on a rotating desert battlefield.',
+			'Stylized 3D chess game in a mystical desert kingdom with Cat Pharaohs.',
 		links: [
-			{ to: 'https://saiiprashanth.itch.io/chess-masters', label: 'Itch.io' }
+			{ to: 'https://github.com/SaiiPrashanth/Neko_Gambit', label: 'GitHub' }
 		],
 		logo: Assets.Unity,
 		name: 'Neko Gambit',
@@ -84,11 +85,11 @@ const items: Array<Project> = [
 		slug: 'boating-through',
 		color: '#4ecdc4',
 		description:
-			'Boating Through is an endless river navigation game with one-tap controls. Players guide their boat through an infinite procedurally generated river, changing direction with each tap to avoid falling into the abyss. Features low-poly relaxing aesthetics, high score tracking, unlockable boats and trails through coin collection, and addictive rhythm-based gameplay. The game emphasizes timing and precision with its simple yet challenging zigzag navigation mechanics.',
+			'A fast-paced infinite runner in Unity featuring vibrant cel-shaded graphics and stylized water physics. Players guide their boat through an infinite procedurally generated river, changing direction with each tap to avoid obstacles. Features low-poly relaxing aesthetics, high score tracking, unlockable boats and trails through coin collection, and addictive rhythm-based gameplay with timing and precision mechanics.',
 		shortDescription:
-			'One-tap endless river runner with rhythm-based navigation and low-poly aesthetics.',
+			'Fast-paced infinite runner with cel-shaded graphics and water physics.',
 		links: [
-			{ to: 'https://saiiprashanth.itch.io/boating-all-the-way', label: 'Itch.io' }
+			{ to: 'https://github.com/SaiiPrashanth/Boating_Through', label: 'GitHub' }
 		],
 		logo: Assets.Unity,
 		name: 'Boating Through',
@@ -104,12 +105,11 @@ const items: Array<Project> = [
 		slug: 'hungry-kirby',
 		color: '#ffb7b2',
 		description:
-			'A Cut the Rope-style physics puzzle game starring Kirby. Players must cut chains and manipulate physics objects to feed stars to Kirby. Features include classic Kirby copy abilities, 5 worlds themed after sweets and treats, beautiful pixel art inspired by GBA classics, controller support, and interactive animations. Players draw lines to cut ropes, utilizing gravity and momentum to solve increasingly complex puzzles while experiencing charming animations and engaging level design.',
+			'A physics-based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby. Players must cut chains and manipulate physics objects to feed stars to Kirby. Features include classic Kirby copy abilities, 5 worlds themed after sweets and treats, beautiful pixel art inspired by GBA classics, controller support, and interactive animations. Cut ropes utilizing gravity and momentum to solve increasingly complex puzzles.',
 		shortDescription:
-			'Physics-based puzzle game where you cut ropes to feed stars to Kirby.',
+			'Physics-based puzzle game where players solve challenges to feed Kirby.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Hungry_Kirby', label: 'GitHub' },
-			{ to: 'https://saiiprashanth.itch.io/hungry-kirby', label: 'Itch.io' }
+			{ to: 'https://github.com/SaiiPrashanth/Hungry_Kirby', label: 'GitHub' }
 		],
 		logo: Assets.Unity,
 		name: 'Hungry Kirby',
@@ -125,12 +125,11 @@ const items: Array<Project> = [
 		slug: 'astron',
 		color: '#00ffff',
 		description:
-			'A minimalist asteroid shooter with vector graphics and physics-based gameplay where precision is key and hesitation is fatal. Built with pure JavaScript and HTML5 Canvas, featuring clean high-contrast geometric art style, realistic inertia-based movement and collision systems, endless waves of increasingly complex geometric shapes, dynamic neon lighting and particle explosions, lives system, and score tracking. Players control a triangular spaceship, shooting asteroids that split into smaller pieces while managing momentum and avoiding collisions in this endless space survival game.',
+			'A classic arcade-style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics-based movement and retro vector graphics. Features clean high-contrast geometric art style, realistic inertia-based movement and collision systems, endless waves of increasingly complex geometric shapes, dynamic neon lighting and particle explosions, lives system, and score tracking. Control a triangular spaceship while managing momentum in this endless space survival game.',
 		shortDescription:
-			'Minimalist vector-based asteroid shooter with physics-driven gameplay.',
+			'Arcade-style space shooter with retro vector graphics and physics.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Astron', label: 'GitHub' },
-			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io' }
+			{ to: 'https://github.com/SaiiPrashanth/Astron', label: 'GitHub' }
 		],
 		logo: Assets.JavaScript,
 		name: 'Astron',
@@ -143,17 +142,17 @@ const items: Array<Project> = [
 		screenshots: []
 	},
 	{
-		slug: 'automated-lod-pipeline',
+		slug: 'automated-lod-tool',
 		color: '#4a90e2',
 		description:
-			'Engineered a 3ds Max automation tool that auto-generates Levels of Detail (LODs) and integrates assets seamlessly into UE5, significantly reducing manual import time for artists. This tool streamlines the asset pipeline by automating repetitive tasks and ensuring consistent quality across LOD levels. Features automated mesh decimation, material preservation, batch processing capabilities, and direct Unreal Engine integration.',
+			'An automation script for Autodesk 3ds Max that instantly generates standardized Levels of Detail (LODs) for game assets using the ProOptimizer modifier. Features automated mesh decimation with configurable reduction percentages, material and UV preservation across LOD levels, batch processing for multiple assets, proper naming conventions for game engines, and seamless integration into existing pipelines. Significantly reduces manual work for technical artists.',
 		shortDescription:
-			'Automated LOD generation and asset integration tool for Unreal Engine 5.',
+			'Automation script for generating LODs in 3ds Max with ProOptimizer.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Max_LODGenerator', label: 'GitHub' }
+			{ to: 'https://github.com/SaiiPrashanth/Automated_LOD_Tool', label: 'GitHub' }
 		],
 		logo: Assets.Python,
-		name: 'Automated LOD Pipeline Tool',
+		name: 'Automated LOD Tool',
 		period: {
 			from: new Date(2023, 6, 1),
 			to: new Date(2024, 0, 1)
@@ -163,37 +162,17 @@ const items: Array<Project> = [
 		screenshots: []
 	},
 	{
-		slug: 'decipher',
-		color: '#10b981',
-		description:
-			'Served as the Technical Artist and Level Designer for Decipher, implementing scene optimizations and culling strategies to maintain stable framerates without sacrificing visual fidelity or gameplay depth. The project focused on balancing performance and visual quality through careful optimization and technical implementation. Utilized occlusion culling, LOD systems, and efficient lighting setups to create immersive environments.',
-		shortDescription:
-			'Technical art and level design with advanced optimization techniques.',
-		links: [
-			{ to: 'https://github.com/SaiiPrashanth', label: 'GitHub' }
-		],
-		logo: Assets.Unity,
-		name: 'Decipher',
-		period: {
-			from: new Date(2023, 0, 1),
-			to: new Date(2023, 6, 1)
-		},
-		skills: getSkills('unity', 'csharp'),
-		type: 'Game Project',
-		screenshots: []
-	},
-	{
-		slug: 'max-unreal-exporter',
+		slug: '3ds-ue5-asset-integration-tool',
 		color: '#0e76a8',
 		description:
-			'A Python-based export tool for 3ds Max that streamlines the workflow of exporting assets directly to Unreal Engine. This tool automates the export process, handles material conversion, ensures proper naming conventions, and maintains asset hierarchy. Designed to reduce manual steps and potential errors in the 3D asset pipeline, making it easier for artists to iterate quickly between Max and Unreal Engine.',
+			'A Python automation tool for Autodesk 3ds Max that streamlines the export of 3D assets and textures directly into Unreal Engine 5 projects. Automates FBX export with proper settings, handles material and texture conversion, maintains proper naming conventions, preserves asset hierarchy, and integrates directly with UE5 content browser. Designed to reduce manual steps and errors in the asset pipeline, enabling quick iteration between Max and Unreal.',
 		shortDescription:
-			'Python export tool for seamless 3ds Max to Unreal Engine asset pipeline.',
+			'Python tool for streamlined 3ds Max to UE5 asset export and integration.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Max_UnrealExporter', label: 'GitHub' }
+			{ to: 'https://github.com/SaiiPrashanth/3DS-UE5_Asset_Integration_Tool', label: 'GitHub' }
 		],
 		logo: Assets.Python,
-		name: '3DSMax-Unreal Exporter',
+		name: '3DS-UE5 Asset Integration Tool',
 		period: {
 			from: new Date(2025, 0, 1)
 		},

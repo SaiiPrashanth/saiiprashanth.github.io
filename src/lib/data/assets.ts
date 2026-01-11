@@ -99,6 +99,7 @@ const Assets = {
 	RenderDoc: asset('RenderDoc.svg'),
 	Office: asset('office.svg'),
 	Rider: asset('RIder.svg'),
+	LaTeX: asset('no-img.svg'),
 	GitHub: iconAsset('GitHub.svg', 'GitHub_Dark.svg'),
 	Itch: iconAsset('Itch.svg', 'Itch_Dark.svg'),
 	Artstation: iconAsset('Artstation.svg'),
