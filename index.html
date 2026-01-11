@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/Logo.png" id="favicon" />
+		<script>
+			// Update favicon based on theme
+			function updateFavicon() {
+				const favicon = document.getElementById('favicon');
+				const isDark = document.documentElement.classList.contains('dark') || 
+					(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+				
+				if (!favicon) return;
+				
+				const canvas = document.createElement('canvas');
+				const img = new Image();
+				img.onload = function() {
+					canvas.width = img.width;
+					canvas.height = img.height;
+					const ctx = canvas.getContext('2d');
+					if (isDark) {
+						ctx.filter = 'invert(1)';
+					}
+					ctx.drawImage(img, 0, 0);
+					favicon.href = canvas.toDataURL('image/png');
+				};
+				img.src = '/Logo.png';
+			}
+			
+			// Run on load and when theme changes
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', updateFavicon);
+			} else {
+				updateFavicon();
+			}
+			
+			// Listen for theme changes
+			const observer = new MutationObserver(updateFavicon);
+			observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="modulepreload" href="/_app/immutable/entry/start.qZfskIEf.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/entry.DDt8HwBI.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/utils.BiTlElHP.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/paths.C4e0B-iQ.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.Cbi0uBhJ.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/disclose-version.DIN2kTFO.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index-client.CaB0hCwn.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_1wvbpxs = {
+						base: ""
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/_app/immutable/entry/start.qZfskIEf.js"),
+						import("/_app/immutable/entry/app.Cbi0uBhJ.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
