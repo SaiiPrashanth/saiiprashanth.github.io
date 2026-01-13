@@ -16,7 +16,7 @@ const items: Array<Education> = [
 		slug: 'google-pm',
 		subjects: ['Project Management', 'Agile', 'Scrum', 'Leadership'],
 		color: '#4285f4',
-		link: 'https://www.coursera.org/account/accomplishments/records/VEFHXHX20JCC'
+		link: 'https://www.coursera.org/account/accomplishments/specialization/48GB3HOCHIZZ'
 	},
 	{
 		degree: 'Agile with Atlassian Jira',
@@ -44,7 +44,7 @@ const items: Array<Education> = [
 		slug: 'unity-certified',
 		subjects: ['Unity', 'C#', 'Game Development', '3D Graphics', 'Game Design'],
 		color: '#00bcd4',
-		link: 'https://lmsfiles.s3.eu-west-1.amazonaws.com/files/u/n/unity_training_docebosaas_com/certificate/255_3_57724_1767268354_Certificate%20of%20Completion_ENG.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJFT5KREJQB24V7YA%2F20260108%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20260108T230152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Signature=ee7bd90957fdfebe3b93ce6cbd0f348aeccbd216d39f92bc7502ad5d536ea81b'
+		link: 'https://drive.google.com/file/d/1DjxAGJ8Jrhbh4aapllE1CQWb9iF_Dsdn/view?usp=sharing'
 	},
 	{
 		degree: 'Electronic Arts - Product Management Job Simulation',

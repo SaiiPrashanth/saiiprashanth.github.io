@@ -69,6 +69,7 @@ const items: Array<Project> = [
 		shortDescription:
 			'Stylized 3D chess game in a mystical desert kingdom with Cat Pharaohs.',
 		links: [
+			{ to: 'https://saiiprashanth.itch.io/neko-gambit', label: 'Itch.io' },
 			{ to: 'https://github.com/SaiiPrashanth/Neko_Gambit', label: 'GitHub' }
 		],
 		logo: Assets.Unity,
@@ -89,6 +90,7 @@ const items: Array<Project> = [
 		shortDescription:
 			'Fast-paced infinite runner with cel-shaded graphics and water physics.',
 		links: [
+			{ to: 'https://saiiprashanth.itch.io/boating-through', label: 'Itch.io' },
 			{ to: 'https://github.com/SaiiPrashanth/Boating_Through', label: 'GitHub' }
 		],
 		logo: Assets.Unity,
@@ -109,6 +111,7 @@ const items: Array<Project> = [
 		shortDescription:
 			'Physics-based puzzle game where players solve challenges to feed Kirby.',
 		links: [
+			{ to: 'https://saiiprashanth.itch.io/hungry-kirby', label: 'Itch.io' },
 			{ to: 'https://github.com/SaiiPrashanth/Hungry_Kirby', label: 'GitHub' }
 		],
 		logo: Assets.Unity,
@@ -129,6 +132,7 @@ const items: Array<Project> = [
 		shortDescription:
 			'Arcade-style space shooter with retro vector graphics and physics.',
 		links: [
+			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io' },
 			{ to: 'https://github.com/SaiiPrashanth/Astron', label: 'GitHub' }
 		],
 		logo: Assets.JavaScript,
