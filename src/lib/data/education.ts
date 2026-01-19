@@ -58,7 +58,7 @@ const items: Array<Education> = [
 		slug: 'ea-product-mgmt',
 		subjects: ['Product Management', 'Game Production', 'Stakeholder Management'],
 		color: '#ff0000',
-		link: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/YOUR_CERT_ID.pdf'
+		link: 'https://www.theforage.com/completion-certificates/j43dGscQHtJJ57N54/5genWYpfo5b57G7yv_j43dGscQHtJJ57N54_8aLi6e7FfZQZDxdog_1768660084981_completion_certificate.pdf '
 	},
 	{
 		degree: 'Game Design and Development Specialization',

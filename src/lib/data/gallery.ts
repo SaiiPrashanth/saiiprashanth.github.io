@@ -13,7 +13,7 @@ const items: Array<GalleryItem> = [
 		tags: ['3d', 'camera', 'rendering', 'technical'],
 		category: '3d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Cam.webp', label: 'Camera View 1' }
@@ -28,7 +28,7 @@ const items: Array<GalleryItem> = [
 		tags: ['3d modeling', 'product design', 'tablet', 'hardware'],
 		category: '3d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/PenTab.webp', label: 'Pen Tablet' }
@@ -43,7 +43,7 @@ const items: Array<GalleryItem> = [
 		tags: ['3d modeling', 'product design', 'rendering', 'audio'],
 		category: '3d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/TWS.webp', label: 'TWS Earbuds' }
@@ -58,7 +58,7 @@ const items: Array<GalleryItem> = [
 		tags: ['game design', 'fps', 'unity', 'game development'],
 		category: 'game',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/FPS.webp', label: 'FPS Gameplay' }
@@ -73,7 +73,7 @@ const items: Array<GalleryItem> = [
 		tags: ['pixel art', 'character', '2d', 'retro'],
 		category: '2d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/PixelGirl.webp', label: 'Pixel Girl' }
@@ -88,7 +88,7 @@ const items: Array<GalleryItem> = [
 		tags: ['digital art', 'character', 'illustration', 'fan art'],
 		category: '2d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Joker.webp', label: 'Joker' }
@@ -103,7 +103,7 @@ const items: Array<GalleryItem> = [
 		tags: ['vr', 'character', '3d', 'virtual reality'],
 		category: '3d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Elaina VR.webp', label: 'Elaina VR' }
@@ -118,7 +118,7 @@ const items: Array<GalleryItem> = [
 		tags: ['illustration', 'animal', 'portrait', 'digital art'],
 		category: '2d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Dog1.webp', label: 'Dog Portrait 1' }
@@ -133,7 +133,7 @@ const items: Array<GalleryItem> = [
 		tags: ['illustration', 'animal', 'portrait', 'digital art'],
 		category: '2d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Dog2.webp', label: 'Dog Portrait 2' }
@@ -148,7 +148,7 @@ const items: Array<GalleryItem> = [
 		tags: ['illustration', 'animal', 'portrait', 'digital art'],
 		category: '2d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Dog3.webp', label: 'Dog Portrait 3' }
@@ -163,7 +163,7 @@ const items: Array<GalleryItem> = [
 		tags: ['web design', 'ui/ux', 'interface', 'mockup'],
 		category: '2d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Website.webp', label: 'Website Design' }
@@ -178,7 +178,7 @@ const items: Array<GalleryItem> = [
 		tags: ['3d', 'environment', 'lighting', 'interior'],
 		category: '3d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/AmbiRoom.webp', label: 'AmbiRoom' }
@@ -193,7 +193,7 @@ const items: Array<GalleryItem> = [
 		tags: ['terrain', 'landscape', 'procedural', 'environment'],
 		category: 'terrain',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Hill.webp', label: 'Hill Landscape' }
@@ -208,10 +208,85 @@ const items: Array<GalleryItem> = [
 		tags: ['3d modeling', 'weapon', 'game asset', 'prop'],
 		category: '3d',
 		links: [
-			{ to: '#', label: 'View Full Size' }
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Sword.webp', label: 'Sword Model' }
+		]
+	},
+	{
+		slug: 'astron',
+		name: 'Astron',
+		description: 'A classic arcade-style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics-based movement and retro vector graphics.',
+		shortDescription: 'Arcade-style space shooter with retro vector graphics.',
+		image: '/gallery/Astron_3.png',
+		tags: ['javascript', 'html5', 'canvas', 'arcade', 'game development'],
+		category: 'game',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Astron', label: 'GitHub', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/Astron_3.png', label: 'Astron Gameplay' }
+		]
+	},
+	{
+		slug: 'boating-through',
+		name: 'Boating Through',
+		description: 'A fast-paced infinite runner in Unity featuring vibrant cel-shaded graphics and stylized water physics.',
+		shortDescription: 'Fast-paced infinite runner with cel-shaded graphics.',
+		image: '/gallery/BT1.jpg',
+		tags: ['unity', 'csharp', 'infinite runner', 'cel-shaded', 'game development'],
+		category: 'game',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Boating_Through', label: 'GitHub', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/BT1.jpg', label: 'Boating Through Gameplay' }
+		]
+	},
+	{
+		slug: 'hungry-kirby',
+		name: 'Hungry Kirby',
+		description: 'A physics-based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby.',
+		shortDescription: 'Physics-based puzzle game with Kirby.',
+		image: '/gallery/HK_1.jpg',
+		tags: ['unity', 'csharp', 'puzzle', 'physics', 'kirby', 'game development'],
+		category: 'game',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Hungry_Kirby', label: 'GitHub', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/HK_1.jpg', label: 'Hungry Kirby Gameplay' }
+		]
+	},
+	{
+		slug: 'neko-gambit',
+		name: 'Neko Gambit',
+		description: 'A stylized 3D Chess game built in Unity, set in a mystical desert kingdom ruled by Cat Pharaohs.',
+		shortDescription: 'Stylized 3D chess game with Cat Pharaohs.',
+		image: '/gallery/Neko_Gambit_img_1.jpg',
+		tags: ['unity', 'csharp', 'chess', 'strategy', 'egyptian mythology', 'game development'],
+		category: 'game',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Neko_Gambit', label: 'GitHub', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/Neko_Gambit_img_1.jpg', label: 'Neko Gambit Gameplay' }
+		]
+	},
+	{
+		slug: 'bumble-bee',
+		name: 'Bumble Bee',
+		description: 'A creative project featuring bumble bee themed gameplay and interactive elements. Showcases unique character design and engaging mechanics.',
+		shortDescription: 'Bumble bee themed interactive project.',
+		image: '/gallery/BB_1.jpg',
+		tags: ['game development', 'character design', 'interactive', 'unity'],
+		category: 'game',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Bumble_Bee', label: 'GitHub', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/BB_1.jpg', label: 'Bumble Bee Project' }
 		]
 	}
 ];

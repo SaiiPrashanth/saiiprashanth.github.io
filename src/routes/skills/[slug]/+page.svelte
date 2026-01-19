@@ -21,6 +21,14 @@
 	let banner = $derived(
 		($mode == 'dark' ? data?.item?.logo.dark : data.item?.logo.light) ?? Assets.Unknown.light
 	);
+	
+	// Logos that need to be inverted in dark mode
+	const invertInDark = ['unreal', 'speedtree', 'zbrush'];
+	let shouldInvert = $derived($mode === 'dark' && data.item && invertInDark.includes(data.item.slug));
+	
+	$effect(() => {
+		console.log('Skills page - mode:', $mode, 'slug:', data.item?.slug, 'shouldInvert:', shouldInvert);
+	});
 
 	let related = $derived(
 		(() => {
@@ -59,7 +67,7 @@
 	{#if !data.item}
 		<EmptyResult />
 	{:else}
-		<FancyBanner img={banner}>
+		<FancyBanner img={banner} style={shouldInvert ? 'filter: invert(1);' : ''}>
 			<H1>{data.item.name}</H1>
 		</FancyBanner>
 		<Separator />

@@ -34,6 +34,8 @@
 <FancyCard
 	{color}
 	class="flex h-full flex-col"
+	href={item.links?.[0]?.to}
+	newTab={item.links?.[0]?.newTab}
 >
 	<CardHeader class="flex w-full flex-col gap-4">
 		<div class="aspect-video w-full overflow-hidden rounded-lg bg-muted relative group">
@@ -47,8 +49,8 @@
 				style="background-color: {color};"
 			></div>
 		</div>
-		<div class="flex w-full flex-row items-center gap-1 overflow-x-hidden">
-			<CardTitle class="h-auto min-w-0 flex-1 overflow-x-hidden">
+		<div class="flex w-full flex-row items-center gap-1 overflow-hidden">
+			<CardTitle class="h-auto min-w-0 flex-1 overflow-hidden">
 				<Tooltip>
 					<TooltipTrigger class="w-full text-left">
 						{ellipsify(item.name, 25)}

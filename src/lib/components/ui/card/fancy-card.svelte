@@ -7,6 +7,7 @@
 	const {
 		color = NAMED_COLORS.gray,
 		href,
+		newTab,
 		bgImg,
 		tilt = 5,
 		class: className,
@@ -15,6 +16,7 @@
 	}: HTMLAttributes<HTMLDivElement> & {
 		color?: string;
 		href?: string;
+		newTab?: boolean;
 		bgImg?: string;
 		tilt?: number;
 	} = $props();
@@ -89,6 +91,7 @@
 	this={href ? 'a' : 'div'}
 	bind:this={el}
 	{href}
+	target={href && newTab ? '_blank' : undefined}
 	class={cn('card rounded-lg border bg-card text-card-foreground shadow-sm', className)}
 	{...reset}
 	onmousemove={onHover}
