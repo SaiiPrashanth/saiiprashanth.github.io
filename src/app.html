@@ -4,11 +4,10 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/png" href="%sveltekit.assets%/Logo.png" id="favicon" />
 		<script>
-			// Update favicon based on theme
+			// Update favicon based on system theme
 			function updateFavicon() {
 				const favicon = document.getElementById('favicon');
-				const isDark = document.documentElement.classList.contains('dark') || 
-					(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+				const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 				
 				if (!favicon) return;
 				
@@ -27,16 +26,16 @@
 				img.src = '%sveltekit.assets%/Logo.png';
 			}
 			
-			// Run on load and when theme changes
+			// Run on load
 			if (document.readyState === 'loading') {
 				document.addEventListener('DOMContentLoaded', updateFavicon);
 			} else {
 				updateFavicon();
 			}
 			
-			// Listen for theme changes
-			const observer = new MutationObserver(updateFavicon);
-			observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+			// Listen for system theme changes
+			const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+			mediaQuery.addEventListener('change', updateFavicon);
 		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
