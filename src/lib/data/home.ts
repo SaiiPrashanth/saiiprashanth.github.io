@@ -15,8 +15,8 @@ const hero: {
 	links: [
 		{ label: 'GitHub', href: 'https://github.com/SaiiPrashanth', icon: 'i-carbon-logo-github' },
 		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/saiiprashanth/', icon: 'i-carbon-logo-linkedin' },
-		{ label: 'ArtStation', href: 'https://www.artstation.com/saiiprashanth', iconImage: '/logos/Icons/Artstation.svg' },
 		{ label: 'Itch.io', href: 'https://saiiprashanth.itch.io/', iconImage: '/logos/Icons/Itch.svg' },
+		{ label: 'ArtStation', href: 'https://www.artstation.com/saiiprashanth', iconImage: '/logos/Icons/Artstation.svg' },
 		{ label: 'Email', href: 'mailto:saiiprashanth23@gmail.com', icon: 'i-carbon-at' }
 	]
 };

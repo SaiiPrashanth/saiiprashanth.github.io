@@ -11,7 +11,7 @@ const items: Array<Project> = [
 		shortDescription:
 			'Open-world Souls-like action RPG in UE5 with challenging combat.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/EterNights', label: 'GitHub' }
+			{ to: 'https://github.com/SaiiPrashanth/EterNights', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unreal,
 		name: 'EterNights',
@@ -30,7 +30,7 @@ const items: Array<Project> = [
 		shortDescription:
 			'3D arcade rail-shooter with dynamic space combat and piloting.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Space_Odyssey', label: 'GitHub' }
+			{ to: 'https://github.com/SaiiPrashanth/Space_Odyssey', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unity,
 		name: 'Space Odyssey',
@@ -49,7 +49,7 @@ const items: Array<Project> = [
 		shortDescription:
 			'Creative voxel sandbox game in UE5 with building mechanics.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Cubeathon', label: 'GitHub' }
+			{ to: 'https://github.com/SaiiPrashanth/Cubeathon', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unreal,
 		name: 'Cubeathon',
@@ -62,6 +62,25 @@ const items: Array<Project> = [
 		screenshots: []
 	},
 	{
+		slug: 'bumble-bee',
+		color: '#ffeb3b',
+		description:
+			'A creative Unity project featuring bumble bee themed gameplay and interactive elements. Showcases unique character design, engaging mechanics, and polished visual presentation with attention to detail in animation and user experience.',
+		shortDescription:
+			'Bumble bee themed interactive Unity project with creative gameplay.',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Bumble_Bee', label: 'GitHub', newTab: true }
+		],
+		logo: Assets.Unity,
+		name: 'Bumble Bee',
+		period: {
+			from: new Date(2024, 6, 1)
+		},
+		skills: getSkills('unity', 'csharp'),
+		type: 'Interactive Project',
+		screenshots: []
+	},
+	{
 		slug: 'neko-gambit',
 		color: '#d4af37',
 		description:
@@ -69,8 +88,8 @@ const items: Array<Project> = [
 		shortDescription:
 			'Stylized 3D chess game in a mystical desert kingdom with Cat Pharaohs.',
 		links: [
-			{ to: 'https://saiiprashanth.itch.io/neko-gambit', label: 'Itch.io' },
-			{ to: 'https://github.com/SaiiPrashanth/Neko_Gambit', label: 'GitHub' }
+			{ to: 'https://saiiprashanth.itch.io/neko-gambit', label: 'Itch.io', newTab: true },
+			{ to: 'https://github.com/SaiiPrashanth/Neko_Gambit', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unity,
 		name: 'Neko Gambit',
@@ -90,8 +109,8 @@ const items: Array<Project> = [
 		shortDescription:
 			'Fast-paced infinite runner with cel-shaded graphics and water physics.',
 		links: [
-			{ to: 'https://saiiprashanth.itch.io/boating-through', label: 'Itch.io' },
-			{ to: 'https://github.com/SaiiPrashanth/Boating_Through', label: 'GitHub' }
+			{ to: 'https://saiiprashanth.itch.io/boating-through', label: 'Itch.io', newTab: true },
+			{ to: 'https://github.com/SaiiPrashanth/Boating_Through', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unity,
 		name: 'Boating Through',
@@ -111,8 +130,8 @@ const items: Array<Project> = [
 		shortDescription:
 			'Physics-based puzzle game where players solve challenges to feed Kirby.',
 		links: [
-			{ to: 'https://saiiprashanth.itch.io/hungry-kirby', label: 'Itch.io' },
-			{ to: 'https://github.com/SaiiPrashanth/Hungry_Kirby', label: 'GitHub' }
+			{ to: 'https://saiiprashanth.itch.io/hungry-kirby', label: 'Itch.io', newTab: true },
+			{ to: 'https://github.com/SaiiPrashanth/Hungry_Kirby', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unity,
 		name: 'Hungry Kirby',
@@ -132,8 +151,8 @@ const items: Array<Project> = [
 		shortDescription:
 			'Arcade-style space shooter with retro vector graphics and physics.',
 		links: [
-			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io' },
-			{ to: 'https://github.com/SaiiPrashanth/Astron', label: 'GitHub' }
+			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io', newTab: true },
+			{ to: 'https://github.com/SaiiPrashanth/Astron', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.JavaScript,
 		name: 'Astron',
@@ -173,7 +192,7 @@ const items: Array<Project> = [
 		shortDescription:
 			'Python tool for streamlined 3ds Max to UE5 asset export and integration.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/3DS-UE5_Asset_Integration_Tool', label: 'GitHub' }
+			{ to: 'https://github.com/SaiiPrashanth/3DS-UE5_Asset_Integration_Tool', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Python,
 		name: '3DS-UE5 Asset Integration Tool',
