@@ -6,56 +6,56 @@ const title = 'Gallery';
 const items: Array<GalleryItem> = [
 	{
 		slug: 'cam-project',
-		name: 'Surveillance Camera',
-		description: 'A high-fidelity 3D model of a surveillance camera system with realistic texturing.',
-		shortDescription: 'High-fidelity 3D surveillance camera model.',
+		name: 'Webcam Model',
+		description: 'A detailed 3D model of a webcam with realistic texturing and materials.',
+		shortDescription: 'Detailed 3D webcam model.',
 		image: '/gallery/Cam.webp',
-		tags: ['3d', 'hard-surface', 'modeling', 'texturing'],
+		tags: ['3d', 'hard-surface', 'modeling', 'webcam'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Cam.webp', label: 'Surveillance Camera' }
+			{ src: '/gallery/Cam.webp', label: 'Webcam Model' }
 		]
 	},
 	{
 		slug: 'pentab-project',
-		name: 'Digital Pen Tablet',
-		description: 'Photorealistic 3D visualization of a digital drawing tablet for product design.',
-		shortDescription: 'Photorealistic 3D digital tablet visualization.',
+		name: 'Wacom Tablet and Stylus',
+		description: '3D model of a Wacom digital drawing tablet and stylus for product visualization.',
+		shortDescription: '3D model of Wacom tablet and stylus.',
 		image: '/gallery/PenTab.webp',
-		tags: ['3d', 'product-design', 'modeling', 'visualization'],
+		tags: ['3d', 'product-design', 'wacom', 'modeling'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/PenTab.webp', label: 'Digital Pen Tablet' }
+			{ src: '/gallery/PenTab.webp', label: 'Wacom Tablet' }
 		]
 	},
 	{
 		slug: 'tws-project',
-		name: 'TWS Earbuds',
-		description: 'Detailed 3D product render of True Wireless Stereo earbuds showcasing material properties.',
-		shortDescription: 'Detailed 3D product render of wireless earbuds.',
+		name: 'Futuristic Earbuds',
+		description: 'A futuristic 3D visualization of True Wireless Stereo earbuds.',
+		shortDescription: 'Futuristic 3D earbuds visualization.',
 		image: '/gallery/TWS.webp',
-		tags: ['3d', 'product-design', 'rendering', 'commercial'],
+		tags: ['3d', 'product-design', 'futuristic', 'rendering'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/TWS.webp', label: 'TWS Earbuds' }
+			{ src: '/gallery/TWS.webp', label: 'Futuristic Earbuds' }
 		]
 	},
 	{
 		slug: 'fps-game',
-		name: 'FPS Project',
-		description: 'A first-person shooter prototype demonstrating core gameplay mechanics and level design.',
-		shortDescription: 'FPS prototype with core mechanics and level design.',
+		name: 'LAN PvP FPS',
+		description: 'A first-person shooter prototype designed for LAN PvP gameplay.',
+		shortDescription: 'LAN PvP first-person shooter prototype.',
 		image: '/gallery/FPS.webp',
-		tags: ['game-design', 'fps', 'unity', 'prototyping'],
+		tags: ['game-design', 'fps', 'pvp', 'unity', 'lan'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/', label: 'View on Itch.io', newTab: true }
@@ -66,45 +66,45 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'pixel-girl',
-		name: 'Pixel Art Character',
-		description: 'Retro-style pixel art character design with vibrant colors and expressive details.',
-		shortDescription: 'Retro-style pixel art character design.',
+		name: 'Pixel Anime Girl',
+		description: 'Pixel art design of an anime-style character with retro aesthetics.',
+		shortDescription: 'Pixel art anime girl character.',
 		image: '/gallery/PixelGirl.webp',
-		tags: ['pixel-art', 'character-design', '2d', 'retro'],
+		tags: ['pixel-art', 'character-design', 'anime', '2d'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/PixelGirl.webp', label: 'Pixel Character' }
+			{ src: '/gallery/PixelGirl.webp', label: 'Pixel Anime Girl' }
 		]
 	},
 	{
 		slug: 'joker',
-		name: 'The Joker',
-		description: 'Digital painting of The Joker featuring bold strokes and dramatic lighting.',
-		shortDescription: 'Digital painting of The Joker with dramatic lighting.',
+		name: 'Polygon Joker',
+		description: 'Polygon art illustration of The Joker featuring sharp geometric shapes.',
+		shortDescription: 'Polygon art illustration of The Joker.',
 		image: '/gallery/Joker.webp',
-		tags: ['digital-painting', 'fan-art', 'illustration', 'portrait'],
+		tags: ['polygon-art', 'fan-art', 'illustration', '2d'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Joker.webp', label: 'The Joker' }
+			{ src: '/gallery/Joker.webp', label: 'Polygon Joker' }
 		]
 	},
 	{
 		slug: 'elaina-vr',
-		name: 'Elaina VR Model',
-		description: 'Optimized 3D anime-style character model aimed for VR applications.',
-		shortDescription: 'Optimized 3D anime-style character for VR.',
+		name: 'Elaina AR Project',
+		description: 'An interactive AR project projecting a model of Elaina into the real world.',
+		shortDescription: 'Interactive AR project featuring Elaina.',
 		image: '/gallery/Elaina VR.webp',
-		tags: ['3d', 'character-modeling', 'anime', 'vr-ready'],
+		tags: ['ar', 'interactive', '3d-model', 'real-world'],
 		category: '3d',
 		links: [],
 		screenshots: [
-			{ src: '/gallery/Elaina VR.webp', label: 'Elaina VR Model' }
+			{ src: '/gallery/Elaina VR.webp', label: 'Elaina AR Project' }
 		]
 	},
 	{
@@ -154,24 +154,24 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'website-design',
-		name: 'UI/UX Web Mockup',
-		description: 'Modern website user interface design focusing on clean layout and usability.',
-		shortDescription: 'Modern website UI design focusing on usability.',
+		name: 'GitHub Page UI Design',
+		description: 'UI design mockup for a GitHub page focusing on clean layout and clarity.',
+		shortDescription: 'GitHub page user interface design mockup.',
 		image: '/gallery/Website.webp',
-		tags: ['ui-design', 'web', 'mockup', 'interface'],
+		tags: ['ui-design', 'web', 'github', 'mockup'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Website.webp', label: 'UI/UX Mockup' }
+			{ src: '/gallery/Website.webp', label: 'GitHub UI Design' }
 		]
 	},
 	{
 		slug: 'ambiroom',
-		name: 'Atmospheric Room',
-		description: '3D interior environment study focusing on ambient lighting and mood.',
-		shortDescription: '3D interior study focusing on ambient lighting.',
+		name: 'Ambient Room',
+		description: '3D ambient room environment study focusing on lighting and atmosphere.',
+		shortDescription: '3D ambient room environment study.',
 		image: '/gallery/AmbiRoom.webp',
 		tags: ['3d', 'environment', 'lighting', 'interior'],
 		category: '3d',
@@ -179,37 +179,37 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/AmbiRoom.webp', label: 'Atmospheric Room' }
+			{ src: '/gallery/AmbiRoom.webp', label: 'Ambient Room' }
 		]
 	},
 	{
 		slug: 'hill-landscape',
-		name: 'Procedural Terrain',
-		description: '3D landscape generation study featuring rolling hills and natural topography.',
-		shortDescription: '3D landscape generation study of rolling hills.',
+		name: 'Castle Environment',
+		description: 'A castle environment set in a procedurally generated 3D terrain.',
+		shortDescription: 'Castle environment in procedural terrain.',
 		image: '/gallery/Hill.webp',
-		tags: ['3d', 'terrain', 'landscape', 'procedural'],
+		tags: ['3d', 'terrain', 'castle', 'environment'],
 		category: 'terrain',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Hill.webp', label: 'Procedural Terrain' }
+			{ src: '/gallery/Hill.webp', label: 'Castle Environment' }
 		]
 	},
 	{
 		slug: 'sword-model',
-		name: 'Fantasy Sword',
-		description: 'Game-ready 3D sword asset with stylized textures and optimized topology.',
-		shortDescription: 'Game-ready 3D sword with stylized textures.',
+		name: 'Low-poly PBR Sword',
+		description: 'Fantasy sword model created with low-poly topology and PBR textures.',
+		shortDescription: 'Low-poly PBR fantasy sword model.',
 		image: '/gallery/Sword.webp',
-		tags: ['3d', 'game-asset', 'weapon', 'stylized'],
+		tags: ['3d', 'game-asset', 'weapon', 'low-poly', 'pbr'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Sword.webp', label: 'Fantasy Sword' }
+			{ src: '/gallery/Sword.webp', label: 'Low-poly PBR Sword' }
 		]
 	},
 	{
@@ -304,11 +304,11 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'decipher',
-		name: 'Decipher',
-		description: 'A cryptographic puzzle project involving decoding messages.',
-		shortDescription: 'A cryptographic puzzle project.',
+		name: 'Decipher: Escape Room',
+		description: 'An escape room type puzzle game challenging players to decode cryptic messages.',
+		shortDescription: 'Escape room type puzzle game.',
 		image: '/gallery/Decipher.webp',
-		tags: ['puzzle', 'cryptography', 'logic'],
+		tags: ['puzzle', 'escape-room', 'cryptography', 'logic'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/decipher', label: 'Itch.io', newTab: true }
@@ -334,9 +334,9 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'procedural-terrain-2',
-		name: 'Advanced Procedural Terrain',
-		description: 'Advanced 3D landscape generation study featuring realistic topography.',
-		shortDescription: 'Advanced 3D landscape generation study.',
+		name: 'Procedural Environment',
+		description: 'Advanced study of a 3D procedural environment generation.',
+		shortDescription: 'Advanced procedural environment study.',
 		image: '/gallery/Procedural Terrain.webp',
 		tags: ['3d', 'terrain', 'landscape', 'procedural'],
 		category: 'terrain',
@@ -344,7 +344,7 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Procedural Terrain.webp', label: 'Procedural Terrain' }
+			{ src: '/gallery/Procedural Terrain.webp', label: 'Procedural Environment' }
 		]
 	},
 	{
