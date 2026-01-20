@@ -29,6 +29,18 @@
 	};
 
 	let color = getCategoryColor(item.category);
+
+	let imgLoaded = $state(false);
+
+	const getThumbUrl = (url: string) => {
+		const parts = url.split('/');
+		const filename = parts.pop();
+		if (!filename) return url;
+		const name = filename.substring(0, filename.lastIndexOf('.'));
+		return `${parts.join('/')}/${name}_thumb.webp`;
+	};
+
+	const thumbUrl = getThumbUrl(item.image);
 </script>
 
 <FancyCard
@@ -38,13 +50,25 @@
 	newTab={item.links?.[0]?.newTab}
 >
 	<CardHeader class="flex w-full flex-col gap-4">
-		<div class="aspect-video w-full overflow-hidden rounded-lg bg-muted relative group">
-			<img 
-				src={item.image} 
-				alt={item.name}
-				class="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
+		<div class="group relative aspect-video w-full overflow-hidden rounded-lg bg-muted">
+			<img
+				src={thumbUrl}
+				alt=""
+				class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-700 {imgLoaded
+					? 'opacity-0'
+					: 'opacity-100'}"
+				aria-hidden="true"
 			/>
-			<div 
+			<img
+				src={item.image}
+				alt={item.name}
+				class="relative h-full w-full object-cover transition-all duration-300 group-hover:scale-105 {imgLoaded
+					? 'opacity-100'
+					: 'opacity-0'}"
+				onload={() => (imgLoaded = true)}
+				loading="lazy"
+			/>
+			<div
 				class="absolute inset-0 transition-all duration-300 opacity-0 group-hover:opacity-20"
 				style="background-color: {color};"
 			></div>
