@@ -53,8 +53,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'dog-portrait-2',
 		name: 'Triadic Dog Art',
-		description: 'A stylized triangular illustration using a triadic color scheme for high visual impact.',
-		shortDescription: 'Triadic color scheme dog illustration.',
+		description: 'Triadic color scheme polygonal art.',
+		shortDescription: 'Triadic color scheme polygonal art.',
 		image: '/gallery/Dog2.webp',
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
