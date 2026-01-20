@@ -7,14 +7,14 @@ const items: Array<Project> = [
 		slug: 'eternights',
 		color: '#8b4513',
 		description:
-			'An open-world Souls-like action RPG developed in Unreal Engine 5 and C++, featuring challenging combat and interconnected exploration. This project showcases advanced combat mechanics, enemy AI systems, and a richly detailed world inspired by classic Souls games. Features include stamina-based combat, dodge-rolling mechanics, boss battles, and an interconnected world design with shortcuts and secrets.',
+			'An open world Souls like action RPG developed in Unreal Engine 5 and C++, featuring challenging combat and interconnected exploration. This project showcases advanced combat mechanics, enemy AI systems, and a richly detailed world inspired by classic Souls games. Features include stamina based combat, dodge rolling mechanics, boss battles, and an interconnected world design with shortcuts and secrets.',
 		shortDescription:
-			'Open World Souls-like Action RPG.',
+			'Open World Souls like Action RPG.',
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/EterNights', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unreal,
-		name: 'Open World Souls-like Action RPG',
+		name: 'Open World Souls like Action RPG',
 		period: {
 			from: new Date(2024, 0, 1)
 		},
@@ -26,9 +26,9 @@ const items: Array<Project> = [
 		slug: 'space-odyssey',
 		color: '#1a1a2e',
 		description:
-			'A 3D arcade rail-shooter built in Unity, featuring dynamic starship piloting and combat mechanics. Players navigate through stunning space environments, engaging in intense dogfights with enemy spacecraft while following a guided rail path. Features include responsive flight controls, varied enemy types, power-up systems, and epic boss battles set against breathtaking cosmic backdrops.',
+			'A 3D arcade rail shooter built in Unity, featuring dynamic starship piloting and combat mechanics. Players navigate through stunning space environments, engaging in intense dogfights with enemy spacecraft while following a guided rail path. Features include responsive flight controls, varied enemy types, power up systems, and epic boss battles set against breathtaking cosmic backdrops.',
 		shortDescription:
-			'3D arcade rail-shooter with dynamic space combat and piloting.',
+			'3D arcade rail shooter with dynamic space combat and piloting.',
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/Space_Odyssey', label: 'GitHub', newTab: true }
 		],
@@ -45,9 +45,9 @@ const items: Array<Project> = [
 		slug: 'cubeology',
 		color: '#8b6f47',
 		description:
-			'A creative open-world sandbox game built in Unreal Engine 5, featuring voxel-based building mechanics and vast level construction tools. Players can unleash their creativity in a voxel environment powered by modern graphics, building elaborate structures in a procedurally generated world.',
+			'A creative open world sandbox game built in Unreal Engine 5, featuring voxel based building mechanics and vast level construction tools. Players can unleash their creativity in a voxel environment powered by modern graphics, building elaborate structures in a procedurally generated world.',
 		shortDescription:
-			'A creative open-world sandbox game built in Unreal Engine 5.',
+			'A creative open world sandbox game built in Unreal Engine 5.',
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/Cubeology', label: 'GitHub', newTab: true }
 		],
@@ -65,9 +65,9 @@ const items: Array<Project> = [
 		slug: 'bumble-bee',
 		color: '#ffeb3b',
 		description:
-			'A Minecraft-style open-world game built in Unity where you control a bee gathering honey across a voxel landscape while defending against attacking wasps. Features include voxel-based environment, smooth flight controls, resource gathering mechanics, and AI-controlled enemy wasps.',
+			'A Minecraft style open world game built in Unity where you control a bee gathering honey across a voxel landscape while defending against attacking wasps. Features include voxel based environment, smooth flight controls, resource gathering mechanics, and AI controlled enemy wasps.',
 		shortDescription:
-			'Minecraft-style open-world game where you control a bee gathering honey.',
+			'Minecraft style open world game where you control a bee gathering honey.',
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/Bumble_Bee', label: 'GitHub', newTab: true }
 		],
@@ -84,7 +84,7 @@ const items: Array<Project> = [
 		slug: 'neko-gambit',
 		color: '#d4af37',
 		description:
-			'A stylized 3D Chess game built in Unity, set in a mystical desert kingdom ruled by Cat Pharaohs. Features a rotating 3D board, divine chess pieces including Anubis-cats and Bastet-bishops, dynamic sandstorm weather events that affect gameplay, and ancient magic artifacts that can change the tide of battle. The game combines classical chess strategy with Egyptian mythology themes and beautiful stylized art.',
+			'A stylized 3D Chess game built in Unity, set in a mystical desert kingdom ruled by Cat Pharaohs. Features a rotating 3D board, divine chess pieces including Anubis cats and Bastet bishops, dynamic sandstorm weather events that affect gameplay, and ancient magic artifacts that can change the tide of battle. The game combines classical chess strategy with Egyptian mythology themes and beautiful stylized art.',
 		shortDescription:
 			'Stylized 3D chess game in a mystical desert kingdom with Cat Pharaohs.',
 		links: [
@@ -105,9 +105,9 @@ const items: Array<Project> = [
 		slug: 'boating-through',
 		color: '#4ecdc4',
 		description:
-			'A fast-paced infinite arcade runner in Unity featuring vibrant cel-shaded graphics. Players guide their boat through an infinite procedurally generated river, changing direction with each tap to avoid obstacles. Features low-poly relaxing aesthetics, high score tracking, and addictive rhythm-based gameplay with timing and precision mechanics.',
+			'A fast paced infinite arcade runner in Unity featuring vibrant cel shaded graphics. Players guide their boat through an infinite procedurally generated river, changing direction with each tap to avoid obstacles. Features low poly relaxing aesthetics, high score tracking, and addictive rhythm based gameplay with timing and precision mechanics.',
 		shortDescription:
-			'A fast-paced infinite arcade runner in Unity featuring vibrant cel-shaded graphics.',
+			'A fast paced infinite arcade runner in Unity featuring vibrant cel shaded graphics.',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/boating-through', label: 'Itch.io', newTab: true },
 			{ to: 'https://github.com/SaiiPrashanth/Boating_Through', label: 'GitHub', newTab: true }
@@ -126,9 +126,9 @@ const items: Array<Project> = [
 		slug: 'hungry-kirby',
 		color: '#ffb7b2',
 		description:
-			'A physics-based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby. Players must cut chains and manipulate physics objects to feed stars to Kirby. Features include classic Kirby copy abilities, 5 worlds themed after sweets and treats, beautiful pixel art inspired by GBA classics, controller support, and interactive animations. Cut ropes utilizing gravity and momentum to solve increasingly complex puzzles.',
+			'A physics based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby. Players must cut chains and manipulate physics objects to feed stars to Kirby. Features include classic Kirby copy abilities, 5 worlds themed after sweets and treats, beautiful pixel art inspired by GBA classics, controller support, and interactive animations. Cut ropes utilizing gravity and momentum to solve increasingly complex puzzles.',
 		shortDescription:
-			'Physics-based puzzle game where players solve challenges to feed Kirby.',
+			'Physics based puzzle game where players solve challenges to feed Kirby.',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/hungry-kirby', label: 'Itch.io', newTab: true },
 			{ to: 'https://github.com/SaiiPrashanth/Hungry_Kirby', label: 'GitHub', newTab: true }
@@ -147,9 +147,9 @@ const items: Array<Project> = [
 		slug: 'astron',
 		color: '#00ffff',
 		description:
-			'A classic arcade-style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics-based movement and retro vector graphics. Features clean high-contrast geometric art style, realistic inertia-based movement and collision systems, endless waves of increasingly complex geometric shapes, dynamic neon lighting and particle explosions, lives system, and score tracking. Control a triangular spaceship while managing momentum in this endless space survival game.',
+			'A classic arcade style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics based movement and retro vector graphics. Features clean high contrast geometric art style, realistic inertia based movement and collision systems, endless waves of increasingly complex geometric shapes, dynamic neon lighting and particle explosions, lives system, and score tracking. Control a triangular spaceship while managing momentum in this endless space survival game.',
 		shortDescription:
-			'Arcade-style space shooter with retro vector graphics and physics.',
+			'Arcade style space shooter with retro vector graphics and physics.',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io', newTab: true },
 			{ to: 'https://github.com/SaiiPrashanth/Astron', label: 'GitHub', newTab: true }
