@@ -9,12 +9,12 @@ const items: Array<Project> = [
 		description:
 			'An open-world Souls-like action RPG developed in Unreal Engine 5 and C++, featuring challenging combat and interconnected exploration. This project showcases advanced combat mechanics, enemy AI systems, and a richly detailed world inspired by classic Souls games. Features include stamina-based combat, dodge-rolling mechanics, boss battles, and an interconnected world design with shortcuts and secrets.',
 		shortDescription:
-			'Open-world Souls-like action RPG in UE5 with challenging combat.',
+			'Open World Souls-like Action RPG.',
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/EterNights', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unreal,
-		name: 'EterNights',
+		name: 'Open World Souls-like Action RPG',
 		period: {
 			from: new Date(2024, 0, 1)
 		},
