@@ -19,6 +19,11 @@
 <BasePage {title}>
 	{#if !data.item}
 		<EmptyResult />
+	{:else if data.item.slug === 'elaina-vr'}
+		<!-- Empty page for Elaina VR Model as requested -->
+		<div class="flex flex-1 items-center justify-center p-20">
+			<Muted>This page is intentionally left blank.</Muted>
+		</div>
 	{:else}
 		<FancyBanner img={data.item.image}>
 			<div class="flex w-full flex-col items-center justify-center gap-4">
