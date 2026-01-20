@@ -102,9 +102,7 @@ const items: Array<GalleryItem> = [
 		image: '/gallery/Elaina VR.webp',
 		tags: ['3d', 'character-modeling', 'anime', 'vr-ready'],
 		category: '3d',
-		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
-		],
+		links: [],
 		screenshots: [
 			{ src: '/gallery/Elaina VR.webp', label: 'Elaina VR Model' }
 		]
