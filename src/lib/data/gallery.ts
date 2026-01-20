@@ -319,9 +319,9 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'eternights',
-		name: 'EterNights',
-		description: 'Open-world Souls-like action RPG in UE5 with challenging combat.',
-		shortDescription: 'Open-world Souls-like action RPG in UE5 with challenging combat.',
+		name: 'Open World Souls-like Action RPG',
+		description: 'Open World Souls-like Action RPG.',
+		shortDescription: 'Open World Souls-like Action RPG.',
 		image: '/gallery/EterNights.webp',
 		tags: ['unreal-engine-5', 'cpp', 'action-rpg', 'souls-like'],
 		category: 'game',
