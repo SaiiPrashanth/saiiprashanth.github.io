@@ -35,7 +35,7 @@ const items: Array<Education> = [
 	{
 		degree: 'Unity Certified Game Developer Certification',
 		description: 'Professional certification validating comprehensive Unity game development skills. Candidate status with estimated completion in February 2026.',
-		location: 'Unity Technologies',
+		location: '',
 		logo: Assets.UnityTech,
 		name: 'Unity Game Developer',
 		organization: 'Unity Technologies',

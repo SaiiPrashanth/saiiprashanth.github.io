@@ -22,7 +22,7 @@
 
 	let period = $derived(`${from} - ${to}`);
 
-	let location = `${it.organization}, ${it.location}`;
+	let location = $derived(it.location ? `${it.organization}, ${it.location}` : it.organization);
 </script>
 
 <FancyCard color={it.color}>
