@@ -52,8 +52,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'fps-game',
 		name: 'LAN PvP FPS',
-		description: 'A first-person shooter prototype designed for LAN PvP gameplay.',
-		shortDescription: 'LAN PvP first-person shooter prototype.',
+		description: 'A first person shooter prototype designed for LAN PvP gameplay.',
+		shortDescription: 'LAN PvP first person shooter prototype.',
 		image: '/gallery/FPS.webp',
 		tags: ['game-design', 'fps', 'pvp', 'unity', 'lan'],
 		category: 'game',
@@ -67,7 +67,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'pixel-girl',
 		name: 'Pixel Anime Girl',
-		description: 'Pixel art design of an anime-style character with retro aesthetics.',
+		description: 'Pixel art design of an anime style character with retro aesthetics.',
 		shortDescription: 'Pixel art anime girl character.',
 		image: '/gallery/PixelGirl.webp',
 		tags: ['pixel-art', 'character-design', 'anime', '2d'],
@@ -199,9 +199,9 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'sword-model',
-		name: 'Low-poly PBR Sword',
-		description: 'Fantasy sword model created with low-poly topology and PBR textures.',
-		shortDescription: 'Low-poly PBR fantasy sword model.',
+		name: 'Low poly PBR Sword',
+		description: 'Fantasy sword model created with low poly topology and PBR textures.',
+		shortDescription: 'Low poly PBR fantasy sword model.',
 		image: '/gallery/Sword.webp',
 		tags: ['3d', 'game-asset', 'weapon', 'low-poly', 'pbr'],
 		category: '3d',
@@ -209,14 +209,14 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Sword.webp', label: 'Low-poly PBR Sword' }
+			{ src: '/gallery/Sword.webp', label: 'Low poly PBR Sword' }
 		]
 	},
 	{
 		slug: 'astron',
 		name: 'Astron',
-		description: 'A classic arcade-style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics-based movement and retro vector graphics.',
-		shortDescription: 'Arcade-style space shooter with retro vector graphics.',
+		description: 'A classic arcade style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics based movement and retro vector graphics.',
+		shortDescription: 'Arcade style space shooter with retro vector graphics.',
 		image: '/gallery/Astron_3.png',
 		tags: ['javascript', 'arcade-game', 'retro', 'game-development', 'html5-canvas', 'space-shooter', '2d-physics'],
 		category: 'game',
@@ -230,8 +230,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'boating-through',
 		name: 'Boating Through',
-		description: 'A fast-paced infinite arcade runner in Unity featuring vibrant cel-shaded graphics.',
-		shortDescription: 'Fast-paced infinite arcade runner with cel-shaded graphics.',
+		description: 'A fast paced infinite arcade runner in Unity featuring vibrant cel shaded graphics.',
+		shortDescription: 'Fast paced infinite arcade runner with cel shaded graphics.',
 		image: '/gallery/BT1.jpg',
 		tags: ['c-sharp', 'unity', 'arcade', 'infinite-runner', 'cel-shading', 'stylized-art', 'water-shader'],
 		category: 'game',
@@ -245,8 +245,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'hungry-kirby',
 		name: 'Hungry Kirby',
-		description: 'A physics-based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby.',
-		shortDescription: 'Physics-based puzzle game with Kirby.',
+		description: 'A physics based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby.',
+		shortDescription: 'Physics based puzzle game with Kirby.',
 		image: '/gallery/HK_1.jpg',
 		tags: ['c-sharp', 'mobile-game', 'casual-game', 'unity-2d', 'cut-the-rope', 'physics-puzzle'],
 		category: 'game',
@@ -275,8 +275,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'bumble-bee',
 		name: 'Bumble Bee',
-		description: 'A Minecraft-style open-world game built in Unity where you control a bee gathering honey across a voxel landscape while defending against attacking wasps.',
-		shortDescription: 'Minecraft-style open-world game where you control a bee.',
+		description: 'A Minecraft style open world game built in Unity where you control a bee gathering honey across a voxel landscape while defending against attacking wasps.',
+		shortDescription: 'Minecraft style open world game where you control a bee.',
 		image: '/gallery/BB_1.jpg',
 		tags: ['c-sharp', 'unity', 'open-world', 'arcade', 'voxel-art', 'stylized-art', 'minecraft-style'],
 		category: 'game',
@@ -290,8 +290,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'cubeology',
 		name: 'Cubeology',
-		description: 'A creative open-world sandbox game built in Unreal Engine 5.',
-		shortDescription: 'A creative open-world sandbox game built in Unreal Engine 5.',
+		description: 'A creative open world sandbox game built in Unreal Engine 5.',
+		shortDescription: 'A creative open world sandbox game built in Unreal Engine 5.',
 		image: '/gallery/Cubeology.webp',
 		tags: ['unreal-engine-5', 'sandbox', 'voxel', 'cpp'],
 		category: 'game',
@@ -319,9 +319,9 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'eternights',
-		name: 'Open World Souls-like Action RPG',
-		description: 'Open World Souls-like Action RPG.',
-		shortDescription: 'Open World Souls-like Action RPG.',
+		name: 'Open World Souls like Action RPG',
+		description: 'Open World Souls like Action RPG.',
+		shortDescription: 'Open World Souls like Action RPG.',
 		image: '/gallery/EterNights.webp',
 		tags: ['unreal-engine-5', 'cpp', 'action-rpg', 'souls-like'],
 		category: 'game',
@@ -350,8 +350,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'space-odyssey',
 		name: 'Space Odyssey',
-		description: '3D arcade rail-shooter with dynamic space combat and piloting.',
-		shortDescription: '3D arcade rail-shooter with dynamic space combat and piloting.',
+		description: '3D arcade rail shooter with dynamic space combat and piloting.',
+		shortDescription: '3D arcade rail shooter with dynamic space combat and piloting.',
 		image: '/gallery/SpaceOdyssey.webp',
 		tags: ['unity', 'csharp', 'arcade', 'shooter', 'space'],
 		category: 'game',
