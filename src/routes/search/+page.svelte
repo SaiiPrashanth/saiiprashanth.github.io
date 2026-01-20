@@ -177,7 +177,7 @@
 									{/if}
 									<Tooltip openDelay={300}>
 										<TooltipTrigger>
-											<CardTitle class="line-clamp-2 truncate text-ellipsis text-left"
+											<CardTitle class="line-clamp-2 text-ellipsis text-left leading-normal py-1"
 												>{item.name}</CardTitle
 											>
 										</TooltipTrigger>
