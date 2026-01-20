@@ -7,7 +7,7 @@ const title = 'Home';
 const hero: {
 	title: string;
 	description: string;
-	links: Array<{ label: string; href: string; icon?: `i-carbon-${string}`; iconImage?: string }>;
+	links: Array<{ label: string; href: string; icon?: string; iconImage?: string }>;
 } = {
 	title: `${BaseData.fullName},`,
 	description:

@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let icon: `i-carbon-${string}`;
+	export let icon: string;
 	export let className = '';
 </script>
 
