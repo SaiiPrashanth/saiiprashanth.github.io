@@ -21,7 +21,7 @@ const items: Array<Education> = [
 	{
 		degree: 'Agile with Atlassian Jira',
 		description: 'Certification in agile project management using Atlassian Jira for team collaboration and workflow optimization.',
-		location: 'Atlassian University',
+		location: 'Coursera',
 		logo: Assets.Atlassian,
 		name: 'Agile with Jira',
 		organization: 'Atlassian',
