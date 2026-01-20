@@ -37,9 +37,9 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'dog-portrait-1',
-		name: 'Realistic Geometric Portrait',
-		description: 'A high fidelity polygon art portrait capturing realistic textures through intricate geometric mesh.',
-		shortDescription: 'High fidelity realistic polygon art portrait.',
+		name: 'Realistic Dog Art',
+		description: 'A realistic polygon art portrait capturing lifelike textures through complex geometry.',
+		shortDescription: 'Realistic polygon art dog portrait.',
 		image: '/gallery/Dog1.webp',
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
@@ -47,14 +47,14 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog1.webp', label: 'Realistic Geometric Portrait' }
+			{ src: '/gallery/Dog1.webp', label: 'Realistic Dog Art' }
 		]
 	},
 	{
 		slug: 'dog-portrait-2',
-		name: 'Tri Tone Triangle Art',
-		description: 'A stylized triangular illustration created using a strict three color palette for vibrant contrast.',
-		shortDescription: 'Stylized triangular illustration with a three color palette.',
+		name: 'Triadic Dog Art',
+		description: 'A stylized triangular illustration using a triadic color scheme for high visual impact.',
+		shortDescription: 'Triadic color scheme dog illustration.',
 		image: '/gallery/Dog2.webp',
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
@@ -62,14 +62,14 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog2.webp', label: 'Tri Tone Triangle Art' }
+			{ src: '/gallery/Dog2.webp', label: 'Triadic Dog Art' }
 		]
 	},
 	{
 		slug: 'dog-portrait-3',
-		name: 'Monochrome Poly Study',
-		description: 'A monochromatic exploration of form using light and shadow to define geometric planes.',
-		shortDescription: 'Monochromatic geometric exploration of light and shadow.',
+		name: 'Monochromatic Dog Art',
+		description: 'An exploration of depth and form using a single color palette across geometric planes.',
+		shortDescription: 'Monochromatic geometric dog portrait.',
 		image: '/gallery/Dog3.webp',
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
@@ -77,7 +77,7 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog3.webp', label: 'Monochrome Poly Study' }
+			{ src: '/gallery/Dog3.webp', label: 'Monochromatic Dog Art' }
 		]
 	},
 
