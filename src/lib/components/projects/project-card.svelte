@@ -46,7 +46,7 @@
 			<AvatarImage src={$mode === 'dark' ? project.logo.dark : project.logo.light} class="object-contain p-2" />
 		</Avatar>
 		<div class="flex w-full flex-row items-center gap-1 min-h-[40px]">
-			<CardTitle class="h-auto min-w-0 flex-1 leading-normal">
+			<CardTitle class="h-auto min-w-0 flex-1 leading-normal py-1">
 				<Tooltip>
 					<TooltipTrigger
 						class="w-full truncate text-ellipsis text-nowrap text-left"

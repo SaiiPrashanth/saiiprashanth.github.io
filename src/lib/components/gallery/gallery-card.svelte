@@ -74,7 +74,7 @@
 			></div>
 		</div>
 		<div class="flex w-full flex-row items-center gap-1 overflow-hidden">
-			<CardTitle class="h-auto min-w-0 flex-1 overflow-hidden">
+			<CardTitle class="h-auto min-w-0 flex-1 leading-normal py-1">
 				<Tooltip>
 					<TooltipTrigger class="w-full text-left">
 						{ellipsify(item.name, 25)}

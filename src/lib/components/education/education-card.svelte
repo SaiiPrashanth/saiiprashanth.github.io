@@ -34,7 +34,7 @@
 			<AvatarImage src={$mode === 'dark' ? it.logo.dark : it.logo.light} class="object-contain p-2" />
 		</Avatar>
 		<div class="flex flex-col gap-4">
-			<CardTitle>{it.degree}</CardTitle>
+			<CardTitle class="leading-normal py-1">{it.degree}</CardTitle>
 			<Tooltip openDelay={300}>
 				<TooltipTrigger>
 					<Muted className="flex flex-row items-center gap-2">
