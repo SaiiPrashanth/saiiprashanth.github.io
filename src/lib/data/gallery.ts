@@ -334,9 +334,9 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'procedural-terrain-2',
-		name: 'Procedural Environment',
-		description: 'Procedural level design and animation showcase.',
-		shortDescription: 'Procedural level design and animation showcase.',
+		name: 'Forest Environment',
+		description: 'Procedural forest terrain and vegetation.',
+		shortDescription: 'Procedural forest terrain and vegetation.',
 		image: '/gallery/Procedural Terrain.webp',
 		tags: ['3d', 'terrain', 'landscape', 'procedural'],
 		category: 'terrain',
@@ -344,7 +344,7 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Procedural Terrain.webp', label: 'Procedural Environment' }
+			{ src: '/gallery/Procedural Terrain.webp', label: 'Forest Environment' }
 		]
 	},
 	{
