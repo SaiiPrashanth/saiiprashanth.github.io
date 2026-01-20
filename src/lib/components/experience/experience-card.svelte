@@ -39,7 +39,7 @@
 			<AvatarImage src={$mode === 'dark' ? it.logo.dark : it.logo.light} class="object-contain p-2" />
 		</Avatar>
 		<div class="flex flex-col gap-4">
-			<CardTitle>{it.name}</CardTitle>
+			<CardTitle class="leading-normal py-1">{it.name}</CardTitle>
 			<div class="flex flex-row flex-wrap gap-1">
 				{#each badges as badge (badge.icon)}
 					<Tooltip openDelay={300}>
