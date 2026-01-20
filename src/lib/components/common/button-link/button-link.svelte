@@ -3,40 +3,30 @@
 	import Icon from '$lib/components/ui/icon/icon.svelte';
 	import { Tooltip, TooltipContent, TooltipTrigger } from '$lib/components/ui/tooltip';
 	import type { Link } from '$lib/data/types';
-	import Assets from '$lib/data/assets';
-	import { mode } from 'mode-watcher';
 
 	const { link }: { link: Link } = $props();
 
 	// Function to get the appropriate icon based on the link label
-	function getLinkIcon(label: string): { type: 'asset'; asset: typeof Assets.GitHub } | { type: 'icon'; icon: `i-carbon-${string}` } {
+	function getLinkIcon(label: string): string {
 		const lowerLabel = label.toLowerCase();
 		if (lowerLabel.includes('github')) {
-			return { type: 'asset', asset: Assets.GitHub };
+			return 'i-carbon-logo-github';
 		} else if (lowerLabel.includes('itch')) {
-			return { type: 'asset', asset: Assets.Itch };
+			return 'i-simple-icons-itchdotio';
 		} else if (lowerLabel.includes('artstation')) {
-			return { type: 'asset', asset: Assets.Artstation };
+			return 'i-simple-icons-artstation';
 		}
-		return { type: 'icon', icon: 'i-carbon-link' as const };
+		return 'i-carbon-link';
 	}
 
-	const linkIcon = $derived(getLinkIcon(link.label));
+	const icon = $derived(getLinkIcon(link.label));
 </script>
 
 <a href={link.to} target={link.newTab ? '_blank' : undefined}>
 	<Tooltip openDelay={300}>
 		<TooltipTrigger>
 			<Button size="icon" variant="outline">
-				{#if linkIcon.type === 'asset'}
-					<img 
-						src={$mode === 'dark' ? linkIcon.asset.dark : linkIcon.asset.light} 
-						alt={link.label}
-						class="h-5 w-5"
-					/>
-				{:else}
-					<Icon icon={linkIcon.icon} />
-				{/if}
+				<Icon {icon} />
 			</Button>
 		</TooltipTrigger>
 		<TooltipContent>

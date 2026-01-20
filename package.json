@@ -13,6 +13,7 @@
 	},
 	"devDependencies": {
 		"@iconify-json/carbon": "^1.2.4",
+		"@iconify-json/simple-icons": "^1.2.67",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-static": "^3.0.6",
 		"@sveltejs/kit": "^2.0.0",
