@@ -17,14 +17,18 @@
 		switch (category) {
 			case '2d':
 				return '#ef4444'; // Red
+			case 'ui':
+				return '#06b6d4'; // Cyan
 			case '3d':
 				return '#3b82f6'; // Blue
-			case 'game':
-				return '#10b981'; // Green
+			case 'ar':
+				return '#a855f7'; // Purple
 			case 'terrain':
 				return '#f59e0b'; // Amber
+			case 'game':
+				return '#10b981'; // Green
 			default:
-				return '#6366f1'; // Default purple
+				return '#6366f1'; // Default indigo
 		}
 	};
 
