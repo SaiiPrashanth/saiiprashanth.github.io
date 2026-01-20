@@ -15,8 +15,7 @@
 	let categoryFilters: Array<CategoryFilter> = $state([
 		{ slug: '2d', name: '2D Art' },
 		{ slug: '3d', name: '3D Models' },
-		{ slug: 'game', name: 'Game Design' },
-		{ slug: 'terrain', name: 'Terrain' }
+		{ slug: 'game', name: 'Game Design' }
 	]);
 
 	let search = $state('');

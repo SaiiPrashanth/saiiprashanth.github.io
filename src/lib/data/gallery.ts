@@ -189,7 +189,7 @@ const items: Array<GalleryItem> = [
 		shortDescription: 'UE5 Castle Environment Level Design.',
 		image: '/gallery/Hill.webp',
 		tags: ['3d', 'terrain', 'castle', 'environment'],
-		category: 'terrain',
+		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
@@ -339,7 +339,7 @@ const items: Array<GalleryItem> = [
 		shortDescription: 'Procedural forest terrain and vegetation.',
 		image: '/gallery/Procedural Terrain.webp',
 		tags: ['3d', 'terrain', 'landscape', 'procedural'],
-		category: 'terrain',
+		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
