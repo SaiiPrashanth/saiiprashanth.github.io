@@ -87,20 +87,6 @@ const items: Array<Education> = [
 		subjects: ['Game Design', 'Unreal Engine', 'Level Design', 'Game Production'],
 		color: '#9333ea',
 		link: 'https://www.coursera.org/account/accomplishments/records/JR2UWVNQO1Z9'
-	},
-	{
-		degree: 'Mutual Funds V A Certification',
-		description: 'Professional certification in mutual funds, variable annuities, and investment products.',
-		location: 'SEBI',
-		logo: Assets.NISM,
-		name: 'Mutual Funds V A',
-		organization: 'NISM',
-		period: { from: new Date(2024, 0, 1) },
-		shortDescription: 'Mutual funds and variable annuities certification.',
-		slug: 'mutual-funds-va',
-		subjects: ['Mutual Funds', 'Variable Annuities', 'Investment Products', 'Financial Planning'],
-		color: '#10b981',
-		link: '/education/mutual-funds-va'
 	}
 ];
 
