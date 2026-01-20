@@ -37,9 +37,9 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'dog-portrait-1',
-		name: 'Canine Portrait I',
-		description: 'Digital pet portrait capturing the texture and expression of a dog.',
-		shortDescription: 'Digital pet portrait capturing texture and expression.',
+		name: 'Realistic Polygon Art',
+		description: 'A realistic interpretation of a canine portrait using polygon art techniques.',
+		shortDescription: 'Realistic polygon art dog portrait.',
 		image: '/gallery/Dog1.webp',
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
@@ -47,14 +47,14 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog1.webp', label: 'Canine Portrait I' }
+			{ src: '/gallery/Dog1.webp', label: 'Realistic Polygon Art' }
 		]
 	},
 	{
 		slug: 'dog-portrait-2',
-		name: 'Canine Portrait II',
-		description: 'Expressive digital illustration of a dog with a focus on fur details.',
-		shortDescription: 'Expressive digital dog illustration with fur details.',
+		name: 'Triagonal 3 Color Art',
+		description: 'A triagonal canine portrait created using a three color palette.',
+		shortDescription: '3 color triagonal dog portrait.',
 		image: '/gallery/Dog2.webp',
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
@@ -62,14 +62,14 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog2.webp', label: 'Canine Portrait II' }
+			{ src: '/gallery/Dog2.webp', label: 'Triagonal 3 Color Art' }
 		]
 	},
 	{
 		slug: 'dog-portrait-3',
-		name: 'Canine Portrait III',
-		description: 'Stylized digital portrait of a dog highlighting unique character traits.',
-		shortDescription: 'Stylized digital dog portrait highlighting character.',
+		name: 'Monochrome Polygon Art',
+		description: 'A monochrome polygon art study of a dog portrait.',
+		shortDescription: 'Monochrome polygon art dog portrait.',
 		image: '/gallery/Dog3.webp',
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
@@ -77,7 +77,7 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog3.webp', label: 'Canine Portrait III' }
+			{ src: '/gallery/Dog3.webp', label: 'Monochrome Polygon Art' }
 		]
 	},
 
