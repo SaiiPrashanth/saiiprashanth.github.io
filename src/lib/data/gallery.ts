@@ -286,6 +286,81 @@ const items: Array<GalleryItem> = [
 		screenshots: [
 			{ src: '/gallery/BB_1.jpg', label: 'Bumble Bee Project' }
 		]
+	},
+	{
+		slug: 'cubeology',
+		name: 'Cubeology',
+		description: 'A creative open-world sandbox game built in Unreal Engine 5.',
+		shortDescription: 'A creative open-world sandbox game built in Unreal Engine 5.',
+		image: '/gallery/Cubeology.webp',
+		tags: ['unreal-engine-5', 'sandbox', 'voxel', 'cpp'],
+		category: 'game',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Cubeology', label: 'GitHub', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/Cubeology.webp', label: 'Cubeology Gameplay' }
+		]
+	},
+	{
+		slug: 'decipher',
+		name: 'Decipher',
+		description: 'A cryptographic puzzle project involving decoding messages.',
+		shortDescription: 'A cryptographic puzzle project.',
+		image: '/gallery/Decipher.webp',
+		tags: ['puzzle', 'cryptography', 'logic'],
+		category: 'game',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Decipher', label: 'GitHub', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/Decipher.webp', label: 'Decipher Project' }
+		]
+	},
+	{
+		slug: 'eternights',
+		name: 'EterNights',
+		description: 'Open-world Souls-like action RPG in UE5 with challenging combat.',
+		shortDescription: 'Open-world Souls-like action RPG in UE5 with challenging combat.',
+		image: '/gallery/EterNights.webp',
+		tags: ['unreal-engine-5', 'cpp', 'action-rpg', 'souls-like'],
+		category: 'game',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/EterNights', label: 'GitHub', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/EterNights.webp', label: 'EterNights Gameplay' }
+		]
+	},
+	{
+		slug: 'procedural-terrain-2',
+		name: 'Advanced Procedural Terrain',
+		description: 'Advanced 3D landscape generation study featuring realistic topography.',
+		shortDescription: 'Advanced 3D landscape generation study.',
+		image: '/gallery/Procedural Terrain.webp',
+		tags: ['3d', 'terrain', 'landscape', 'procedural'],
+		category: 'terrain',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/Procedural Terrain.webp', label: 'Procedural Terrain' }
+		]
+	},
+	{
+		slug: 'space-odyssey',
+		name: 'Space Odyssey',
+		description: '3D arcade rail-shooter with dynamic space combat and piloting.',
+		shortDescription: '3D arcade rail-shooter with dynamic space combat and piloting.',
+		image: '/gallery/SpaceOdyssey.webp',
+		tags: ['unity', 'csharp', 'arcade', 'shooter', 'space'],
+		category: 'game',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Space_Odyssey', label: 'GitHub', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/SpaceOdyssey.webp', label: 'Space Odyssey Gameplay' }
+		]
 	}
 ];
 
