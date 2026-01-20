@@ -4,66 +4,7 @@ import type { GalleryItem } from './types';
 const title = 'Gallery';
 
 const items: Array<GalleryItem> = [
-	{
-		slug: 'cam-project',
-		name: 'Webcam Model',
-		description: 'A detailed 3D model of a webcam with realistic texturing and materials.',
-		shortDescription: 'Detailed 3D webcam model.',
-		image: '/gallery/Cam.webp',
-		tags: ['3d', 'hard-surface', 'modeling', 'webcam'],
-		category: '3d',
-		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
-		],
-		screenshots: [
-			{ src: '/gallery/Cam.webp', label: 'Webcam Model' }
-		]
-	},
-	{
-		slug: 'pentab-project',
-		name: 'Wacom Tablet and Stylus',
-		description: '3D model of a Wacom digital drawing tablet and stylus for product visualization.',
-		shortDescription: '3D model of Wacom tablet and stylus.',
-		image: '/gallery/PenTab.webp',
-		tags: ['3d', 'product-design', 'wacom', 'modeling'],
-		category: '3d',
-		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
-		],
-		screenshots: [
-			{ src: '/gallery/PenTab.webp', label: 'Wacom Tablet' }
-		]
-	},
-	{
-		slug: 'tws-project',
-		name: 'Futuristic Earbuds',
-		description: 'A futuristic 3D visualization of True Wireless Stereo earbuds.',
-		shortDescription: 'Futuristic 3D earbuds visualization.',
-		image: '/gallery/TWS.webp',
-		tags: ['3d', 'product-design', 'futuristic', 'rendering'],
-		category: '3d',
-		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
-		],
-		screenshots: [
-			{ src: '/gallery/TWS.webp', label: 'Futuristic Earbuds' }
-		]
-	},
-	{
-		slug: 'fps-game',
-		name: 'LAN PvP FPS',
-		description: 'A first person shooter prototype designed for LAN PvP gameplay.',
-		shortDescription: 'LAN PvP first person shooter prototype.',
-		image: '/gallery/FPS.webp',
-		tags: ['game-design', 'fps', 'pvp', 'unity', 'lan'],
-		category: 'game',
-		links: [
-			{ to: 'https://saiiprashanth.itch.io/', label: 'View on Itch.io', newTab: true }
-		],
-		screenshots: [
-			{ src: '/gallery/FPS.webp', label: 'FPS Gameplay' }
-		]
-	},
+	// --- 2D ART ---
 	{
 		slug: 'pixel-girl',
 		name: 'Pixel Anime Girl',
@@ -92,19 +33,6 @@ const items: Array<GalleryItem> = [
 		],
 		screenshots: [
 			{ src: '/gallery/Joker.webp', label: 'Polygon Joker' }
-		]
-	},
-	{
-		slug: 'elaina-vr',
-		name: 'Elaina AR Project',
-		description: 'An interactive AR project projecting a model of Elaina into the real world.',
-		shortDescription: 'Interactive AR project featuring Elaina.',
-		image: '/gallery/Elaina VR.webp',
-		tags: ['ar', 'interactive', '3d-model', 'real-world'],
-		category: '3d',
-		links: [],
-		screenshots: [
-			{ src: '/gallery/Elaina VR.webp', label: 'Elaina AR Project' }
 		]
 	},
 	{
@@ -152,6 +80,8 @@ const items: Array<GalleryItem> = [
 			{ src: '/gallery/Dog3.webp', label: 'Canine Portrait III' }
 		]
 	},
+
+	// --- UI ---
 	{
 		slug: 'website-design',
 		name: 'GitHub Page UI Design',
@@ -159,12 +89,59 @@ const items: Array<GalleryItem> = [
 		shortDescription: 'GitHub page user interface design mockup.',
 		image: '/gallery/Website.webp',
 		tags: ['ui-design', 'web', 'github', 'mockup'],
-		category: '2d',
+		category: 'ui',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Website.webp', label: 'GitHub UI Design' }
+		]
+	},
+
+	// --- 3D MODEL ---
+	{
+		slug: 'cam-project',
+		name: 'Webcam Model',
+		description: 'A detailed 3D model of a webcam with realistic texturing and materials.',
+		shortDescription: 'Detailed 3D webcam model.',
+		image: '/gallery/Cam.webp',
+		tags: ['3d', 'hard-surface', 'modeling', 'webcam'],
+		category: '3d',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/Cam.webp', label: 'Webcam Model' }
+		]
+	},
+	{
+		slug: 'pentab-project',
+		name: 'Wacom Tablet and Stylus',
+		description: '3D model of a Wacom digital drawing tablet and stylus for product visualization.',
+		shortDescription: '3D model of Wacom tablet and stylus.',
+		image: '/gallery/PenTab.webp',
+		tags: ['3d', 'product-design', 'wacom', 'modeling'],
+		category: '3d',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/PenTab.webp', label: 'Wacom Tablet' }
+		]
+	},
+	{
+		slug: 'tws-project',
+		name: 'Futuristic Earbuds',
+		description: 'A futuristic 3D visualization of True Wireless Stereo earbuds.',
+		shortDescription: 'Futuristic 3D earbuds visualization.',
+		image: '/gallery/TWS.webp',
+		tags: ['3d', 'product-design', 'futuristic', 'rendering'],
+		category: '3d',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/TWS.webp', label: 'Futuristic Earbuds' }
 		]
 	},
 	{
@@ -183,21 +160,6 @@ const items: Array<GalleryItem> = [
 		]
 	},
 	{
-		slug: 'hill-landscape',
-		name: 'Castle Environment',
-		description: 'UE5 Castle Environment Level Design.',
-		shortDescription: 'UE5 Castle Environment Level Design.',
-		image: '/gallery/Hill.webp',
-		tags: ['3d', 'terrain', 'castle', 'environment'],
-		category: '3d',
-		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
-		],
-		screenshots: [
-			{ src: '/gallery/Hill.webp', label: 'Castle Environment' }
-		]
-	},
-	{
 		slug: 'sword-model',
 		name: 'Low poly PBR Sword',
 		description: 'Fantasy sword model created with low poly topology and PBR textures.',
@@ -210,6 +172,70 @@ const items: Array<GalleryItem> = [
 		],
 		screenshots: [
 			{ src: '/gallery/Sword.webp', label: 'Low poly PBR Sword' }
+		]
+	},
+
+	// --- AR ---
+	{
+		slug: 'elaina-vr',
+		name: 'Elaina AR Project',
+		description: 'An interactive AR project projecting a model of Elaina into the real world.',
+		shortDescription: 'Interactive AR project featuring Elaina.',
+		image: '/gallery/Elaina VR.webp',
+		tags: ['ar', 'interactive', '3d-model', 'real-world'],
+		category: 'ar',
+		links: [],
+		screenshots: [
+			{ src: '/gallery/Elaina VR.webp', label: 'Elaina AR Project' }
+		]
+	},
+
+	// --- TERRAIN ---
+	{
+		slug: 'hill-landscape',
+		name: 'Castle Environment',
+		description: 'UE5 Castle Environment Level Design.',
+		shortDescription: 'UE5 Castle Environment Level Design.',
+		image: '/gallery/Hill.webp',
+		tags: ['3d', 'terrain', 'castle', 'environment'],
+		category: 'terrain',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/Hill.webp', label: 'Castle Environment' }
+		]
+	},
+	{
+		slug: 'procedural-terrain-2',
+		name: 'Forest Environment',
+		description: 'Procedural forest terrain and vegetation.',
+		shortDescription: 'Procedural forest terrain and vegetation.',
+		image: '/gallery/Procedural Terrain.webp',
+		tags: ['3d', 'terrain', 'landscape', 'procedural'],
+		category: 'terrain',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/Procedural Terrain.webp', label: 'Forest Environment' }
+		]
+	},
+
+	// --- GAME ---
+	{
+		slug: 'fps-game',
+		name: 'LAN PvP FPS',
+		description: 'A first person shooter prototype designed for LAN PvP gameplay.',
+		shortDescription: 'LAN PvP first person shooter prototype.',
+		image: '/gallery/FPS.webp',
+		tags: ['game-design', 'fps', 'pvp', 'unity', 'lan'],
+		category: 'game',
+		links: [
+			{ to: 'https://saiiprashanth.itch.io/', label: 'View on Itch.io', newTab: true }
+		],
+		screenshots: [
+			{ src: '/gallery/FPS.webp', label: 'FPS Gameplay' }
 		]
 	},
 	{
@@ -330,21 +356,6 @@ const items: Array<GalleryItem> = [
 		],
 		screenshots: [
 			{ src: '/gallery/EterNights.webp', label: 'EterNights Gameplay' }
-		]
-	},
-	{
-		slug: 'procedural-terrain-2',
-		name: 'Forest Environment',
-		description: 'Procedural forest terrain and vegetation.',
-		shortDescription: 'Procedural forest terrain and vegetation.',
-		image: '/gallery/Procedural Terrain.webp',
-		tags: ['3d', 'terrain', 'landscape', 'procedural'],
-		category: '3d',
-		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
-		],
-		screenshots: [
-			{ src: '/gallery/Procedural Terrain.webp', label: 'Forest Environment' }
 		]
 	},
 	{
