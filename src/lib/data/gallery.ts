@@ -6,41 +6,41 @@ const title = 'Gallery';
 const items: Array<GalleryItem> = [
 	{
 		slug: 'cam-project',
-		name: 'Camera System Project',
-		description: 'Advanced camera system implementation showcasing multiple viewpoints and perspectives. Technical demonstration of camera controls and rendering techniques.',
-		shortDescription: 'Multi-viewpoint camera system implementation.',
+		name: 'Surveillance Camera',
+		description: 'A high-fidelity 3D model of a surveillance camera system with realistic texturing.',
+		shortDescription: 'High-fidelity 3D surveillance camera model.',
 		image: '/gallery/Cam.webp',
-		tags: ['3d', 'camera', 'rendering', 'technical'],
+		tags: ['3d', 'hard-surface', 'modeling', 'texturing'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Cam.webp', label: 'Camera View 1' }
+			{ src: '/gallery/Cam.webp', label: 'Surveillance Camera' }
 		]
 	},
 	{
 		slug: 'pentab-project',
-		name: 'Pen Tablet 3D Model',
-		description: '3D model of a digital drawing tablet with detailed modeling and realistic materials. High-quality product visualization.',
-		shortDescription: '3D model of digital drawing tablet.',
+		name: 'Digital Pen Tablet',
+		description: 'Photorealistic 3D visualization of a digital drawing tablet for product design.',
+		shortDescription: 'Photorealistic 3D digital tablet visualization.',
 		image: '/gallery/PenTab.webp',
-		tags: ['3d modeling', 'product design', 'tablet', 'hardware'],
+		tags: ['3d', 'product-design', 'modeling', 'visualization'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/PenTab.webp', label: 'Pen Tablet' }
+			{ src: '/gallery/PenTab.webp', label: 'Digital Pen Tablet' }
 		]
 	},
 	{
 		slug: 'tws-project',
-		name: 'TWS Wireless Earbuds',
-		description: '3D product visualization of True Wireless Stereo earbuds. High-quality rendering with attention to materials and lighting.',
-		shortDescription: '3D visualization of wireless earbuds.',
+		name: 'TWS Earbuds',
+		description: 'Detailed 3D product render of True Wireless Stereo earbuds showcasing material properties.',
+		shortDescription: 'Detailed 3D product render of wireless earbuds.',
 		image: '/gallery/TWS.webp',
-		tags: ['3d modeling', 'product design', 'rendering', 'audio'],
+		tags: ['3d', 'product-design', 'rendering', 'commercial'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
@@ -51,11 +51,11 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'fps-game',
-		name: 'FPS Game Project',
-		description: 'First-person shooter game development showcasing gameplay mechanics, level design, and weapon systems.',
-		shortDescription: 'FPS game with advanced mechanics and level design.',
+		name: 'FPS Project',
+		description: 'A first-person shooter prototype demonstrating core gameplay mechanics and level design.',
+		shortDescription: 'FPS prototype with core mechanics and level design.',
 		image: '/gallery/FPS.webp',
-		tags: ['game design', 'fps', 'unity', 'game development'],
+		tags: ['game-design', 'fps', 'unity', 'prototyping'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/', label: 'View on Itch.io', newTab: true }
@@ -66,114 +66,114 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'pixel-girl',
-		name: 'Pixel Girl',
-		description: 'A pixel art character design showcasing retro gaming aesthetics. Created with attention to detail in limited resolution.',
-		shortDescription: 'Pixel art character design with retro gaming style.',
+		name: 'Pixel Art Character',
+		description: 'Retro-style pixel art character design with vibrant colors and expressive details.',
+		shortDescription: 'Retro-style pixel art character design.',
 		image: '/gallery/PixelGirl.webp',
-		tags: ['pixel art', 'character', '2d', 'retro'],
+		tags: ['pixel-art', 'character-design', '2d', 'retro'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/PixelGirl.webp', label: 'Pixel Girl' }
+			{ src: '/gallery/PixelGirl.webp', label: 'Pixel Character' }
 		]
 	},
 	{
 		slug: 'joker',
-		name: 'Joker',
-		description: 'Digital artwork featuring the iconic character with unique artistic interpretation and vibrant colors.',
-		shortDescription: 'Digital artwork featuring iconic character design.',
+		name: 'The Joker',
+		description: 'Digital painting of The Joker featuring bold strokes and dramatic lighting.',
+		shortDescription: 'Digital painting of The Joker with dramatic lighting.',
 		image: '/gallery/Joker.webp',
-		tags: ['digital art', 'character', 'illustration', 'fan art'],
+		tags: ['digital-painting', 'fan-art', 'illustration', 'portrait'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Joker.webp', label: 'Joker' }
+			{ src: '/gallery/Joker.webp', label: 'The Joker' }
 		]
 	},
 	{
 		slug: 'elaina-vr',
-		name: 'Elaina VR',
-		description: 'Character visualization for VR experience. Designed with immersive virtual reality applications in mind.',
-		shortDescription: 'VR character design for immersive experiences.',
+		name: 'Elaina VR Model',
+		description: 'Optimized 3D anime-style character model aimed for VR applications.',
+		shortDescription: 'Optimized 3D anime-style character for VR.',
 		image: '/gallery/Elaina VR.webp',
-		tags: ['vr', 'character', '3d', 'virtual reality'],
+		tags: ['3d', 'character-modeling', 'anime', 'vr-ready'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Elaina VR.webp', label: 'Elaina VR' }
+			{ src: '/gallery/Elaina VR.webp', label: 'Elaina VR Model' }
 		]
 	},
 	{
 		slug: 'dog-portrait-1',
-		name: 'Dog Portrait 1',
-		description: 'Digital illustration featuring a dog with expressive features, detailed fur rendering, and unique personality.',
-		shortDescription: 'Expressive dog portrait with detailed fur.',
+		name: 'Canine Portrait I',
+		description: 'Digital pet portrait capturing the texture and expression of a dog.',
+		shortDescription: 'Digital pet portrait capturing texture and expression.',
 		image: '/gallery/Dog1.webp',
-		tags: ['illustration', 'animal', 'portrait', 'digital art'],
+		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog1.webp', label: 'Dog Portrait 1' }
+			{ src: '/gallery/Dog1.webp', label: 'Canine Portrait I' }
 		]
 	},
 	{
 		slug: 'dog-portrait-2',
-		name: 'Dog Portrait 2',
-		description: 'Digital illustration featuring a dog with expressive features, detailed fur rendering, and unique personality.',
-		shortDescription: 'Expressive dog portrait with detailed fur.',
+		name: 'Canine Portrait II',
+		description: 'Expressive digital illustration of a dog with a focus on fur details.',
+		shortDescription: 'Expressive digital dog illustration with fur details.',
 		image: '/gallery/Dog2.webp',
-		tags: ['illustration', 'animal', 'portrait', 'digital art'],
+		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog2.webp', label: 'Dog Portrait 2' }
+			{ src: '/gallery/Dog2.webp', label: 'Canine Portrait II' }
 		]
 	},
 	{
 		slug: 'dog-portrait-3',
-		name: 'Dog Portrait 3',
-		description: 'Digital illustration featuring a dog with expressive features, detailed fur rendering, and unique personality.',
-		shortDescription: 'Expressive dog portrait with detailed fur.',
+		name: 'Canine Portrait III',
+		description: 'Stylized digital portrait of a dog highlighting unique character traits.',
+		shortDescription: 'Stylized digital dog portrait highlighting character.',
 		image: '/gallery/Dog3.webp',
-		tags: ['illustration', 'animal', 'portrait', 'digital art'],
+		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog3.webp', label: 'Dog Portrait 3' }
+			{ src: '/gallery/Dog3.webp', label: 'Canine Portrait III' }
 		]
 	},
 	{
 		slug: 'website-design',
-		name: 'Website Design',
-		description: 'Modern website design mockup showcasing clean layout, user interface elements, and responsive design principles.',
-		shortDescription: 'Modern website design with clean UI/UX.',
+		name: 'UI/UX Web Mockup',
+		description: 'Modern website user interface design focusing on clean layout and usability.',
+		shortDescription: 'Modern website UI design focusing on usability.',
 		image: '/gallery/Website.webp',
-		tags: ['web design', 'ui/ux', 'interface', 'mockup'],
+		tags: ['ui-design', 'web', 'mockup', 'interface'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Website.webp', label: 'Website Design' }
+			{ src: '/gallery/Website.webp', label: 'UI/UX Mockup' }
 		]
 	},
 	{
 		slug: 'ambiroom',
-		name: 'AmbiRoom',
-		description: '3D environment design featuring ambient lighting and atmospheric room visualization. Created with focus on mood and ambiance.',
-		shortDescription: 'Ambient room environment with atmospheric lighting.',
+		name: 'Atmospheric Room',
+		description: '3D interior environment study focusing on ambient lighting and mood.',
+		shortDescription: '3D interior study focusing on ambient lighting.',
 		image: '/gallery/AmbiRoom.webp',
 		tags: ['3d', 'environment', 'lighting', 'interior'],
 		category: '3d',
@@ -181,37 +181,37 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/AmbiRoom.webp', label: 'AmbiRoom' }
+			{ src: '/gallery/AmbiRoom.webp', label: 'Atmospheric Room' }
 		]
 	},
 	{
 		slug: 'hill-landscape',
-		name: 'Hill Terrain',
-		description: '3D terrain generation featuring rolling hills and natural landscape. Created with procedural techniques and realistic texturing.',
-		shortDescription: 'Procedural hill terrain with natural features.',
+		name: 'Procedural Terrain',
+		description: '3D landscape generation study featuring rolling hills and natural topography.',
+		shortDescription: '3D landscape generation study of rolling hills.',
 		image: '/gallery/Hill.webp',
-		tags: ['terrain', 'landscape', 'procedural', 'environment'],
+		tags: ['3d', 'terrain', 'landscape', 'procedural'],
 		category: 'terrain',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Hill.webp', label: 'Hill Landscape' }
+			{ src: '/gallery/Hill.webp', label: 'Procedural Terrain' }
 		]
 	},
 	{
 		slug: 'sword-model',
-		name: 'Sword Model',
-		description: '3D sword model with detailed textures and materials. Game-ready asset with attention to form and detail.',
-		shortDescription: 'Detailed 3D sword model for games.',
+		name: 'Fantasy Sword',
+		description: 'Game-ready 3D sword asset with stylized textures and optimized topology.',
+		shortDescription: 'Game-ready 3D sword with stylized textures.',
 		image: '/gallery/Sword.webp',
-		tags: ['3d modeling', 'weapon', 'game asset', 'prop'],
+		tags: ['3d', 'game-asset', 'weapon', 'stylized'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Sword.webp', label: 'Sword Model' }
+			{ src: '/gallery/Sword.webp', label: 'Fantasy Sword' }
 		]
 	},
 	{
