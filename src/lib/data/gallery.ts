@@ -311,7 +311,7 @@ const items: Array<GalleryItem> = [
 		tags: ['puzzle', 'cryptography', 'logic'],
 		category: 'game',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Decipher', label: 'GitHub', newTab: true }
+			{ to: 'https://saiiprashanth.itch.io/decipher', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Decipher.webp', label: 'Decipher Project' }
