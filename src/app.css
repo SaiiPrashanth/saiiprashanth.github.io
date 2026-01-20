@@ -6,6 +6,11 @@ body {
 	font-family: 'Inter';
 }
 
+html,
+body {
+	overflow-x: hidden;
+}
+
 @layer base {
 	:root {
 		--background: 243 0% 100%;
