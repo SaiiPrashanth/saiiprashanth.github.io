@@ -170,8 +170,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'ambiroom',
 		name: 'Ambient Room',
-		description: '3D ambient room environment study focusing on lighting and atmosphere.',
-		shortDescription: '3D ambient room environment study.',
+		description: '3D Ambient night bedroom environment.',
+		shortDescription: '3D Ambient night bedroom environment.',
 		image: '/gallery/AmbiRoom.webp',
 		tags: ['3d', 'environment', 'lighting', 'interior'],
 		category: '3d',
@@ -185,8 +185,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'hill-landscape',
 		name: 'Castle Environment',
-		description: 'A castle environment set in a procedurally generated 3D terrain.',
-		shortDescription: 'Castle environment in procedural terrain.',
+		description: 'UE5 Castle Environment Level Design.',
+		shortDescription: 'UE5 Castle Environment Level Design.',
 		image: '/gallery/Hill.webp',
 		tags: ['3d', 'terrain', 'castle', 'environment'],
 		category: 'terrain',
@@ -335,8 +335,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'procedural-terrain-2',
 		name: 'Procedural Environment',
-		description: 'Advanced study of a 3D procedural environment generation.',
-		shortDescription: 'Advanced procedural environment study.',
+		description: 'Procedural level design and animation showcase.',
+		shortDescription: 'Procedural level design and animation showcase.',
 		image: '/gallery/Procedural Terrain.webp',
 		tags: ['3d', 'terrain', 'landscape', 'procedural'],
 		category: 'terrain',
