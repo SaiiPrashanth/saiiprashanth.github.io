@@ -7,7 +7,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'cam-project',
 		name: 'Camera System Project',
-		description: 'Advanced camera system implementation showcasing multiple viewpoints and perspectives. Technical demonstration of camera controls and rendering techniques.',
+		description: 'Advanced camera system implementation with multiple viewpoints and technical controls.',
 		shortDescription: 'Multi-viewpoint camera system implementation.',
 		image: '/gallery/Cam.webp',
 		tags: ['3d', 'camera', 'rendering', 'technical'],
@@ -22,7 +22,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'pentab-project',
 		name: 'Pen Tablet 3D Model',
-		description: '3D model of a digital drawing tablet with detailed modeling and realistic materials. High-quality product visualization.',
+		description: 'Detailed 3D model of a digital drawing tablet with realistic materials.',
 		shortDescription: '3D model of digital drawing tablet.',
 		image: '/gallery/PenTab.webp',
 		tags: ['3d modeling', 'product design', 'tablet', 'hardware'],
@@ -37,7 +37,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'tws-project',
 		name: 'TWS Wireless Earbuds',
-		description: '3D product visualization of True Wireless Stereo earbuds. High-quality rendering with attention to materials and lighting.',
+		description: '3D product visualization of True Wireless Stereo earbuds with high-quality rendering.',
 		shortDescription: '3D visualization of wireless earbuds.',
 		image: '/gallery/TWS.webp',
 		tags: ['3d modeling', 'product design', 'rendering', 'audio'],
@@ -52,7 +52,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'fps-game',
 		name: 'FPS Game Project',
-		description: 'First-person shooter game development showcasing gameplay mechanics, level design, and weapon systems.',
+		description: 'First-person shooter game showcasing gameplay mechanics and level design.',
 		shortDescription: 'FPS game with advanced mechanics and level design.',
 		image: '/gallery/FPS.webp',
 		tags: ['game design', 'fps', 'unity', 'game development'],
@@ -67,7 +67,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'pixel-girl',
 		name: 'Pixel Girl',
-		description: 'A pixel art character design showcasing retro gaming aesthetics. Created with attention to detail in limited resolution.',
+		description: 'Pixel art character design showcasing retro gaming aesthetics.',
 		shortDescription: 'Pixel art character design with retro gaming style.',
 		image: '/gallery/PixelGirl.webp',
 		tags: ['pixel art', 'character', '2d', 'retro'],
@@ -82,7 +82,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'joker',
 		name: 'Joker',
-		description: 'Digital artwork featuring the iconic character with unique artistic interpretation and vibrant colors.',
+		description: 'Digital artwork featuring the iconic Joker with unique artistic interpretation.',
 		shortDescription: 'Digital artwork featuring iconic character design.',
 		image: '/gallery/Joker.webp',
 		tags: ['digital art', 'character', 'illustration', 'fan art'],
@@ -97,7 +97,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'elaina-vr',
 		name: 'Elaina VR',
-		description: 'Character visualization for VR experience. Designed with immersive virtual reality applications in mind.',
+		description: 'Character visualization designed for immersive VR experiences.',
 		shortDescription: 'VR character design for immersive experiences.',
 		image: '/gallery/Elaina VR.webp',
 		tags: ['vr', 'character', '3d', 'virtual reality'],
@@ -112,7 +112,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'dog-portrait-1',
 		name: 'Dog Portrait 1',
-		description: 'Digital illustration featuring a dog with expressive features, detailed fur rendering, and unique personality.',
+		description: 'Digital illustration of an expressive dog with detailed fur rendering.',
 		shortDescription: 'Expressive dog portrait with detailed fur.',
 		image: '/gallery/Dog1.webp',
 		tags: ['illustration', 'animal', 'portrait', 'digital art'],
@@ -127,7 +127,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'dog-portrait-2',
 		name: 'Dog Portrait 2',
-		description: 'Digital illustration featuring a dog with expressive features, detailed fur rendering, and unique personality.',
+		description: 'Digital illustration of an expressive dog with detailed fur rendering.',
 		shortDescription: 'Expressive dog portrait with detailed fur.',
 		image: '/gallery/Dog2.webp',
 		tags: ['illustration', 'animal', 'portrait', 'digital art'],
@@ -142,7 +142,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'dog-portrait-3',
 		name: 'Dog Portrait 3',
-		description: 'Digital illustration featuring a dog with expressive features, detailed fur rendering, and unique personality.',
+		description: 'Digital illustration of an expressive dog with detailed fur rendering.',
 		shortDescription: 'Expressive dog portrait with detailed fur.',
 		image: '/gallery/Dog3.webp',
 		tags: ['illustration', 'animal', 'portrait', 'digital art'],
@@ -157,7 +157,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'website-design',
 		name: 'Website Design',
-		description: 'Modern website design mockup showcasing clean layout, user interface elements, and responsive design principles.',
+		description: 'Modern website design mockup showcasing clean layout and responsive UI.',
 		shortDescription: 'Modern website design with clean UI/UX.',
 		image: '/gallery/Website.webp',
 		tags: ['web design', 'ui/ux', 'interface', 'mockup'],
@@ -172,7 +172,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'ambiroom',
 		name: 'AmbiRoom',
-		description: '3D environment design featuring ambient lighting and atmospheric room visualization. Created with focus on mood and ambiance.',
+		description: '3D environment design featuring ambient lighting and atmospheric visualization.',
 		shortDescription: 'Ambient room environment with atmospheric lighting.',
 		image: '/gallery/AmbiRoom.webp',
 		tags: ['3d', 'environment', 'lighting', 'interior'],
@@ -187,7 +187,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'hill-landscape',
 		name: 'Hill Terrain',
-		description: '3D terrain generation featuring rolling hills and natural landscape. Created with procedural techniques and realistic texturing.',
+		description: '3D terrain generation featuring procedural rolling hills and natural landscapes.',
 		shortDescription: 'Procedural hill terrain with natural features.',
 		image: '/gallery/Hill.webp',
 		tags: ['terrain', 'landscape', 'procedural', 'environment'],
@@ -202,7 +202,7 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'sword-model',
 		name: 'Sword Model',
-		description: '3D sword model with detailed textures and materials. Game-ready asset with attention to form and detail.',
+		description: 'Detailed 3D sword model with game-ready textures and materials.',
 		shortDescription: 'Detailed 3D sword model for games.',
 		image: '/gallery/Sword.webp',
 		tags: ['3d modeling', 'weapon', 'game asset', 'prop'],
@@ -220,7 +220,7 @@ const items: Array<GalleryItem> = [
 		description: 'A classic arcade-style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics-based movement and retro vector graphics.',
 		shortDescription: 'Arcade-style space shooter with retro vector graphics.',
 		image: '/gallery/Astron_3.png',
-		tags: ['javascript', 'html5', 'canvas', 'arcade', 'game development'],
+		tags: ['javascript', 'arcade-game', 'retro', 'game-development', 'html5-canvas', 'space-shooter', '2d-physics'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io', newTab: true }
@@ -235,7 +235,7 @@ const items: Array<GalleryItem> = [
 		description: 'A fast-paced infinite arcade runner in Unity featuring vibrant cel-shaded graphics.',
 		shortDescription: 'A fast-paced infinite arcade runner in Unity featuring vibrant cel-shaded graphics.',
 		image: '/gallery/BT1.jpg',
-		tags: ['unity', 'csharp', 'infinite runner', 'cel-shaded', 'game development'],
+		tags: ['c-sharp', 'unity', 'arcade', 'infinite-runner', 'cel-shading', 'stylized-art', 'water-shader'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/boating-through', label: 'Itch.io', newTab: true }
@@ -250,7 +250,7 @@ const items: Array<GalleryItem> = [
 		description: 'A physics-based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby.',
 		shortDescription: 'Physics-based puzzle game with Kirby.',
 		image: '/gallery/HK_1.jpg',
-		tags: ['unity', 'csharp', 'puzzle', 'physics', 'kirby', 'game development'],
+		tags: ['c-sharp', 'mobile-game', 'casual-game', 'unity-2d', 'cut-the-rope', 'physics-puzzle'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/hungry-kirby', label: 'Itch.io', newTab: true }
@@ -265,7 +265,7 @@ const items: Array<GalleryItem> = [
 		description: 'A stylized 3D Chess game built in Unity, set in a mystical desert kingdom ruled by Cat Pharaohs.',
 		shortDescription: 'Stylized 3D chess game with Cat Pharaohs.',
 		image: '/gallery/Neko_Gambit_img_1.jpg',
-		tags: ['unity', 'csharp', 'chess', 'strategy', 'egyptian mythology', 'game development'],
+		tags: ['c-sharp', 'board-game', 'chess', 'unity', 'strategy', '3d-game', 'stylized-art'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/neko-gambit', label: 'Itch.io', newTab: true }
@@ -280,7 +280,7 @@ const items: Array<GalleryItem> = [
 		description: 'A Minecraft-style open-world game built in Unity where you control a bee gathering honey across a voxel landscape while defending against attacking wasps.',
 		shortDescription: 'Minecraft-style open-world game where you control a bee gathering honey.',
 		image: '/gallery/BB_1.jpg',
-		tags: ['game development', 'character design', 'interactive', 'unity'],
+		tags: ['c-sharp', 'unity', 'open-world', 'arcade', 'voxel-art', 'stylized-art', 'minecraft-style'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/bumble-bee', label: 'Itch.io', newTab: true }
