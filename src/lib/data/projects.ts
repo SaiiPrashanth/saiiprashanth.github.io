@@ -65,9 +65,9 @@ const items: Array<Project> = [
 		slug: 'bumble-bee',
 		color: '#ffeb3b',
 		description:
-			'A creative Unity project featuring bumble bee themed gameplay and interactive elements. Showcases unique character design, engaging mechanics, and polished visual presentation with attention to detail in animation and user experience.',
+			'A Minecraft-style open-world game built in Unity where you control a bee gathering honey across a voxel landscape while defending against attacking wasps. Features include voxel-based environment, smooth flight controls, resource gathering mechanics, and AI-controlled enemy wasps.',
 		shortDescription:
-			'Bumble bee themed interactive Unity project with creative gameplay.',
+			'Minecraft-style open-world game where you control a bee gathering honey.',
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/Bumble_Bee', label: 'GitHub', newTab: true }
 		],
@@ -105,9 +105,9 @@ const items: Array<Project> = [
 		slug: 'boating-through',
 		color: '#4ecdc4',
 		description:
-			'A fast-paced infinite runner in Unity featuring vibrant cel-shaded graphics and stylized water physics. Players guide their boat through an infinite procedurally generated river, changing direction with each tap to avoid obstacles. Features low-poly relaxing aesthetics, high score tracking, unlockable boats and trails through coin collection, and addictive rhythm-based gameplay with timing and precision mechanics.',
+			'A fast-paced infinite arcade runner in Unity featuring vibrant cel-shaded graphics. Players guide their boat through an infinite procedurally generated river, changing direction with each tap to avoid obstacles. Features low-poly relaxing aesthetics, high score tracking, and addictive rhythm-based gameplay with timing and precision mechanics.',
 		shortDescription:
-			'Fast-paced infinite runner with cel-shaded graphics and water physics.',
+			'A fast-paced infinite arcade runner in Unity featuring vibrant cel-shaded graphics.',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/boating-through', label: 'Itch.io', newTab: true },
 			{ to: 'https://github.com/SaiiPrashanth/Boating_Through', label: 'GitHub', newTab: true }

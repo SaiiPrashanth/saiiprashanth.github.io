@@ -232,8 +232,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'boating-through',
 		name: 'Boating Through',
-		description: 'A fast-paced infinite runner in Unity featuring vibrant cel-shaded graphics and stylized water physics.',
-		shortDescription: 'Fast-paced infinite runner with cel-shaded graphics.',
+		description: 'A fast-paced infinite arcade runner in Unity featuring vibrant cel-shaded graphics.',
+		shortDescription: 'A fast-paced infinite arcade runner in Unity featuring vibrant cel-shaded graphics.',
 		image: '/gallery/BT1.jpg',
 		tags: ['unity', 'csharp', 'infinite runner', 'cel-shaded', 'game development'],
 		category: 'game',
@@ -277,8 +277,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'bumble-bee',
 		name: 'Bumble Bee',
-		description: 'A creative project featuring bumble bee themed gameplay and interactive elements. Showcases unique character design and engaging mechanics.',
-		shortDescription: 'Bumble bee themed interactive project.',
+		description: 'A Minecraft-style open-world game built in Unity where you control a bee gathering honey across a voxel landscape while defending against attacking wasps.',
+		shortDescription: 'Minecraft-style open-world game where you control a bee gathering honey.',
 		image: '/gallery/BB_1.jpg',
 		tags: ['game development', 'character design', 'interactive', 'unity'],
 		category: 'game',
