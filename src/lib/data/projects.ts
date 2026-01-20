@@ -42,17 +42,17 @@ const items: Array<Project> = [
 		screenshots: []
 	},
 	{
-		slug: 'cubeathon',
+		slug: 'cubeology',
 		color: '#8b6f47',
 		description:
-			'A creative open-world sandbox game built in Unreal Engine 5, featuring voxel-based building mechanics and vast level construction tools. Players can unleash their creativity in a Minecraft-style environment powered by modern graphics, building elaborate structures in a procedurally generated world. Features include intuitive building tools, creative mode with unlimited resources, and beautiful voxel rendering with UE5\'s advanced lighting.',
+			'A creative open-world sandbox game built in Unreal Engine 5, featuring voxel-based building mechanics and vast level construction tools. Players can unleash their creativity in a voxel environment powered by modern graphics, building elaborate structures in a procedurally generated world.',
 		shortDescription:
-			'Creative voxel sandbox game in UE5 with building mechanics.',
+			'A creative open-world sandbox game built in Unreal Engine 5.',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Cubeathon', label: 'GitHub', newTab: true }
+			{ to: 'https://github.com/SaiiPrashanth/Cubeology', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unreal,
-		name: 'Cubeathon',
+		name: 'Cubeology',
 		period: {
 			from: new Date(2023, 9, 1),
 			to: new Date(2024, 2, 1)
