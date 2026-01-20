@@ -58,7 +58,7 @@ const items: Array<GalleryItem> = [
 		tags: ['game design', 'fps', 'unity', 'game development'],
 		category: 'game',
 		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+			{ to: 'https://saiiprashanth.itch.io/', label: 'View on Itch.io', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/FPS.webp', label: 'FPS Gameplay' }
@@ -223,7 +223,7 @@ const items: Array<GalleryItem> = [
 		tags: ['javascript', 'html5', 'canvas', 'arcade', 'game development'],
 		category: 'game',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Astron', label: 'GitHub', newTab: true }
+			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Astron_3.png', label: 'Astron Gameplay' }
@@ -238,7 +238,7 @@ const items: Array<GalleryItem> = [
 		tags: ['unity', 'csharp', 'infinite runner', 'cel-shaded', 'game development'],
 		category: 'game',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Boating_Through', label: 'GitHub', newTab: true }
+			{ to: 'https://saiiprashanth.itch.io/boating-through', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/BT1.jpg', label: 'Boating Through Gameplay' }
@@ -253,7 +253,7 @@ const items: Array<GalleryItem> = [
 		tags: ['unity', 'csharp', 'puzzle', 'physics', 'kirby', 'game development'],
 		category: 'game',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Hungry_Kirby', label: 'GitHub', newTab: true }
+			{ to: 'https://saiiprashanth.itch.io/hungry-kirby', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/HK_1.jpg', label: 'Hungry Kirby Gameplay' }
@@ -268,7 +268,7 @@ const items: Array<GalleryItem> = [
 		tags: ['unity', 'csharp', 'chess', 'strategy', 'egyptian mythology', 'game development'],
 		category: 'game',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Neko_Gambit', label: 'GitHub', newTab: true }
+			{ to: 'https://saiiprashanth.itch.io/neko-gambit', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/Neko_Gambit_img_1.jpg', label: 'Neko Gambit Gameplay' }
@@ -283,7 +283,7 @@ const items: Array<GalleryItem> = [
 		tags: ['game development', 'character design', 'interactive', 'unity'],
 		category: 'game',
 		links: [
-			{ to: 'https://github.com/SaiiPrashanth/Bumble_Bee', label: 'GitHub', newTab: true }
+			{ to: 'https://saiiprashanth.itch.io/bumble-bee', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
 			{ src: '/gallery/BB_1.jpg', label: 'Bumble Bee Project' }
