@@ -46,8 +46,8 @@
 <FancyCard
 	{color}
 	class="flex h-full flex-col"
-	href={item.links?.[0]?.to}
-	newTab={item.links?.[0]?.newTab}
+	href={item.links && item.links.length > 0 ? item.links[0].to : href(`/gallery/${item.slug}`)}
+	newTab={item.links && item.links.length > 0 ? item.links[0].newTab : false}
 >
 	<CardHeader class="flex w-full flex-col gap-4">
 		<div class="group relative aspect-video w-full overflow-hidden rounded-lg bg-muted">
