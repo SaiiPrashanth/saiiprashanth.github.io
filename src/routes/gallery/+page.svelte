@@ -56,9 +56,11 @@
 					onPressedChange={() => toggleSelected(category.slug)}
 					variant="outline"
 					size="sm"
-					class="flex flex-row items-center gap-1"
+					class="flex flex-row items-center gap-2 rounded-lg"
 				>
-					<Icon icon={'i-carbon-image'} />
+					{#if category.isSelected}
+						<Icon icon="i-carbon-close" />
+					{/if}
 					{category.name}
 				</Toggle>
 			{/each}
