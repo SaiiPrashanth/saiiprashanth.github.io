@@ -1,3 +1,4 @@
+import { base } from '$app/paths';
 import Assets from './assets';
 import type { GalleryItem } from './types';
 
@@ -10,14 +11,14 @@ const items: Array<GalleryItem> = [
 		name: 'Pixel Anime Girl',
 		description: 'Pixel art design of an anime style character with retro aesthetics.',
 		shortDescription: 'Pixel art anime girl character.',
-		image: '/gallery/PixelGirl.webp',
+		image: `${base}/gallery/PixelGirl.webp`,
 		tags: ['pixel-art', 'character-design', 'anime', '2d'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/PixelGirl.webp', label: 'Pixel Anime Girl' }
+			{ src: `${base}/gallery/PixelGirl.webp`, label: 'Pixel Anime Girl' }
 		]
 	},
 	{
@@ -25,14 +26,14 @@ const items: Array<GalleryItem> = [
 		name: 'Polygon Joker',
 		description: 'Polygon art illustration of The Joker featuring sharp geometric shapes.',
 		shortDescription: 'Polygon art illustration of The Joker.',
-		image: '/gallery/Joker.webp',
+		image: `${base}/gallery/Joker.webp`,
 		tags: ['polygon-art', 'fan-art', 'illustration', '2d'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Joker.webp', label: 'Polygon Joker' }
+			{ src: `${base}/gallery/Joker.webp`, label: 'Polygon Joker' }
 		]
 	},
 	{
@@ -40,14 +41,14 @@ const items: Array<GalleryItem> = [
 		name: 'Realistic Dog Art',
 		description: 'A realistic polygon art portrait capturing lifelike textures through complex geometry.',
 		shortDescription: 'Realistic polygon art dog portrait.',
-		image: '/gallery/Dog1.webp',
+		image: `${base}/gallery/Dog1.webp`,
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog1.webp', label: 'Realistic Dog Art' }
+			{ src: `${base}/gallery/Dog1.webp`, label: 'Realistic Dog Art' }
 		]
 	},
 	{
@@ -55,14 +56,14 @@ const items: Array<GalleryItem> = [
 		name: 'Triadic Dog Art',
 		description: 'Triadic color scheme polygonal art.',
 		shortDescription: 'Triadic color scheme polygonal art.',
-		image: '/gallery/Dog2.webp',
+		image: `${base}/gallery/Dog2.webp`,
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog2.webp', label: 'Triadic Dog Art' }
+			{ src: `${base}/gallery/Dog2.webp`, label: 'Triadic Dog Art' }
 		]
 	},
 	{
@@ -70,14 +71,14 @@ const items: Array<GalleryItem> = [
 		name: 'Monochromatic Dog Art',
 		description: 'An exploration of depth and form using a single color palette across geometric planes.',
 		shortDescription: 'Monochromatic geometric dog portrait.',
-		image: '/gallery/Dog3.webp',
+		image: `${base}/gallery/Dog3.webp`,
 		tags: ['digital-painting', 'animal', 'portrait', 'illustration'],
 		category: '2d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Dog3.webp', label: 'Monochromatic Dog Art' }
+			{ src: `${base}/gallery/Dog3.webp`, label: 'Monochromatic Dog Art' }
 		]
 	},
 
@@ -87,14 +88,14 @@ const items: Array<GalleryItem> = [
 		name: 'GitHub Page UI Design',
 		description: 'UI design mockup for a GitHub page focusing on clean layout and clarity.',
 		shortDescription: 'GitHub page user interface design mockup.',
-		image: '/gallery/Website.webp',
+		image: `${base}/gallery/Website.webp`,
 		tags: ['ui-design', 'web', 'github', 'mockup'],
 		category: 'ui',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Website.webp', label: 'GitHub UI Design' }
+			{ src: `${base}/gallery/Website.webp`, label: 'GitHub UI Design' }
 		]
 	},
 
@@ -104,14 +105,14 @@ const items: Array<GalleryItem> = [
 		name: 'Webcam Model',
 		description: 'A detailed 3D model of a webcam with realistic texturing and materials.',
 		shortDescription: 'Detailed 3D webcam model.',
-		image: '/gallery/Cam.webp',
+		image: `${base}/gallery/Cam.webp`,
 		tags: ['3d', 'hard-surface', 'modeling', 'webcam'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Cam.webp', label: 'Webcam Model' }
+			{ src: `${base}/gallery/Cam.webp`, label: 'Webcam Model' }
 		]
 	},
 	{
@@ -119,14 +120,14 @@ const items: Array<GalleryItem> = [
 		name: 'Wacom Tablet and Stylus',
 		description: '3D model of a Wacom digital drawing tablet and stylus for product visualization.',
 		shortDescription: '3D model of Wacom tablet and stylus.',
-		image: '/gallery/PenTab.webp',
+		image: `${base}/gallery/PenTab.webp`,
 		tags: ['3d', 'product-design', 'wacom', 'modeling'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/PenTab.webp', label: 'Wacom Tablet' }
+			{ src: `${base}/gallery/PenTab.webp`, label: 'Wacom Tablet' }
 		]
 	},
 	{
@@ -134,14 +135,14 @@ const items: Array<GalleryItem> = [
 		name: 'Futuristic Earbuds',
 		description: 'A futuristic 3D visualization of True Wireless Stereo earbuds.',
 		shortDescription: 'Futuristic 3D earbuds visualization.',
-		image: '/gallery/TWS.webp',
+		image: `${base}/gallery/TWS.webp`,
 		tags: ['3d', 'product-design', 'futuristic', 'rendering'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/TWS.webp', label: 'Futuristic Earbuds' }
+			{ src: `${base}/gallery/TWS.webp`, label: 'Futuristic Earbuds' }
 		]
 	},
 	{
@@ -149,14 +150,14 @@ const items: Array<GalleryItem> = [
 		name: 'Ambient Room',
 		description: '3D Ambient night bedroom environment.',
 		shortDescription: '3D Ambient night bedroom environment.',
-		image: '/gallery/AmbiRoom.webp',
+		image: `${base}/gallery/AmbiRoom.webp`,
 		tags: ['3d', 'environment', 'lighting', 'interior'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/AmbiRoom.webp', label: 'Ambient Room' }
+			{ src: `${base}/gallery/AmbiRoom.webp`, label: 'Ambient Room' }
 		]
 	},
 	{
@@ -164,14 +165,14 @@ const items: Array<GalleryItem> = [
 		name: 'Low poly PBR Sword',
 		description: 'Fantasy sword model created with low poly topology and PBR textures.',
 		shortDescription: 'Low poly PBR fantasy sword model.',
-		image: '/gallery/Sword.webp',
+		image: `${base}/gallery/Sword.webp`,
 		tags: ['3d', 'game-asset', 'weapon', 'low-poly', 'pbr'],
 		category: '3d',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Sword.webp', label: 'Low poly PBR Sword' }
+			{ src: `${base}/gallery/Sword.webp`, label: 'Low poly PBR Sword' }
 		]
 	},
 
@@ -181,12 +182,12 @@ const items: Array<GalleryItem> = [
 		name: 'Elaina AR Project',
 		description: 'An interactive AR project projecting a model of Elaina into the real world.',
 		shortDescription: 'Interactive AR project featuring Elaina.',
-		image: '/gallery/Elaina VR.webp',
+		image: `${base}/gallery/Elaina VR.webp`,
 		tags: ['ar', 'interactive', '3d-model', 'real-world'],
 		category: 'ar',
 		links: [],
 		screenshots: [
-			{ src: '/gallery/Elaina VR.webp', label: 'Elaina AR Project' }
+			{ src: `${base}/gallery/Elaina VR.webp`, label: 'Elaina AR Project' }
 		]
 	},
 
@@ -196,14 +197,14 @@ const items: Array<GalleryItem> = [
 		name: 'Castle Environment',
 		description: 'UE5 Castle Environment Level Design.',
 		shortDescription: 'UE5 Castle Environment Level Design.',
-		image: '/gallery/Hill.webp',
+		image: `${base}/gallery/Hill.webp`,
 		tags: ['3d', 'terrain', 'castle', 'environment'],
 		category: 'terrain',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Hill.webp', label: 'Castle Environment' }
+			{ src: `${base}/gallery/Hill.webp`, label: 'Castle Environment' }
 		]
 	},
 	{
@@ -211,14 +212,14 @@ const items: Array<GalleryItem> = [
 		name: 'Forest Environment',
 		description: 'Procedural forest terrain and vegetation.',
 		shortDescription: 'Procedural forest terrain and vegetation.',
-		image: '/gallery/Procedural Terrain.webp',
+		image: `${base}/gallery/Procedural Terrain.webp`,
 		tags: ['3d', 'terrain', 'landscape', 'procedural'],
 		category: 'terrain',
 		links: [
 			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Procedural Terrain.webp', label: 'Forest Environment' }
+			{ src: `${base}/gallery/Procedural Terrain.webp`, label: 'Forest Environment' }
 		]
 	},
 
@@ -228,14 +229,14 @@ const items: Array<GalleryItem> = [
 		name: 'LAN PvP FPS',
 		description: 'A first person shooter prototype designed for LAN PvP gameplay.',
 		shortDescription: 'LAN PvP first person shooter prototype.',
-		image: '/gallery/FPS.webp',
+		image: `${base}/gallery/FPS.webp`,
 		tags: ['game-design', 'fps', 'pvp', 'unity', 'lan'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/', label: 'View on Itch.io', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/FPS.webp', label: 'FPS Gameplay' }
+			{ src: `${base}/gallery/FPS.webp`, label: 'FPS Gameplay' }
 		]
 	},
 	{
@@ -243,14 +244,14 @@ const items: Array<GalleryItem> = [
 		name: 'Astron',
 		description: 'A classic arcade style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics based movement and retro vector graphics.',
 		shortDescription: 'Arcade style space shooter with retro vector graphics.',
-		image: '/gallery/Astron_3.png',
+		image: `${base}/gallery/Astron_3.png`,
 		tags: ['javascript', 'arcade-game', 'retro', 'game-development', 'html5-canvas', 'space-shooter', '2d-physics'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Astron_3.png', label: 'Astron Gameplay' }
+			{ src: `${base}/gallery/Astron_3.png`, label: 'Astron Gameplay' }
 		]
 	},
 	{
@@ -258,14 +259,14 @@ const items: Array<GalleryItem> = [
 		name: 'Boating Through',
 		description: 'A fast paced infinite arcade runner in Unity featuring vibrant cel shaded graphics.',
 		shortDescription: 'Fast paced infinite arcade runner with cel shaded graphics.',
-		image: '/gallery/BT1.jpg',
+		image: `${base}/gallery/BT1.jpg`,
 		tags: ['c-sharp', 'unity', 'arcade', 'infinite-runner', 'cel-shading', 'stylized-art', 'water-shader'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/boating-through', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/BT1.jpg', label: 'Boating Through Gameplay' }
+			{ src: `${base}/gallery/BT1.jpg`, label: 'Boating Through Gameplay' }
 		]
 	},
 	{
@@ -273,14 +274,14 @@ const items: Array<GalleryItem> = [
 		name: 'Hungry Kirby',
 		description: 'A physics based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby.',
 		shortDescription: 'Physics based puzzle game with Kirby.',
-		image: '/gallery/HK_1.jpg',
+		image: `${base}/gallery/HK_1.jpg`,
 		tags: ['c-sharp', 'mobile-game', 'casual-game', 'unity-2d', 'cut-the-rope', 'physics-puzzle'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/hungry-kirby', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/HK_1.jpg', label: 'Hungry Kirby Gameplay' }
+			{ src: `${base}/gallery/HK_1.jpg`, label: 'Hungry Kirby Gameplay' }
 		]
 	},
 	{
@@ -288,14 +289,14 @@ const items: Array<GalleryItem> = [
 		name: 'Neko Gambit',
 		description: 'A stylized 3D Chess game built in Unity, set in a mystical desert kingdom ruled by Cat Pharaohs.',
 		shortDescription: 'Stylized 3D chess game with Cat Pharaohs.',
-		image: '/gallery/Neko_Gambit_img_1.jpg',
+		image: `${base}/gallery/Neko_Gambit_img_1.jpg`,
 		tags: ['c-sharp', 'board-game', 'chess', 'unity', 'strategy', '3d-game', 'stylized-art'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/neko-gambit', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Neko_Gambit_img_1.jpg', label: 'Neko Gambit Gameplay' }
+			{ src: `${base}/gallery/Neko_Gambit_img_1.jpg`, label: 'Neko Gambit Gameplay' }
 		]
 	},
 	{
@@ -303,14 +304,14 @@ const items: Array<GalleryItem> = [
 		name: 'Bumble Bee',
 		description: 'A Minecraft style open world game built in Unity where you control a bee gathering honey across a voxel landscape while defending against attacking wasps.',
 		shortDescription: 'Minecraft style open world game where you control a bee.',
-		image: '/gallery/BB_1.jpg',
+		image: `${base}/gallery/BB_1.jpg`,
 		tags: ['c-sharp', 'unity', 'open-world', 'arcade', 'voxel-art', 'stylized-art', 'minecraft-style'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/bumble-bee', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/BB_1.jpg', label: 'Bumble Bee Project' }
+			{ src: `${base}/gallery/BB_1.jpg`, label: 'Bumble Bee Project' }
 		]
 	},
 	{
@@ -318,14 +319,14 @@ const items: Array<GalleryItem> = [
 		name: 'Cubeology',
 		description: 'A creative open world sandbox game built in Unreal Engine 5.',
 		shortDescription: 'A creative open world sandbox game built in Unreal Engine 5.',
-		image: '/gallery/Cubeology.webp',
+		image: `${base}/gallery/Cubeology.webp`,
 		tags: ['unreal-engine-5', 'sandbox', 'voxel', 'cpp'],
 		category: 'game',
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/Cubeology', label: 'GitHub', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Cubeology.webp', label: 'Cubeology Gameplay' }
+			{ src: `${base}/gallery/Cubeology.webp`, label: 'Cubeology Gameplay' }
 		]
 	},
 	{
@@ -333,29 +334,29 @@ const items: Array<GalleryItem> = [
 		name: 'Decipher: Escape Room',
 		description: 'An escape room type puzzle game challenging players to decode cryptic messages.',
 		shortDescription: 'Escape room type puzzle game.',
-		image: '/gallery/Decipher.webp',
+		image: `${base}/gallery/Decipher.webp`,
 		tags: ['puzzle', 'escape-room', 'cryptography', 'logic'],
 		category: 'game',
 		links: [
 			{ to: 'https://saiiprashanth.itch.io/decipher', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/Decipher.webp', label: 'Decipher Project' }
+			{ src: `${base}/gallery/Decipher.webp`, label: 'Decipher Project' }
 		]
 	},
 	{
 		slug: 'eternights',
-		name: 'Open World Souls like Action RPG',
+		name: 'Eternights',
 		description: 'Open World Souls like Action RPG.',
 		shortDescription: 'Open World Souls like Action RPG.',
-		image: '/gallery/EterNights.webp',
+		image: `${base}/gallery/EterNights.webp`,
 		tags: ['unreal-engine-5', 'cpp', 'action-rpg', 'souls-like'],
 		category: 'game',
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/EterNights', label: 'GitHub', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/EterNights.webp', label: 'EterNights Gameplay' }
+			{ src: `${base}/gallery/EterNights.webp`, label: 'EterNights Gameplay' }
 		]
 	},
 	{
@@ -363,14 +364,14 @@ const items: Array<GalleryItem> = [
 		name: 'Space Odyssey',
 		description: '3D arcade rail shooter with dynamic space combat and piloting.',
 		shortDescription: '3D arcade rail shooter with dynamic space combat and piloting.',
-		image: '/gallery/SpaceOdyssey.webp',
+		image: `${base}/gallery/SpaceOdyssey.webp`,
 		tags: ['unity', 'csharp', 'arcade', 'shooter', 'space'],
 		category: 'game',
 		links: [
 			{ to: 'https://github.com/SaiiPrashanth/Space_Odyssey', label: 'GitHub', newTab: true }
 		],
 		screenshots: [
-			{ src: '/gallery/SpaceOdyssey.webp', label: 'Space Odyssey Gameplay' }
+			{ src: `${base}/gallery/SpaceOdyssey.webp`, label: 'Space Odyssey Gameplay' }
 		]
 	}
 ];
