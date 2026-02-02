@@ -14,7 +14,7 @@ const items: Array<Project> = [
 			{ to: 'https://github.com/SaiiPrashanth/EterNights', label: 'GitHub', newTab: true }
 		],
 		logo: Assets.Unreal,
-		name: 'Open World Souls like Action RPG',
+		name: 'Eternights',
 		period: {
 			from: new Date(2024, 0, 1)
 		},
