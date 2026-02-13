@@ -1,0 +1,1 @@
+import{j as s,E as a,k as n,o,q as i,u as r,v as t}from"./index-client.CIKm0kFa.js";function e(e,l,...u){var c,f=e,j=o;s(()=>{j!==(j=l())&&(c&&(i(c),c=null),c=n(()=>j(f,...u)))},a),r&&(f=t)}export{e as s};

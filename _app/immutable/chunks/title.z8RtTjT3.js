@@ -1,0 +1,1 @@
+import{g as s,h as i}from"./disclose-version.Cn0pmGqU.js";import{i as t}from"./utils.DOb_1rzk.js";import{p as o,b as a,t as e,$ as r}from"./index-client.CIKm0kFa.js";import{B as m}from"./base.dcJAAfA4.js";function f(f,l){o(l,!1);let p=s(l,"title",8,"Title");t(),i(s=>{e(()=>r.title=`${p()} | ${m.suffix}`)}),a()}export{f as T};

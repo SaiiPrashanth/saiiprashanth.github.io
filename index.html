@@ -2,7 +2,36 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<!-- Preconnect to external domains -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://www.google-analytics.com" />
+		
+		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="/Logo.png" id="favicon" />
+		
+		<!-- Preload critical fonts only -->
+		<link 
+			rel="preload" 
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<style>
+			/* Font loading optimization with fallback */
+			@font-face {
+				font-family: 'Inter';
+				font-style: normal;
+				font-weight: 400;
+				font-display: swap;
+				src: local('Inter'), local('Inter-Regular');
+			}
+		</style>
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+		</noscript>
 		<script>
 			// Update favicon based on system theme
 			function updateFavicon() {
@@ -36,30 +65,42 @@
 			// Listen for system theme changes
 			const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 			mediaQuery.addEventListener('change', updateFavicon);
+
+			// Register service worker
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('/service-worker.js')
+						.then((registration) => {
+							console.log('Service Worker registered:', registration.scope);
+						})
+						.catch((error) => {
+							console.log('Service Worker registration failed:', error);
+						});
+				});
+			}
 		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link rel="modulepreload" href="/_app/immutable/entry/start.5yTJad64.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/entry.Cckzu_y_.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/utils.CN8y0tA8.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/paths.CAcu4rjJ.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.Cex1kCvs.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/disclose-version.GGYaz2pq.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/index-client.CMhOQRSm.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/start.B-6k9Ms4.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/entry.DsvnKCei.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index-client.CIKm0kFa.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/paths.LPBKsWa1.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.C2HpwCa2.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/disclose-version.Cn0pmGqU.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
 			<script>
 				{
-					__sveltekit_142ix7i = {
+					__sveltekit_p23qk3 = {
 						base: ""
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.5yTJad64.js"),
-						import("/_app/immutable/entry/app.Cex1kCvs.js")
+						import("/_app/immutable/entry/start.B-6k9Ms4.js"),
+						import("/_app/immutable/entry/app.C2HpwCa2.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});
