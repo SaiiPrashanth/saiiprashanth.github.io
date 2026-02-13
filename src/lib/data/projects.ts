@@ -5,7 +5,7 @@ import type { Project } from './types';
 const items: Array<Project> = [
 	{
 		slug: 'eternights',
-		color: '#8b4513',
+		color: '#cd5c5c',
 		description:
 			'An open world Souls like action RPG developed in Unreal Engine 5 and C++, featuring challenging combat and interconnected exploration. This project showcases advanced combat mechanics, enemy AI systems, and a richly detailed world inspired by classic Souls games. Features include stamina based combat, dodge rolling mechanics, boss battles, and an interconnected world design with shortcuts and secrets.',
 		shortDescription:
@@ -16,7 +16,8 @@ const items: Array<Project> = [
 		logo: Assets.Unreal,
 		name: 'Eternights',
 		period: {
-			from: new Date(2024, 0, 1)
+			from: new Date(2024, 11, 1),
+			to: new Date(2025, 3, 1)
 		},
 		skills: getSkills('cpp', 'unreal'),
 		type: 'Action RPG',
@@ -24,7 +25,7 @@ const items: Array<Project> = [
 	},
 	{
 		slug: 'space-odyssey',
-		color: '#1a1a2e',
+		color: '#4a90e2',
 		description:
 			'A 3D arcade rail shooter built in Unity, featuring dynamic starship piloting and combat mechanics. Players navigate through stunning space environments, engaging in intense dogfights with enemy spacecraft while following a guided rail path. Features include responsive flight controls, varied enemy types, power up systems, and epic boss battles set against breathtaking cosmic backdrops.',
 		shortDescription:
@@ -35,7 +36,8 @@ const items: Array<Project> = [
 		logo: Assets.Unity,
 		name: 'Space Odyssey',
 		period: {
-			from: new Date(2024, 0, 1)
+			from: new Date(2022, 8, 1),
+			to: new Date(2022, 10, 1)
 		},
 		skills: getSkills('unity', 'csharp'),
 		type: 'Arcade Shooter',
@@ -43,7 +45,7 @@ const items: Array<Project> = [
 	},
 	{
 		slug: 'cubeology',
-		color: '#8b6f47',
+		color: '#daa520',
 		description:
 			'A creative open world sandbox game built in Unreal Engine 5, featuring voxel based building mechanics and vast level construction tools. Players can unleash their creativity in a voxel environment powered by modern graphics, building elaborate structures in a procedurally generated world.',
 		shortDescription:
@@ -54,8 +56,8 @@ const items: Array<Project> = [
 		logo: Assets.Unreal,
 		name: 'Cubeology',
 		period: {
-			from: new Date(2023, 9, 1),
-			to: new Date(2024, 2, 1)
+			from: new Date(2024, 6, 1),
+			to: new Date(2024, 9, 1)
 		},
 		skills: getSkills('unreal'),
 		type: 'Sandbox Game',
@@ -74,7 +76,8 @@ const items: Array<Project> = [
 		logo: Assets.Unity,
 		name: 'Bumble Bee',
 		period: {
-			from: new Date(2024, 6, 1)
+			from: new Date(2022, 11, 1),
+			to: new Date(2023, 1, 1)
 		},
 		skills: getSkills('unity', 'csharp'),
 		type: 'Interactive Project',
@@ -94,8 +97,8 @@ const items: Array<Project> = [
 		logo: Assets.Unity,
 		name: 'Neko Gambit',
 		period: {
-			from: new Date(2024, 3, 1),
-			to: new Date(2024, 6, 1)
+			from: new Date(2023, 3, 1),
+			to: new Date(2023, 6, 1)
 		},
 		skills: getSkills('unity', 'csharp'),
 		type: 'Strategy Game',
@@ -115,8 +118,8 @@ const items: Array<Project> = [
 		logo: Assets.Unity,
 		name: 'Boating Through',
 		period: {
-			from: new Date(2024, 1, 1),
-			to: new Date(2024, 4, 1)
+			from: new Date(2023, 9, 1),
+			to: new Date(2023, 10, 1)
 		},
 		skills: getSkills('unity', 'csharp'),
 		type: 'Casual Game',
@@ -136,8 +139,8 @@ const items: Array<Project> = [
 		logo: Assets.Unity,
 		name: 'Hungry Kirby',
 		period: {
-			from: new Date(2023, 8, 1),
-			to: new Date(2024, 1, 1)
+			from: new Date(2024, 1, 1),
+			to: new Date(2024, 3, 1)
 		},
 		skills: getSkills('unity', 'csharp'),
 		type: 'Puzzle Game',
@@ -157,8 +160,8 @@ const items: Array<Project> = [
 		logo: Assets.JavaScript,
 		name: 'Astron',
 		period: {
-			from: new Date(2022, 6, 1),
-			to: new Date(2022, 11, 1)
+			from: new Date(2023, 8, 1),
+			to: new Date(2023, 9, 1)
 		},
 		skills: getSkills('js', 'html'),
 		type: 'Arcade Game',
@@ -177,8 +180,8 @@ const items: Array<Project> = [
 		logo: Assets.Python,
 		name: 'Automated LOD Tool',
 		period: {
-			from: new Date(2023, 6, 1),
-			to: new Date(2024, 0, 1)
+			from: new Date(2023, 5, 1),
+			to: new Date(2023, 6, 1)
 		},
 		skills: getSkills('python', '3dsmax'),
 		type: 'Tool Development',
@@ -186,7 +189,7 @@ const items: Array<Project> = [
 	},
 	{
 		slug: '3ds-ue5-asset-integration-tool',
-		color: '#0e76a8',
+		color: '#20b2aa',
 		description:
 			'A Python automation tool for Autodesk 3ds Max that streamlines the export of 3D assets and textures directly into Unreal Engine 5 projects. Automates FBX export with proper settings, handles material and texture conversion, maintains proper naming conventions, preserves asset hierarchy, and integrates directly with UE5 content browser. Designed to reduce manual steps and errors in the asset pipeline, enabling quick iteration between Max and Unreal.',
 		shortDescription:
@@ -197,7 +200,8 @@ const items: Array<Project> = [
 		logo: Assets.Python,
 		name: '3DS-UE5 Asset Integration Tool',
 		period: {
-			from: new Date(2025, 0, 1)
+			from: new Date(2025, 0, 1),
+			to: new Date(2025, 2, 1)
 		},
 		skills: getSkills('python', '3dsmax', 'unreal'),
 		type: 'Tool Development',

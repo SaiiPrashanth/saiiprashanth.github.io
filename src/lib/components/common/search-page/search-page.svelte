@@ -16,11 +16,16 @@
 		if (mounted) {
 			let searchParams = new URLSearchParams(window.location.search);
 
-			searchParams.set('q', query);
+			if (query) {
+				searchParams.set('q', query);
+			} else {
+				searchParams.delete('q');
+			}
 
+			const urlParams = searchParams.toString();
 			const url = `${window.location.protocol}//${window.location.host}${
 				window.location.pathname
-			}?${searchParams.toString()}`;
+			}${urlParams ? '?' + urlParams : ''}`;
 
 			const state = window.history.state;
 

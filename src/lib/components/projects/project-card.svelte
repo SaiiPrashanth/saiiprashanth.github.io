@@ -25,25 +25,30 @@
 	import Separator from '../ui/separator/separator.svelte';
 	import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 	import Muted from '../ui/typography/muted.svelte';
+	import { trackCardClick, trackProjectLink } from '$lib/utils/analytics';
 
 	const { project }: { project: Project } = $props();
 
 	let from = $derived(getMonthAndYear(project.period.from));
 	let to = $derived(getMonthAndYear(project.period.to));
 	let exactDuration = $derived(computeExactDuration(project.period.from, project.period.to));
+	let imgLoaded = $state(false);
 </script>
 
 <FancyCard
 	color={project.color}
 	class="flex h-full flex-col"
 	href={href(`/projects/${project.slug}`)}
+	onclick={() => trackCardClick('Project', project.name, `/projects/${project.slug}`)}
 >
 	<CardHeader class="flex w-full flex-col gap-4">
 		<Avatar class="h-14 w-14 flex items-center justify-center">
-			<AvatarFallback>
-				<img src={Assets.Unknown.light} alt={project.name} class="object-contain" />
-			</AvatarFallback>
-			<AvatarImage src={$mode === 'dark' ? project.logo.dark : project.logo.light} class="object-contain p-2" />
+			<AvatarFallback class="bg-transparent" />
+			<AvatarImage 
+				src={$mode === 'dark' ? project.logo.dark : project.logo.light} 
+				class="object-contain p-2 transition-opacity duration-300 {imgLoaded ? 'opacity-100' : 'opacity-0'}" 
+				onload={() => (imgLoaded = true)}
+			/>
 		</Avatar>
 		<div class="flex w-full flex-row items-center gap-1 min-h-[40px]">
 			<CardTitle class="h-auto min-w-0 flex-1 leading-normal py-1">
@@ -57,7 +62,7 @@
 				</Tooltip>
 			</CardTitle>
 			{#if project.links.length > 2}
-				<ButtonLink link={project.links[0]} />
+				<ButtonLink link={project.links[0]} projectName={project.name} />
 				<DropdownMenu>
 					<DropdownMenuTrigger>
 						<Button size="icon" variant="outline"
@@ -66,7 +71,15 @@
 					</DropdownMenuTrigger>
 					<DropdownMenuContent>
 						{#each project.links.slice(1) as link (link.to)}
-							<a href={link.to} target={'_blank'}>
+							<a 
+								href={link.to} 
+								target={'_blank'} 
+								onclick={() => {
+									const linkType = link.to.includes('github.com') ? 'GitHub' : 
+									                 link.to.includes('itch.io') ? 'Itch.io' : 'Other';
+									trackProjectLink(project.name, linkType, link.to);
+								}}
+							>
 								<DropdownMenuItem>
 									{link.label}
 								</DropdownMenuItem>
@@ -76,7 +89,7 @@
 				</DropdownMenu>
 			{:else if project.links.length > 0}
 				{#each project.links as link (link.to)}
-					<ButtonLink {link} />
+					<ButtonLink {link} projectName={project.name} />
 				{/each}
 			{/if}
 		</div>

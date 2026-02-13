@@ -9,6 +9,7 @@
 	import FancyCard from '../ui/card/fancy-card.svelte';
 	import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 	import Muted from '../ui/typography/muted.svelte';
+	import { trackGalleryClick } from '$lib/utils/analytics';
 
 	const { item }: { item: GalleryItem } = $props();
 
@@ -44,6 +45,11 @@
 		return `${parts.join('/')}/${name}_thumb.webp`;
 	};
 
+	const getAvifUrl = (url: string) => {
+		// Replace .webp or .png extension with .avif
+		return url.replace(/\.(webp|png)$/i, '.avif');
+	};
+
 	const thumbUrl = getThumbUrl(item.image);
 </script>
 
@@ -52,9 +58,10 @@
 	class="flex h-full flex-col"
 	href={item.links && item.links.length > 0 ? item.links[0].to : href(`/gallery/${item.slug}`)}
 	newTab={item.links && item.links.length > 0 ? item.links[0].newTab : false}
+	onclick={() => trackGalleryClick(item.name, item.category, `/gallery/${item.slug}`)}
 >
 	<CardHeader class="flex w-full flex-col gap-4">
-		<div class="group relative aspect-video w-full overflow-hidden rounded-lg bg-muted">
+		<div class="group relative aspect-video w-full overflow-hidden rounded-lg">
 			<img
 				src={thumbUrl}
 				alt=""
@@ -63,15 +70,20 @@
 					: 'opacity-100'}"
 				aria-hidden="true"
 			/>
-			<img
-				src={item.image}
-				alt={item.name}
-				class="relative h-full w-full object-cover transition-all duration-300 group-hover:scale-105 {imgLoaded
-					? 'opacity-100'
-					: 'opacity-0'}"
-				onload={() => (imgLoaded = true)}
-				loading="lazy"
-			/>
+			<picture>
+				<source srcset={getAvifUrl(item.image)} type="image/avif" />
+				<source srcset={item.image} type="image/webp" />
+				<img
+					src={item.image}
+					alt={item.name}
+					class="relative h-full w-full object-cover transition-all duration-300 group-hover:scale-105 {imgLoaded
+						? 'opacity-100'
+						: 'opacity-0'}"
+					onload={() => (imgLoaded = true)}
+					onerror={() => (imgLoaded = true)}
+					loading="lazy"
+				/>
+			</picture>
 			<div
 				class="absolute inset-0 transition-all duration-300 opacity-0 group-hover:opacity-20"
 				style="background-color: {color};"

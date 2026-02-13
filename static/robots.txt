@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://saiiprashanth.github.io/GameDesign/sitemap.xml
+
+# Disallow admin/build artifacts
+Disallow: /_app/
+Disallow: /build/
+
+# Allow all content pages
+Allow: /skills/
+Allow: /projects/
+Allow: /experience/
+Allow: /education/
+Allow: /resume/
+Allow: /search/
+Allow: /gallery/
