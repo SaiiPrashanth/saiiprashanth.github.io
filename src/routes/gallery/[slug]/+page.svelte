@@ -10,6 +10,7 @@
 	import H1 from '$lib/components/ui/typography/h1.svelte';
 	import Muted from '$lib/components/ui/typography/muted.svelte';
 	import type { GalleryItem } from '$lib/data/types';
+	import { trackProjectLink } from '$lib/utils/analytics';
 
 	let { data }: { data: { item?: GalleryItem } } = $props();
 
@@ -36,7 +37,15 @@
 				{#if data.item.links && data.item.links.length > 0}
 					<div class="flex flex-row flex-wrap justify-center gap-2">
 						{#each data.item.links as link (link.to)}
-							<a href={link.to} target="_blank">
+							<a 
+								href={link.to} 
+								target="_blank"
+								onclick={() => {
+									const linkType = link.to.includes('github.com') ? 'GitHub' : 
+									                 link.to.includes('itch.io') ? 'Itch.io' : 'Other';
+									trackProjectLink(data.item?.name ?? '', linkType, link.to);
+								}}
+							>
 								<Badge variant="outline">{link.label}</Badge>
 							</a>
 						{/each}

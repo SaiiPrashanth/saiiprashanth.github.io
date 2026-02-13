@@ -19,6 +19,7 @@
 	import SkillsData from '$lib/data/skills';
 	import { href } from '$lib/utils';
 	import { mode } from 'mode-watcher';
+	import { trackSearch, trackCardClick } from '$lib/utils/analytics';
 
 	type Item = {
 		name: string;
@@ -136,7 +137,13 @@
 
 	let result = $derived(getResult(search));
 
-	const onSearch = (query: string) => (search = query);
+	const onSearch = (query: string) => {
+		search = query;
+		if (query.trim()) {
+			const totalResults = result.reduce((sum, group) => sum + group.items.length, 0);
+			trackSearch(query, totalResults);
+		}
+	};
 </script>
 
 <SearchPage title="Search" {onSearch}>
@@ -157,7 +164,11 @@
 					</div>
 					<div class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 						{#each group.items as item (item.link)}
-							<FancyCard color={item.color} href={href(item.link)}>
+							<FancyCard 
+								color={item.color} 
+								href={href(item.link)}
+								onclick={() => trackCardClick(group.name, item.name, item.link)}
+							>
 								<CardContent class="flex flex-row items-center gap-4">
 									{#if group.name === 'Gallery'}
 										<div class="h-10 w-16 flex-shrink-0 overflow-hidden rounded-md">
@@ -168,11 +179,9 @@
 											/>
 										</div>
 									{:else}
-										<Avatar>
-											<AvatarFallback>
-												<img src={Assets.Unknown.light} alt={item.name} />
-											</AvatarFallback>
-											<AvatarImage src={item.logo} />
+										<Avatar class="h-10 w-10 flex-shrink-0">
+											<AvatarFallback class="bg-background" />
+											<AvatarImage src={item.logo} class="object-contain p-1" />
 										</Avatar>
 									{/if}
 									<Tooltip openDelay={300}>

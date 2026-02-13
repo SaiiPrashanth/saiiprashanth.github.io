@@ -92,7 +92,7 @@
 	bind:this={el}
 	{href}
 	target={href && newTab ? '_blank' : undefined}
-	class={cn('card rounded-lg border bg-card text-card-foreground shadow-sm', className)}
+	class={cn('card rounded-lg border bg-card text-card-foreground shadow-sm touch-manipulation active:scale-[0.98] transition-transform', className)}
 	{...reset}
 	onmousemove={onHover}
 >
@@ -111,11 +111,17 @@
 				var(--card-color-30) 100%
 			),
 			no-repeat right 40% / 40% var(--bg-img);
+		transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 	}
 
 	.card:hover {
-		transform: perspective(1000px) rotateX(var(--rot-x)) rotateY(var(--rot-y)) scale(1.01);
+		transform: perspective(1000px) rotateX(var(--rot-x)) rotateY(var(--rot-y)) scale(1.02);
 		border-color: var(--border-color);
+		box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+	}
+
+	.card-color {
+		transition: background-color 0.2s ease;
 	}
 
 	.card-color:hover {

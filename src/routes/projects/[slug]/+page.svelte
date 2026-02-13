@@ -9,10 +9,13 @@
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import H1 from '$lib/components/ui/typography/h1.svelte';
 	import Muted from '$lib/components/ui/typography/muted.svelte';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import Icon from '$lib/components/ui/icon/icon.svelte';
 	import Assets from '$lib/data/assets';
 	import type { Project } from '$lib/data/types';
 	import { computeExactDuration, getMonthAndYear, href } from '$lib/utils';
 	import { mode } from 'mode-watcher';
+	import { trackProjectLink, trackSkillClick } from '$lib/utils/analytics';
 
 	let { data }: { data: { item?: Project } } = $props();
 
@@ -39,14 +42,9 @@
 				<Muted>{data.item.type}</Muted>
 				<Muted>{duration}</Muted>
 				<Separator />
-				<div class="flex flex-row flex-wrap justify-center gap-2">
-					{#each data.item.links as link (link.to)}
-						<a href={link.to} target="_blank"><Badge variant="outline">{link.label}</Badge></a>
-					{/each}
-				</div>
-				<div class="flex flex-row flex-wrap justify-center gap-2">
+				<div class="flex flex-row flex-wrap justify-center gap-3 pb-2">
 					{#each data.item.skills as skill (skill.slug)}
-						<a href={href(`/skills/${skill.slug}`)}>
+						<a href={href(`/skills/${skill.slug}`)} onclick={() => trackSkillClick(skill.name, `Project: ${data.item?.name}`)}>
 							<Badge variant="outline" class="flex flex-row items-center justify-center gap-2">
 								<img
 									class="h-[20px] w-[20px]"
@@ -55,6 +53,30 @@
 								/>
 								<Muted>{skill.name}</Muted>
 							</Badge>
+						</a>
+					{/each}
+				</div>
+				<div class="flex flex-row flex-wrap justify-center items-center gap-3 pb-2">
+					{#each data.item.links as link (link.to)}
+						<a 
+							href={link.to} 
+							target="_blank"
+							onclick={() => {
+								const linkType = link.to.includes('github.com') ? 'GitHub' : 
+								                 link.to.includes('itch.io') ? 'Itch.io' : 'Other';
+								trackProjectLink(data.item?.name ?? '', linkType, link.to);
+							}}
+						>
+							<Button variant="default" size="lg" class="gap-2 font-semibold shadow-lg hover:scale-105 transition-transform">
+								{#if link.to.includes('github.com')}
+									<Icon icon="i-carbon-logo-github" className="text-xl" />
+								{:else if link.to.includes('itch.io')}
+									<Icon icon="i-simple-icons-itchdotio" className="text-xl" />
+								{:else}
+									<Icon icon="i-carbon-link" className="text-xl" />
+								{/if}
+								{link.label}
+							</Button>
 						</a>
 					{/each}
 				</div>

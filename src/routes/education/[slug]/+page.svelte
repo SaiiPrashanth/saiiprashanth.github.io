@@ -13,6 +13,9 @@
 	import type { Education } from '$lib/data/types';
 	import { computeExactDuration, getMonthAndYear } from '$lib/utils';
 	import { mode } from 'mode-watcher';
+	import { trackCertificateClick } from '$lib/utils/analytics';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import Icon from '$lib/components/ui/icon/icon.svelte';
 
 	let { data }: { data: { item?: Education } } = $props();
 
@@ -39,6 +42,19 @@
 				<Muted>{data.item.organization} · {data.item.location}</Muted>
 				<Muted><Muted>{duration}</Muted></Muted>
 				<Separator />
+				{#if data.item.link}
+					<a 
+						href={data.item.link} 
+						target="_blank"
+						onclick={() => trackCertificateClick(data.item?.degree ?? '', data.item?.organization ?? '', data.item?.link ?? '')}
+					>
+						<Button variant="default" size="lg" class="gap-2 font-semibold shadow-lg hover:scale-105 transition-transform">
+							<Icon icon="i-carbon-certificate" className="text-xl" />
+							View Certificate
+						</Button>
+					</a>
+					<Separator />
+				{/if}
 				<div class="flex flex-row flex-wrap justify-center gap-2">
 					{#each data.item.subjects as subject (subject)}
 						<Badge variant="outline" class="flex flex-row items-center justify-center gap-2">

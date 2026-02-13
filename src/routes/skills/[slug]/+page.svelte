@@ -14,6 +14,7 @@
 	import type { Skill } from '$lib/data/types';
 	import { href } from '$lib/utils';
 	import { mode } from 'mode-watcher';
+	import { trackCardClick } from '$lib/utils/analytics';
 
 	let { data }: { data: { item?: Skill } } = $props();
 
@@ -21,14 +22,6 @@
 	let banner = $derived(
 		($mode == 'dark' ? data?.item?.logo.dark : data.item?.logo.light) ?? Assets.Unknown.light
 	);
-	
-	// Logos that need to be inverted in dark mode
-	const invertInDark = ['unreal', 'speedtree', 'zbrush'];
-	let shouldInvert = $derived($mode === 'dark' && data.item && invertInDark.includes(data.item.slug));
-	
-	$effect(() => {
-		console.log('Skills page - mode:', $mode, 'slug:', data.item?.slug, 'shouldInvert:', shouldInvert);
-	});
 
 	let related = $derived(
 		(() => {
@@ -67,7 +60,7 @@
 	{#if !data.item}
 		<EmptyResult />
 	{:else}
-		<FancyBanner img={banner} style={shouldInvert ? 'filter: invert(1);' : ''}>
+		<FancyBanner img={banner}>
 			<H1>{data.item.name}</H1>
 		</FancyBanner>
 		<Separator />
@@ -81,7 +74,7 @@
 			<div class="flex flex-row flex-wrap items-center gap-2 px-4 py-4">
 				<Muted>Related items</Muted>
 				{#each related as item}
-					<a href={href(item.link)}>
+					<a href={href(item.link)} onclick={() => trackCardClick(item.link.includes('project') ? 'Project' : 'Experience', item.name, item.link)}>
 						<Badge>{item.name}</Badge>
 					</a>
 				{/each}

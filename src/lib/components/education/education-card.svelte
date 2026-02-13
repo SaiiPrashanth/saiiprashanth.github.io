@@ -12,10 +12,13 @@
 	import Icon from '../ui/icon/icon.svelte';
 	import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 	import Muted from '../ui/typography/muted.svelte';
+	import { trackCardClick } from '$lib/utils/analytics';
 
 	const { it }: { it: Education } = $props();
 
 	const exactDuration = computeExactDuration(it.period.from, it.period.to);
+
+	let imgLoaded = $state(false);
 
 	let from = $derived(getMonthAndYear(it.period.from));
 	let to = $derived(getMonthAndYear(it.period.to));
@@ -25,13 +28,18 @@
 	let location = $derived(it.location ? `${it.organization}, ${it.location}` : it.organization);
 </script>
 
-<FancyCard color={it.color}>
+<FancyCard 
+	color={it.color}
+	onclick={() => trackCardClick('Education', it.degree, `/education/${it.slug}`)}
+>
 	<CardContent class="flex flex-col gap-8 sm:flex-row">
 		<Avatar class="h-16 w-16 rounded-full flex items-center justify-center">
-			<AvatarFallback>
-				<img src={$mode === 'dark' ? Assets.Unknown.dark : Assets.Unknown.light} alt={it.name} class="object-contain" />
-			</AvatarFallback>
-			<AvatarImage src={$mode === 'dark' ? it.logo.dark : it.logo.light} class="object-contain p-2" />
+			<AvatarFallback class="bg-background" />
+			<AvatarImage 
+				src={$mode === 'dark' ? it.logo.dark : it.logo.light} 
+				class="object-contain p-2 transition-opacity duration-300 {imgLoaded ? 'opacity-100' : 'opacity-0'}" 
+				onload={() => (imgLoaded = true)}
+			/>
 		</Avatar>
 		<div class="flex flex-col gap-4">
 			<CardTitle class="leading-normal py-1">{it.degree}</CardTitle>

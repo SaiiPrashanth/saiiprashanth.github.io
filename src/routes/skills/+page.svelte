@@ -9,6 +9,7 @@
 	import SkillsData, { groupByCategory } from '$lib/data/skills';
 	import { href } from '$lib/utils';
 	import { mode } from 'mode-watcher';
+	import { trackSkillClick } from '$lib/utils/analytics';
 
 	let query = $state('');
 
@@ -33,7 +34,7 @@
 					</div>
 					<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 						{#each group.items as item (item.slug)}
-							<a href={href(`/skills/${item.slug}`)} class="block">
+							<a href={href(`/skills/${item.slug}`)} class="block" aria-label="View {item.name} details" onclick={() => trackSkillClick(item.name, 'Skills Page')}>
 								<FancyCard
 									bgImg={$mode === 'light' ? item.logo.light : item.logo.dark}
 									color={item.color}
