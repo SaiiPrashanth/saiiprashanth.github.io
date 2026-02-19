@@ -44,22 +44,22 @@
 </script>
 
 <svelte:head>
-	<title>{$page.data.title || `${BaseData.fullName} - Game Developer Portfolio`}</title>
+	<title>{$page.data.title || `${BaseData.fullName} - Game Producer Portfolio`}</title>
 	<meta name="description" content={$page.data.description || defaultDescription} />
 	<meta name="author" content={BaseData.fullName} />
-	<meta name="keywords" content="Game Developer, Game Programmer, C++, C#, Unity Developer, Unreal Developer, Gameplay Programming, Game Development, 3D Math, Object Oriented Design, Portfolio" />
+	<meta name="keywords" content="Game Producer, Project Manager, Game Production, Game Development, Product Management, Agile, Scrum, Team Leadership, Pipeline Management, Game Design, Cross-functional Teams, Jira, Risk Management, Milestone Planning, Portfolio" />
 	
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={`${siteUrl}${$page.url.pathname}`} />
-	<meta property="og:title" content={$page.data.title || `${BaseData.fullName} - Game Developer Portfolio`} />
+	<meta property="og:title" content={$page.data.title || `${BaseData.fullName} - Game Producer Portfolio`} />
 	<meta property="og:description" content={$page.data.description || defaultDescription} />
 	<meta property="og:image" content={`${siteUrl}/Logo.png`} />
 	
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:url" content={`${siteUrl}${$page.url.pathname}`} />
-	<meta name="twitter:title" content={$page.data.title || `${BaseData.fullName} - Game Developer Portfolio`} />
+	<meta name="twitter:title" content={$page.data.title || `${BaseData.fullName} - Game Producer Portfolio`} />
 	<meta name="twitter:description" content={$page.data.description || defaultDescription} />
 	<meta name="twitter:image" content={`${siteUrl}/Logo.png`} />
 </svelte:head>
