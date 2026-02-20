@@ -169,7 +169,7 @@
 								href={href(item.link)}
 								onclick={() => trackCardClick(group.name, item.name, item.link)}
 							>
-								<CardContent class="flex flex-row items-center gap-4">
+								<CardContent class="flex h-[72px] flex-row items-center gap-4">
 									{#if group.name === 'Gallery'}
 										<div class="h-10 w-16 flex-shrink-0 overflow-hidden rounded-md">
 											<img 

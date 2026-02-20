@@ -21,7 +21,7 @@ const hero: {
 	]
 };
 
-const carousel: Array<Skill> = getSkills();
+const carousel: Array<Skill> = getSkills().filter((s) => s.category?.slug !== 'core');
 
 const HomeData = {
 	title,

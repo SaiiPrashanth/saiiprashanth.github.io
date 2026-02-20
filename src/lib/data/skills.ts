@@ -6,17 +6,18 @@ import svelteMd from './md/svelte.md?raw';
 const defineSkillCategory = <S extends string>(data: SkillCategory<S>): SkillCategory<S> => data;
 
 const categories = [
-	defineSkillCategory({ name: 'Programming Languages', slug: 'pro-lang' }),
+	defineSkillCategory({ name: 'Core Competencies', slug: 'core' }),
+	defineSkillCategory({ name: 'Dev Tools', slug: 'devtools' }),
 	defineSkillCategory({ name: 'Frameworks', slug: 'framework' }),
+	defineSkillCategory({ name: 'Programming Languages', slug: 'pro-lang' }),
+	defineSkillCategory({ name: 'Design', slug: 'design' }),
+	defineSkillCategory({ name: 'Markup & Style', slug: 'markup-style' }),
 	defineSkillCategory({ name: 'Libraries', slug: 'library' }),
 	defineSkillCategory({ name: 'Langauges', slug: 'lang' }),
 	defineSkillCategory({ name: 'Databases', slug: 'db' }),
 	defineSkillCategory({ name: 'ORMs', slug: 'orm' }),
 	defineSkillCategory({ name: 'DevOps', slug: 'devops' }),
 	defineSkillCategory({ name: 'Testing', slug: 'test' }),
-	defineSkillCategory({ name: 'Dev Tools', slug: 'devtools' }),
-	defineSkillCategory({ name: 'Markup & Style', slug: 'markup-style' }),
-	defineSkillCategory({ name: 'Design', slug: 'design' }),
 	defineSkillCategory({ name: 'Soft Skills', slug: 'soft' })
 ] as const;
 
@@ -72,12 +73,124 @@ export const groupByCategory = (
 		out.push({ category: { name: 'Others', slug: 'others' }, items: others });
 	}
 
+	// Sort groups by the order defined in the 'categories' array
+	out.sort((a, b) => {
+		const aIdx = categories.findIndex((c) => c.slug === a.category.slug);
+		const bIdx = categories.findIndex((c) => c.slug === b.category.slug);
+		if (aIdx === -1) return 1;
+		if (bIdx === -1) return -1;
+		return aIdx - bIdx;
+	});
+
+	// Sort devtools items in the desired display order
+	const devtoolsOrder = ['jira', 'office', 'git', 'visualstudio', 'vscode', 'rider', 'renderdoc', 'comfyui'];
+	out.forEach((group) => {
+		if (group.category.slug === 'devtools') {
+			group.items.sort((a, b) => {
+				const aIdx = devtoolsOrder.indexOf(a.slug);
+				const bIdx = devtoolsOrder.indexOf(b.slug);
+				if (aIdx === -1 && bIdx === -1) return 0;
+				if (aIdx === -1) return 1;
+				if (bIdx === -1) return -1;
+				return aIdx - bIdx;
+			});
+		}
+	});
+
 	return out;
 };
 
 const title = 'Skills';
 
 const items = [
+	defineSkill({
+		slug: 'agile-scrum',
+		color: 'blue',
+		description: '[Agile](#) is a set of values and principles first formalised in the [Agile Manifesto](#) in [2001](#) by a group of [17 software practitioners](#) in Snowbird, Utah — a document that reshaped how the entire software and games industry delivers products. [Scrum](#), its most widely adopted framework, was introduced by [Jeff Sutherland](#) and [Ken Schwaber](#) and is now used by [over 90% of Agile teams worldwide](#).\n\nThe [Scrum framework](#) structures work into short, time-boxed iterations called [sprints](#) (typically [1–2 weeks](#)), ensuring teams can respond quickly to change rather than following a rigid plan. Each sprint includes [sprint planning](#), [daily stand-ups](#) (15-minute syncs that replace hour-long status meetings), a [sprint review](#) with stakeholders, and a [sprint retrospective](#) — where the team reflects on what worked and what did not.\n\nKey ceremonies and artefacts include:\n- **[Product Backlog](#)** — the prioritised list of all work, owned by the [Product Owner](#)\n- **[Sprint Backlog](#)** — the tasks selected for the current sprint\n- **[Burndown Chart](#)** — a real-time view of remaining work vs. time\n- **[Velocity](#)** — the team\'s average output per sprint, used for forecasting\n\nIn practice, this means planning and running [bi-weekly sprints](#), facilitating [backlog grooming sessions](#), and adapting sprint goals based on stakeholder feedback, test results, or technical blockers — keeping [delivery velocity high](#) while maintaining product quality. Fun fact: [Spotify](#) popularised the ["Squad model"](#) — a Scrum variant where cross-functional squads own end-to-end features, heavily influencing how game studios structure teams today.',
+		logo: Assets.CoreAgileScrum,
+		name: 'Agile & Scrum',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'game-production',
+		color: 'cyan',
+		description: 'A project without a schedule is just a wish list. [Project scheduling](#) is the process of translating a project\'s scope into a structured, time-bound plan — identifying every task, its dependencies, the resources required, and the order in which work must happen to reach the finish line on time.\n\nThe gold standard for complex projects is the [Critical Path Method (CPM)](#), developed in the [1950s](#) by [DuPont](#) and [Remington Rand](#) for managing chemical plant construction. CPM identifies the longest chain of dependent tasks — the [critical path](#) — that determines the project\'s earliest possible completion date. Any delay on the critical path delays the entire project, while tasks with [float](#) (slack time) offer scheduling flexibility.\n\nModern scheduling combines tools and techniques:\n- **[Gantt Charts](#)** — visual bars mapping tasks to calendar time, popularised by [Henry Gantt](#) in the [1910s](#) and still used in virtually every project management tool\n- **[Work Breakdown Structure (WBS)](#)** — decomposing deliverables into manageable tasks and subtasks\n- **[Milestone Gates](#)** — fixed checkpoints (Alpha, Beta, Gold) where the project\'s health is formally reviewed\n- **[Buffer Management](#)** — building realistic contingency into estimates, because [studies show that software projects run over by an average of 25–50%](#)\n\nIn practice this means planning schedules across all phases — from [pre-production roadmaps](#) to [daily sprint boards](#) — breaking down high-level goals into time-boxed deliverables, and proactively adjusting when scope shifts without compromising key milestones. Tools like [Jira](#), [MS Project](#), and [Notion](#) are used daily to keep teams and stakeholders aligned on what is coming, what is at risk, and what is done.',
+		logo: Assets.CoreGameProduction,
+		name: 'Project Scheduling',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'risk-management',
+		color: 'red',
+		description: '[Risk management](#) is the practice of identifying, assessing, and mitigating threats to a project before they become crises. The discipline dates back to [maritime insurance in 17th-century Europe](#), but its modern project management form was codified by the [Project Management Institute (PMI)](#) in the [PMBOK Guide](#) — now in its [7th edition](#) and used by [professionals in over 190 countries](#).\n\nEvery risk has two dimensions: [likelihood](#) (how probable?) and [impact](#) (how damaging?). Mapping risks on a [probability-impact matrix](#) allows teams to focus mitigation effort where it matters most — high-impact, high-likelihood risks get immediate action plans; low-probability, low-impact risks get watched but not over-engineered.\n\nThe core artefact is the [Risk Register](#) — a living document that tracks:\n- **Risk description** and category (technical, scope, schedule, resource, external)\n- **Probability and impact scores** (often rated 1–5)\n- **Owner** — the person responsible for monitoring and mitigating\n- **Mitigation strategy** — [avoid](#), [transfer](#) (insurance/contracts), [mitigate](#) (reduce likelihood), or [accept](#)\n- **Contingency plan** — what to do if the risk materialises anyway\n\nIn practice, this means proactively identifying [technical, scope, and schedule risks](#) early in the development cycle, assigning ownership to each risk, and tracking mitigation actions in weekly reviews. Critical risks are escalated to stakeholders with [actionable options](#) rather than just problems — because a producer\'s job is to bring solutions, not just bad news. Fun fact: [NASA\'s Continuous Risk Management (CRM)](#) framework, developed after the [Challenger disaster](#), is one of the most rigorous risk management systems ever created and has influenced how the games industry thinks about milestone gating.',
+		logo: Assets.CoreRiskManagement,
+		name: 'Risk Management',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'budget-resource',
+		color: 'yellow',
+		description: '[Resource allocation](#) is the process of identifying, assigning, and managing the assets needed to complete a project successfully — covering [people](#), [budget](#), [tools](#), and [time](#). Poor resource allocation is one of the leading causes of project failure: a [2023 PMI report](#) found that [32% of project failures](#) are attributed to inadequate resource management.\n\nIn game production, resources span a unique mix: [artists](#), [programmers](#), [designers](#), [QA testers](#), [outsource partners](#), [licensed middleware](#), [hardware](#), and [cloud services](#). The challenge is that resource demand fluctuates dramatically across the production cycle — [pre-production](#) is lean, [production](#) peaks, and [crunch](#) (if unmanaged) signals earlier misallocation.\n\nKey practices include:\n- **[Capacity planning](#)** — mapping team bandwidth against sprint workload to surface overallocation before it becomes burnout\n- **[Rolling reforecast](#)** — continuously updating budget vs. actuals rather than relying on a stale upfront estimate\n- **[Outsource management](#)** — scoping, briefing, and reviewing work from external vendors and contractors to maintain quality without growing headcount permanently\n- **[RACI mapping](#)** — clarifying who is [Responsible](#), [Accountable](#), [Consulted](#), and [Informed](#) so no task lacks an owner\n- **[Contingency budgets](#)** — the industry standard is reserving [10–15%](#) of total budget for unknowns\n\nIn practice, this means tracking [actuals vs. estimates](#) on a rolling basis, coordinating with HR and finance to secure headcount ahead of crunch periods, and negotiating with vendors to stay within budget without sacrificing quality — because the goal is always [sustainable production](#), not just on-time delivery.',
+		logo: Assets.CoreBudgetResource,
+		name: 'Resource Allocation',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'stakeholder-comm',
+		color: 'teal',
+		description: 'A [stakeholder](#) is anyone with an interest in a project\'s outcome — from the [publisher](#) funding it, to the [lead programmer](#) concerned about tech debt, to the [player community](#) waiting for the game. [Stakeholder facilitation](#) is the art of identifying all these parties, understanding what they need to know and when, and keeping them aligned without drowning the team in meetings.\n\nResearch by [MIT Sloan Management Review](#) found that [poor stakeholder communication](#) is cited in [57% of project failures](#). The antidote is a [Communication Plan](#) — a deliberately designed cadence that answers: who gets what information, at what frequency, in what format, and through which channel.\n\nEffective facilitation involves:\n- **[Stakeholder mapping](#)** — plotting each stakeholder by [influence](#) (can they change the project?) and [interest](#) (do they care about details?) using a [power-interest grid](#)\n- **[Status reports](#)** — concise, visual updates (often traffic-light [RAG status](#): Red/Amber/Green) that tell stakeholders what they need to know without requiring them to attend every meeting\n- **[Alignment meetings](#)** — structured sessions with a clear agenda, decision log, and action items, ensuring time spent in the room translates to decisions out of it\n- **[Escalation paths](#)** — pre-agreed protocols for when blockers need to move up the chain quickly\n- **[Publisher-facing reporting](#)** — translating internal sprint data into milestone evidence that builds confidence and demonstrates control\n\nIn practice this means translating complex technical and creative updates into concise executive summaries, facilitating alignment between internal departments and external partners, and maintaining transparent communication cadences that build trust and [reduce surprise escalations](#) — because the best escalation is the one that never needed to happen.',
+		logo: Assets.CoreStakeholderComm,
+		name: 'Stakeholder Facilitation',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'milestone-planning',
+		color: 'purple',
+		description: '[Market analysis](#) in game production is the process of evaluating a game\'s competitive landscape, target audience, pricing positioning, and platform opportunity — turning raw data and player research into actionable development and marketing decisions. It bridges the gap between [creative vision](#) and [commercial reality](#).\n\nThe global games market generated [over $180 billion in revenue in 2023](#), spanning [mobile](#), [PC](#), [console](#), and [emerging platforms](#). Understanding where a game fits in that landscape — and what players in that segment expect — is as important as the game\'s design itself. A title that is well-made but poorly positioned will be invisible at launch.\n\nKey analysis methods include:\n- **[Competitive benchmarking](#)** — surveying similar titles on [Steam](#), [Metacritic](#), [Itch.io](#), and app stores to understand [pricing](#), [feature sets](#), [review sentiment](#), and market gaps\n- **[Player persona research](#)** — building profiles of the target audience through [surveys](#), [playtest feedback](#), and [Steam Review mining](#) to validate design decisions\n- **[SWOT analysis](#)** — mapping [Strengths](#), [Weaknesses](#), [Opportunities](#), and [Threats](#) relative to the competitive field\n- **[Platform opportunity assessment](#)** — evaluating [platform demographics](#), [first-party promotional opportunities](#), and [revenue share structures](#) across [Steam](#), [Epic Games Store](#), [Xbox Game Pass](#), and [PlayStation Store](#)\n- **[Trend monitoring](#)** — tracking [SteamDB](#), [VGInsights](#), and [Newzoo reports](#) to stay ahead of genre saturation and emerging player preferences\n\nIn practice, this means translating market data into clear, measurable requirements and planning inputs — ensuring every feature prioritised maps back to a defined player need or commercial objective.',
+		logo: Assets.CoreMilestonePlanning,
+		name: 'Market Analysis',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'problem-solving',
+		color: 'purple',
+		description: 'In production, decisions rarely come with perfect information, unlimited time, or obvious right answers. [Critical decision making](#) is the skill of cutting through ambiguity, evaluating trade-offs clearly, and committing to a course of action that the whole team can execute — even under pressure.\n\nThe foundational tool is [Root Cause Analysis (RCA)](#): rather than treating symptoms, RCA digs to the underlying cause of a problem. The [5 Whys technique](#) — asking "why?" five times in succession — was developed by [Sakichi Toyoda](#) and is now used across industries from [Toyota\'s production line](#) to [NASA mission debriefs](#). Pairing RCA with an [Ishikawa (fishbone) diagram](#) maps all contributing factors visually, making patterns clear and solutions more targeted.\n\nFor decisions involving competing options, structured frameworks help remove bias:\n- **[Decision Matrix](#)** — score each option against weighted criteria (cost, time, risk, quality) and let the numbers surface the best fit\n- **[Pre-mortem analysis](#)** — imagining a decision has already failed, then working backwards to identify what went wrong, before committing\n- **[OODA Loop](#)** (Observe, Orient, Decide, Act) — a military decision model now widely adopted in fast-moving project environments for rapid, iterative problem resolution\n- **[Trade-off mapping](#)** — explicitly documenting [scope vs. schedule vs. quality](#) trade-offs so decisions are informed, transparent, and agreed by the right stakeholders\n\nIn practice, this means keeping teams focused on [solutions rather than problems](#) — from live build-breaking bugs requiring instant triage, to scope conflicts demanding a clear producer call, to resourcing decisions that affect morale and delivery simultaneously. Fun fact: [Amazon\'s two-pizza rule](#) (if a decision requires more people than can be fed by two pizzas, the group is too large) reflects research showing that smaller decision-making groups act faster and with less [groupthink](#).',
+		logo: Assets.CoreProblemSolving,
+		name: 'Critical Decision Making',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'presentation',
+		color: 'orange',
+		description: 'The ability to present clearly and persuasively is one of the highest-leverage professional skills that exists — it determines whether a great idea gets funding, whether a team embraces a direction, and whether a publisher signs the deal. [Presentation](#) is not just slide design; it is [structured thinking made visible](#).\n\nThe gold standard framework for narrative structure is [Barbara Minto\'s Pyramid Principle](#), developed at [McKinsey](#) in the [1960s](#) and still taught in the world\'s top business schools. The core insight: lead with the [conclusion](#), then support it with grouped, logical arguments — because audiences make decisions top-down, not bottom-up. In game production, this means opening a milestone review with ["We are on track for Beta — here\'s the evidence"](#), not burying the headline on slide 14.\n\nKey presentation contexts in production:\n- **[Pitch decks](#)** — [10–15 slide](#) documents that sell a concept, vision, or funding ask to publishers or investors\n- **[Milestone reviews](#)** — structured presentations to stakeholders using [RAG status](#), [burndown data](#), and live [build demos](#) to demonstrate progress objectively\n- **[Post-mortems](#)** — candid, blameless retrospectives examining what went well, what did not, and what changes for the next project — standard practice at studios like [Bungie](#), [Naughty Dog](#), and [Valve](#) (many of which are [publicly published on GDC Vault](#))\n- **[Team stand-ups and all-hands](#)** — concise, high-energy communication that aligns and motivates without wasting development time\n\nIn practice, this means crafting and delivering compelling presentations to audiences ranging from small team stand-ups to [executive leadership](#) and [external publishers](#). Data and visuals are always paired with clear narrative — because data without story is just noise, and story without data is just hope. Fun fact: [Steve Jobs](#) famously rehearsed his keynotes for [weeks](#), and the consensus from communication researchers is that great presentations are ["not about slides, they\'re about the thinking behind the slides"](#).',
+		logo: Assets.CorePresentation,
+		name: 'Presentation',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'team-leadership',
+		color: 'orange',
+		description: 'Game development teams are among the most [cross-functional](#) in any industry — a single project brings together [artists](#), [programmers](#), [designers](#), [QA testers](#), [audio engineers](#), [producers](#), and often [external partners](#), each with different workflows, vocabularies, and definitions of "done". [Team leadership](#) in this environment is not about authority — it is about [clarity](#), [trust](#), and [removing the things that slow people down](#).\n\n[Google\'s Project Aristotle](#) (a multi-year study of [180 teams](#)) found that [psychological safety](#) — the belief that team members can speak up without fear of humiliation or punishment — is the [single most important factor](#) in team effectiveness, more than individual talent or team composition. Building this environment is the primary job of a producer-leader.\n\nKey leadership practices include:\n- **[Goal clarity](#)** — every team member should be able to articulate what they are building, why it matters, and what "done" looks like in the current sprint\n- **[1-on-1 check-ins](#)** — regular (weekly or bi-weekly) individual conversations focused on blockers, career growth, and wellbeing — not status updates\n- **[Blocker removal](#)** — the producer\'s highest-priority daily task: clearing anything that stops the team from making progress (ambiguous requirements, missing assets, unclear dependencies, tooling failures)\n- **[Conflict resolution](#)** — addressing interpersonal or creative tension early, before it affects delivery or team morale, using [interest-based negotiation](#) rather than positional arguing\n- **[Onboarding structure](#)** — new team members who ramp up quickly multiply team capacity; clear onboarding documentation, buddy systems, and a [30-60-90 day plan](#) make this happen\n\nFun fact: [Valve\'s "Flatland"](#) structure (no managers, self-organising teams) and [Bungie\'s discipline-lead model](#) represent opposite ends of the leadership philosophy spectrum — and both have shipped iconic games. The lesson: great team leadership adapts to the team, the project, and the moment.',
+		logo: Assets.CoreTeamLeadership,
+		name: 'Team Leadership',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'production-pipeline',
+		color: 'green',
+		description: 'If it is not written down, it did not happen. [Project documentation](#) is the connective tissue of a production — the collection of structured artefacts that capture decisions, define responsibilities, communicate status, and preserve institutional knowledge across a project\'s full lifecycle.\n\nThe importance of good documentation is backed by data: the [Project Management Institute](#) estimates that [poor communication](#) (of which missing or unclear documentation is a primary driver) accounts for [one-third of all project failures](#). In game development specifically, documentation becomes critical as team size grows — verbal agreements in a 5-person jam become liabilities in a 50-person studio.\n\nCore documentation artefacts include:\n- **[Project Charter](#)** — the founding document defining scope, objectives, stakeholders, and success criteria; signed off before a single task begins\n- **[RACI Matrix](#)** — maps every deliverable to a [Responsible](#), [Accountable](#), [Consulted](#), and [Informed](#) party, eliminating the "I thought you were handling that" failure mode\n- **[Game Design Document (GDD)](#)** — evolves from vision to technical specification across pre-production and production; version control is essential\n- **[RAG Status Reports](#)** — regular, templated communication showing [Red/Amber/Green](#) health across schedule, scope, quality, and risk\n- **[Change Log](#)** — every scope change, decision reversal, or requirement update is recorded with a rationale, owner, and date — making the audit trail clear when post-mortems are conducted\n- **[Post-mortem Reports](#)** — candid retrospective documents following a milestone or project completion; studios like [Bungie](#), [Insomniac](#), and [Riot Games](#) publish theirs publicly on [GDC Vault](#) as a contribution to the industry\n\nGood documentation reduces [onboarding time](#), prevents [knowledge loss](#) when team members leave, and ensures [distributed teams](#) across timezones stay aligned on the same source of truth. The best documentation is [concise, searchable, and maintained](#) — not a 200-page document no-one reads.',
+		logo: Assets.CoreProductionPipeline,
+		name: 'Project Documentation',
+		category: 'core'
+	}),
+	defineSkill({
+		slug: 'qa-testing',
+		color: 'green',
+		description: '[Quality Assurance (QA)](#) is the systematic process of verifying that a product meets defined standards before it reaches players. In games, QA is not just bug hunting — it is a [quality management philosophy](#) that, when embedded correctly, shapes development decisions from [pre-production](#) through to [post-launch patch cycles](#).\n\nThe discipline traces its roots to [W. Edwards Deming](#) and [Joseph Juran](#), whose [Total Quality Management (TQM)](#) principles transformed [Japanese manufacturing](#) in the [1950s](#) — the same thinking now underpins [ISO 25010](#) (the international standard for software product quality) and the [ISTQB certification](#) held by professional testers worldwide.\n\nCore QA practices in game production:\n- **[Test Planning](#)** — defining what will be tested, how, by whom, and to what standard, before testing begins; aligned to the project\'s [Definition of Done](#)\n- **[Test Types](#)** — [functional testing](#) (does it work?), [regression testing](#) (does it still work after a change?), [performance testing](#) (frame rate, load time, memory), [platform certification testing](#) (TRC/TCR compliance for [PlayStation](#), [Xbox](#), [Nintendo](#)), and [localisation testing](#)\n- **[Defect Triage](#)** — reviewing reported bugs, assigning [severity](#) (Critical/Major/Minor/Trivial) and [priority](#), routing to the right discipline, and tracking to resolution in a system like [Jira](#) or [Hansoft](#)\n- **[Release Gates](#)** — pre-agreed quality criteria (e.g., [zero Critical bugs](#), [frame rate ≥ 30FPS on target hardware](#)) that a build must pass before advancing to the next milestone\n- **[Exploratory Testing](#)** — unscripted sessions where experienced testers probe the game with creativity and player intuition, often catching edge cases that scripted test plans miss\n\nIn practice, this means owning QA planning end-to-end — building test strategies, managing defect triage workflows, and gating releases against clear criteria. Fun fact: [Red Dead Redemption 2](#) reportedly required [over 1,600 testers](#) during its final test phase, and even then [thousands of bugs](#) were fixed in the month before launch — a reminder that QA is a process, not a guarantee.',
+		logo: Assets.CoreTesting,
+		name: 'Quality Assurance',
+		category: 'core'
+	}),
 	defineSkill({
 		slug: 'cpp',
 		color: 'blue',
@@ -220,6 +333,14 @@ const items = [
 		description: '[Cascading Style Sheets (CSS)](#) is a style sheet language used for describing the presentation of a document written in [HTML](#) or [XML](#). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. First proposed by [Håkon Wium Lie](#) (a Norwegian web pioneer) in [1994](#) while working at [CERN](#) with [Tim Berners-Lee](#), CSS was born from necessity - early websites mixed structure and styling in HTML, creating maintenance nightmares! [CSS1](#) was released in [1996](#), [CSS2](#) in [1998](#), and [CSS3](#) development began in [1999](#) but is still ongoing (CSS is now modular with independent specifications). Here\'s the fascinating part: The ["Cascading"](#) in CSS refers to the algorithm that determines which style rules apply when multiple rules target the same element - specificity wars are real!\n\n[CSS](#) enables the separation of content and presentation, including layout, colors, and fonts. [CSS3](#) introduced game-changing features: [animations and transitions](#) (no more JavaScript for simple animations!), [flexbox](#) (finally, vertical centering is easy!), [grid layout](#) (2D layouts without hacks!), [custom properties/variables](#) (--my-color: #ff0000), [media queries](#) for responsive design, and so much more.\n\nHere\'s modern CSS in action:\n\n```css\n/* Flexbox - vertical centering made easy! */\n.container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n/* CSS Grid - powerful 2D layouts */\n.grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 20px;\n}\n\n/* Custom properties and animations */\n:root {\n    --primary-color: #3b82f6;\n}\n\n.button {\n    background: var(--primary-color);\n    transition: transform 0.3s;\n}\n\n.button:hover {\n    transform: scale(1.1);\n}\n```\n\nFun fact: The ["float"](#) property was originally designed for wrapping text around images, but for years it was (ab)used for layouts until [flexbox](#) and [grid](#) saved us all! CSS has become incredibly powerful - you can create entire games, art, and animations purely with CSS. The website [csszengarden.com](#) demonstrates how the same HTML can look completely different with just CSS changes!',
 		logo: Assets.CSS,
 		name: 'CSS',
+		category: 'markup-style'
+	}),
+	defineSkill({
+		slug: 'latex',
+		color: 'teal',
+		description: '[LaTeX](#) ([/ˈlɑːtɛk/ LAH-tek](#) or [/ˈleɪtɛk/ LAY-tek](#)) is a high-quality document preparation system built on top of [TeX](#), the typesetting engine created by [Donald Knuth](#) at [Stanford](#) in [1978](#). LaTeX was developed by [Leslie Lamport](#) in the early [1980s](#) to make TeX easier to use by providing higher-level macros for common document structures. Unlike word processors such as Word where what you see is what you get, LaTeX separates content from formatting — you write plain text with markup commands, and LaTeX handles the typesetting automatically, producing output of exceptional typographic quality.\n\nLaTeX is the standard tool in academia and research for producing papers, theses, books, and presentations. It handles even the most complex content effortlessly: multi-line mathematical equations with perfect spacing, chemical formulas, musical notation, citations and bibliographies via [BibTeX](#) or [BibLaTeX](#), cross-references, tables of contents, and multi-language documents. Its equation rendering is unmatched — compare a Word equation to a LaTeX one and the difference is immediately obvious.\n\nFun fact: LaTeX is used by virtually all major academic journals and publishers, and millions of scientific papers are submitted in LaTeX format every year. It is free and open-source, with the [LaTeX Project](#) maintaining the system. Popular distributions include [TeX Live](#) and [MiKTeX](#), and writers often work in editors like [Overleaf](#) (cloud-based), [TeXstudio](#), or [VS Code](#) with the LaTeX Workshop extension.',
+		logo: Assets.LaTeX,
+		name: 'LaTeX',
 		category: 'markup-style'
 	}),
 	defineSkill({
