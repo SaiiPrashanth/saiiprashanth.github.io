@@ -7,7 +7,7 @@ const items: Array<Project> = [
 		slug: 'eternights',
 		color: '#cd5c5c',
 		description:
-			'An open world Souls like action RPG developed in Unreal Engine 5 and C++, featuring challenging combat and interconnected exploration. This project showcases advanced combat mechanics, enemy AI systems, and a richly detailed world inspired by classic Souls games. Features include stamina based combat, dodge rolling mechanics, boss battles, and an interconnected world design with shortcuts and secrets.',
+			'[Eternights](#) is an [open-world](#) [Souls-like](#) [Action RPG](#) built in [Unreal Engine 5](#) and [C++](#). Players explore a handcrafted world where combat demands careful stamina management, precise dodge timing, and reading enemy patterns before committing to an attack.\n\nThe game draws heavy inspiration from the [FromSoftware](#) design philosophy — every encounter is a puzzle solved through patience and execution rather than raw power. The interconnected world rewards thorough exploration with shortcuts, hidden paths, and escalating challenges that push combat skills to their limit.',
 		shortDescription:
 			'Open World Souls like Action RPG.',
 		links: [
@@ -27,7 +27,7 @@ const items: Array<Project> = [
 		slug: 'space-odyssey',
 		color: '#4a90e2',
 		description:
-			'A 3D arcade rail shooter built in Unity, featuring dynamic starship piloting and combat mechanics. Players navigate through stunning space environments, engaging in intense dogfights with enemy spacecraft while following a guided rail path. Features include responsive flight controls, varied enemy types, power up systems, and epic boss battles set against breathtaking cosmic backdrops.',
+			'[Space Odyssey](#) is a [3D arcade rail-shooter](#) built in [Unity](#), casting the player as the pilot of a starship cutting through deep space. The ship is locked to a forward-moving corridor but responds fluidly to input — banking and rolling with lateral movement to give a strong illusion of speed and freedom.\n\nThe game features a diverse roster of enemy ship types, particle-based laser combat, and a score system that rewards aggressive play. It captures the arcade feel of classic rail-shooters like [Star Fox](#) — fast, action-packed, and built around moment-to-moment reflex over long-term strategy.',
 		shortDescription:
 			'3D arcade rail shooter with dynamic space combat and piloting.',
 		links: [
@@ -47,7 +47,7 @@ const items: Array<Project> = [
 		slug: 'cubeology',
 		color: '#daa520',
 		description:
-			'A creative open world sandbox game built in Unreal Engine 5, featuring voxel based building mechanics and vast level construction tools. Players can unleash their creativity in a voxel environment powered by modern graphics, building elaborate structures in a procedurally generated world.',
+			'[Cubeology](#) is an [open-world sandbox](#) built in [Unreal Engine 5](#), giving players a voxel-style creative space to construct, explore, and experiment in. The game lets players place and interact with blocks freely across a wide environment, with [UE5](#)\'s modern renderer bringing high-fidelity lighting and visuals to the blocky aesthetic.\n\nThe project started as a 3D platformer prototype called Cubeathon before evolving into its current open sandbox format. Built entirely using [Unreal Blueprints](#), it demonstrates how a fully playable experience can be designed and shipped through visual scripting without writing a single line of native code.',
 		shortDescription:
 			'A creative open world sandbox game built in Unreal Engine 5.',
 		links: [
@@ -67,7 +67,7 @@ const items: Array<Project> = [
 		slug: 'bumble-bee',
 		color: '#ffeb3b',
 		description:
-			'A Minecraft style open world game built in Unity where you control a bee gathering honey across a voxel landscape while defending against attacking wasps. Features include voxel based environment, smooth flight controls, resource gathering mechanics, and AI controlled enemy wasps.',
+			'[Bumble Bee](#) is a [Minecraft-style open-world](#) game built in [Unity 3D](#), where the player takes control of a bee navigating a voxel-style garden. The goal is simple — collect honey from flowers scattered across the map — but territorial wasps patrol the skies and will chase the player down on sight.\n\nFlowers are spawned procedurally across valid terrain at the start of each session, keeping the layout fresh. Enemy wasps switch between roaming and chasing behaviors, creating constant pressure without making the world feel overcrowded. The low-poly voxel art style gives the game a charming, Minecraft-adjacent visual identity.',
 		shortDescription:
 			'Minecraft style open world game where you control a bee gathering honey.',
 		links: [
@@ -87,7 +87,7 @@ const items: Array<Project> = [
 		slug: 'neko-gambit',
 		color: '#d4af37',
 		description:
-			'A stylized 3D Chess game built in Unity, set in a mystical desert kingdom ruled by Cat Pharaohs. Features a rotating 3D board, divine chess pieces including Anubis cats and Bastet bishops, dynamic sandstorm weather events that affect gameplay, and ancient magic artifacts that can change the tide of battle. The game combines classical chess strategy with Egyptian mythology themes and beautiful stylized art.',
+			'[Neko Gambit](#) is a fully functional [3D Chess](#) game built in [Unity](#), reimagined as a mystical Egyptian desert kingdom ruled by Cat Pharaohs. Every standard chess piece is replaced with a stylized feline unit, and the board is surrounded by sand dunes and ancient ruins that bring the setting to life.\n\nThe game implements the complete chess ruleset — standard piece movements, Castling, En Passant, Pawn Promotion, and King Capture win detection — alongside a [Minimax](#) AI opponent for single-player matches. Players interact through a click-to-move interface with dynamic tile highlighting to show valid moves.',
 		shortDescription:
 			'Stylized 3D chess game in a mystical desert kingdom with Cat Pharaohs.',
 		links: [
@@ -108,7 +108,7 @@ const items: Array<Project> = [
 		slug: 'boating-through',
 		color: '#4ecdc4',
 		description:
-			'A fast paced infinite arcade runner in Unity featuring vibrant cel shaded graphics. Players guide their boat through an infinite procedurally generated river, changing direction with each tap to avoid obstacles. Features low poly relaxing aesthetics, high score tracking, and addictive rhythm based gameplay with timing and precision mechanics.',
+			'[Boating Through](#) is a [one-tap infinite runner](#) built in [Unity](#), where players guide a boat along a procedurally generated zigzagging path. A single tap switches the boat\'s direction between forward and left — one mistimed press and the boat slips off the edge and sinks.\n\nThe course tiles are generated dynamically as the player advances, so no two runs feel the same. A slow-motion effect plays on death before auto-restarting, giving a brief moment of dramatic weight to every mistake. Cel-shaded geometry paired with a stylized water shader gives the game a distinctive, polished visual identity.',
 		shortDescription:
 			'A fast paced infinite arcade runner in Unity featuring vibrant cel shaded graphics.',
 		links: [
@@ -129,7 +129,7 @@ const items: Array<Project> = [
 		slug: 'hungry-kirby',
 		color: '#ffb7b2',
 		description:
-			'A physics based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby. Players must cut chains and manipulate physics objects to feed stars to Kirby. Features include classic Kirby copy abilities, 5 worlds themed after sweets and treats, beautiful pixel art inspired by GBA classics, controller support, and interactive animations. Cut ropes utilizing gravity and momentum to solve increasingly complex puzzles.',
+			'[Hungry Kirby](#) is a [physics-based puzzle game](#) built in [Unity 2D](#), inspired by the rope-cutting mechanic of [Cut the Rope](#). The goal is to guide a candy-like Star through each level by cutting the right ropes at the right moment — getting it to swing, fall, or bounce its way into Kirby\'s waiting mouth.\n\nKirby himself reacts to how the player treats him: leave him waiting and he grows doubtful, click him a few times and he turns playful, push it too far and he gets genuinely angry. Cutting mechanics are backed by a physics-driven rope and joint system, with each level\'s rope layout hand-designed to introduce new puzzle configurations.',
 		shortDescription:
 			'Physics based puzzle game where players solve challenges to feed Kirby.',
 		links: [
@@ -150,7 +150,7 @@ const items: Array<Project> = [
 		slug: 'astron',
 		color: '#00ffff',
 		description:
-			'A classic arcade style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics based movement and retro vector graphics. Features clean high contrast geometric art style, realistic inertia based movement and collision systems, endless waves of increasingly complex geometric shapes, dynamic neon lighting and particle explosions, lives system, and score tracking. Control a triangular spaceship while managing momentum in this endless space survival game.',
+			'[Astron](#) is a [retro arcade space shooter](#) built from scratch using [vanilla JavaScript](#) and the [HTML5 Canvas API](#) — no game engine, no external libraries. Players pilot a triangular spaceship through an endless void, using momentum-based thrust to navigate and firing lasers to survive.\n\nThe ship\'s physics are deliberately inertia-driven: thrust builds up velocity and friction slowly bleeds it off, making control feel weighty and skill-dependent. Flying off one edge of the screen wraps the ship to the opposite side, keeping the action contained without artificial walls. Building the entire game — rendering, input, physics, and game loop — in a single JavaScript file was a deliberate exercise in understanding game development from first principles.',
 		shortDescription:
 			'Arcade style space shooter with retro vector graphics and physics.',
 		links: [
@@ -171,7 +171,7 @@ const items: Array<Project> = [
 		slug: 'automated-lod-tool',
 		color: '#4a90e2',
 		description:
-			'An automation script for Autodesk 3ds Max that instantly generates standardized Levels of Detail (LODs) for game assets using the ProOptimizer modifier. Features automated mesh decimation with configurable reduction percentages, material and UV preservation across LOD levels, batch processing for multiple assets, proper naming conventions for game engines, and seamless integration into existing pipelines. Significantly reduces manual work for technical artists.',
+			'The [Automated LOD Tool](#) is a [Python](#) script for [Autodesk 3ds Max](#) that generates three standardized [Level of Detail (LOD)](#) variants from any selected mesh with a single script run. It targets LOD1 at 50%, LOD2 at 25%, and LOD3 at 10% of the original vertex count — matching the standard reduction tiers expected by engines like Unreal and Unity.\n\nThe tool works non-destructively by cloning the source object before applying any reductions, leaving the original mesh untouched. Each generated variant is automatically named using the `ObjectName_LOD1/2/3` convention, making it immediately compatible with most engine import pipelines without any renaming step.',
 		shortDescription:
 			'Automation script for generating LODs in 3ds Max with ProOptimizer.',
 		links: [
@@ -191,7 +191,7 @@ const items: Array<Project> = [
 		slug: '3ds-ue5-asset-integration-tool',
 		color: '#20b2aa',
 		description:
-			'A Python automation tool for Autodesk 3ds Max that streamlines the export of 3D assets and textures directly into Unreal Engine 5 projects. Automates FBX export with proper settings, handles material and texture conversion, maintains proper naming conventions, preserves asset hierarchy, and integrates directly with UE5 content browser. Designed to reduce manual steps and errors in the asset pipeline, enabling quick iteration between Max and Unreal.',
+			'The [3DS-UE5 Asset Integration Tool](#) is a [Python](#) script for [Autodesk 3ds Max](#) that automates the process of exporting 3D assets directly into an [Unreal Engine 5](#) project. It handles folder creation, FBX export configuration, and texture copying in one pass — eliminating the repetitive manual steps that slow down high-volume asset handoffs.\n\nWhen run, the tool prompts for a target directory, then processes each selected object: creating a dedicated subfolder, exporting an FBX with Unreal-compatible settings (Z-up axis, centimeter units, smoothing groups), and automatically copying all linked textures into the same location. It also remembers the last-used export path between sessions for faster iteration.',
 		shortDescription:
 			'Python tool for streamlined 3ds Max to UE5 asset export and integration.',
 		links: [

@@ -9,7 +9,7 @@
 </script>
 
 <div
-	style={`--bg-img:url(${img})`}
+	style={`--bg-img:url("${img}")`}
 	class={`row gradient-cover min-h-[200px] w-full px-4 py-8 text-center sm:min-h-[250px] md:min-h-[300px] md:px-10 lg:min-h-[350px] ${className}`}
 >
 	<div class="p-x-2 flex size-full flex-1 flex-col items-center justify-center">
