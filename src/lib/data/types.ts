@@ -89,6 +89,7 @@ export interface Education<S extends string = string> extends Item<S> {
 
 export interface GalleryItem<S extends string = string> extends Omit<Item<S>, 'logo'> {
 	image: string;
+	video?: string;
 	tags: Array<string>;
 	links?: Array<Link>;
 	category: string;

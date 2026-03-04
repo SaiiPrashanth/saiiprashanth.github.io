@@ -18,7 +18,10 @@
 		{ slug: 'ar', name: 'AR' },
 		{ slug: 'game', name: 'Game' },
 		{ slug: 'terrain', name: 'Terrain' },
-		{ slug: 'ui', name: 'UI' }
+		{ slug: 'ui', name: 'UI' },
+		{ slug: 'particle', name: 'Particle' },
+		{ slug: 'shader', name: 'Shader' },
+		{ slug: 'tool', name: 'Tool' }
 	]);
 
 	let search = $state('');
