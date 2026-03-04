@@ -10,8 +10,8 @@
 	import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 	import Muted from '../ui/typography/muted.svelte';
 	import { trackGalleryClick } from '$lib/utils/analytics';
-	import { scale } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { scale, fade } from 'svelte/transition';
+	import { quintOut, cubicOut } from 'svelte/easing';
 
 	const { item }: { item: GalleryItem } = $props();
 
@@ -45,6 +45,7 @@
 
 	let imgLoaded = $state(false);
 	let videoLoaded = $state(false);
+	let previewMediaLoaded = $state(false);
 	let isHovered = $state(false);
 	let showPreview = $state(false);
 	let hoverTimer: ReturnType<typeof setTimeout>;
@@ -64,7 +65,10 @@
 
 			// Delay (600ms) to ensure user intent before popping the big window
 			hoverTimer = setTimeout(() => {
-				if (isHovered) showPreview = true;
+				if (isHovered) {
+					showPreview = true;
+					previewMediaLoaded = false; // Reset for the new window
+				}
 			}, 600); 
 		}
 	};
@@ -107,11 +111,8 @@
 	};
 
 	const getThumbUrl = (url: string) => {
-		const parts = url.split('/');
-		const filename = parts.pop();
-		if (!filename) return url;
-		const name = filename.substring(0, filename.lastIndexOf('.'));
-		return `${parts.join('/')}/Images/${name}_thumb.webp`;
+		// Replace extension with _thumb.webp
+		return url.replace(/\.(webp|png|jpg)$/i, '_thumb.webp');
 	};
 
 	const getAvifUrl = (url: string) => {
@@ -142,7 +143,7 @@
 				onmouseleave={handleMouseLeave}
 				class="group relative aspect-video w-full overflow-hidden rounded-lg cursor-zoom-in"
 			>
-				<!-- Blurred Placeholder -->
+				<!-- Blurred Placeholder (Tile) -->
 				<img
 					src={thumbUrl}
 					alt=""
@@ -230,14 +231,23 @@
 			out:scale={{ duration: 300, start: 0.95, easing: quintOut }}
 			class="relative aspect-video w-full max-w-5xl overflow-hidden rounded-2xl border border-white/20 bg-black/80 shadow-[0_0_80px_rgba(0,0,0,0.6)] animate-in fade-in zoom-in-75 slide-in-from-bottom-12 duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
 		>
+			<!-- Blurred Placeholder (Preview Window) -->
+			<img
+				src={thumbUrl}
+				alt=""
+				class="absolute inset-0 h-full w-full object-cover blur-2xl transition-opacity duration-500 {previewMediaLoaded ? 'opacity-0' : 'opacity-100'}"
+				aria-hidden="true"
+			/>
+
 			{#if item.video}
 				<video
 					src={item.video}
-					class="h-full w-full object-contain"
+					class="relative h-full w-full object-contain transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
 					autoplay
 					loop
 					muted
 					playsinline
+					oncanplay={() => (previewMediaLoaded = true)}
 				>
 					<track kind="captions" />
 				</video>
@@ -245,7 +255,8 @@
 				<img
 					src={item.image}
 					alt={item.name}
-					class="h-full w-full object-cover"
+					class="relative h-full w-full object-cover transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
+					onload={() => (previewMediaLoaded = true)}
 				/>
 			{/if}
 			
