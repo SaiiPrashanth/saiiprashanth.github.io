@@ -189,7 +189,7 @@
 				<button
 					type="button"
 					onclick={openZoomPreview}
-					class="absolute top-2 right-2 z-20 flex h-8 w-8 items-center justify-center rounded-lg bg-background/70 text-foreground border border-border transition-all duration-200 hover:bg-background hover:scale-110 backdrop-blur-sm"
+					class="absolute top-2 right-2 z-20 hidden sm:flex h-8 w-8 items-center justify-center rounded-lg bg-background/70 text-foreground border border-border transition-all duration-200 hover:bg-background hover:scale-110 backdrop-blur-sm"
 					aria-label="Zoom preview"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
