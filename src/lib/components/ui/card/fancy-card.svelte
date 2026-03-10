@@ -92,9 +92,9 @@
 	bind:this={el}
 	{href}
 	target={href && newTab ? '_blank' : undefined}
-	class={cn('card rounded-lg border bg-card text-card-foreground shadow-sm touch-manipulation active:scale-[0.98] transition-transform', className)}
+	class={cn('card rounded-lg border bg-card text-card-foreground shadow-sm touch-manipulation active:scale-[0.98] transition-transform', !tilt && 'no-tilt', className)}
 	{...reset}
-	onmousemove={onHover}
+	onmousemove={tilt ? onHover : undefined}
 >
 	<div class="card-color flex flex-1 flex-col">
 		{@render children?.()}
@@ -120,6 +120,12 @@
 		box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 	}
 
+	/* Skip expensive hover transforms when tilt is disabled */
+	.card.no-tilt:hover {
+		transform: none;
+		box-shadow: none;
+	}
+
 	.card-color {
 		transition: background-color 0.2s ease;
 	}
@@ -131,5 +137,9 @@
 			var(--drop-color),
 			transparent
 		);
+	}
+
+	.no-tilt .card-color:hover {
+		background-image: none;
 	}
 </style>
