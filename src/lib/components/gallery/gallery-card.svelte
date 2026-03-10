@@ -41,6 +41,7 @@
 	let imgLoaded = $state(false);       // high-res still image decoded
 	let videoReady = $state(false);      // video can play through
 	let inViewport = $state(false);      // card is near viewport
+	let videoMounted = $state(false);    // lazy mount: true once near viewport, never goes false
 	let videoEl: HTMLVideoElement | undefined = $state();
 
 	// Media is "ready" when the image loads (image-only) or video can play (video items)
@@ -60,12 +61,15 @@
 	let previewReady = $state(false);
 
 	// ── Intersection Observer (video items only) ──────────────
+	// IO fires immediately for elements already in viewport, so this is
+	// uniform for first-visible cards and scrolled-into-view cards.
 	$effect(() => {
 		if (!cardEl || !item.video) return;
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				inViewport = entry.isIntersecting;
+				if (entry.isIntersecting) videoMounted = true;
 			},
 			{ threshold: 0.01, rootMargin: '200px 0px' }
 		);
@@ -135,7 +139,8 @@
 				{/if}
 
 				{#if item.video}
-					<!-- Video items: video only, no static image -->
+					<!-- Video items: lazy-mounted when near viewport -->
+					{#if videoMounted}
 					<video
 						bind:this={videoEl}
 						src={item.video}
@@ -149,6 +154,7 @@
 					>
 						<track kind="captions" />
 					</video>
+					{/if}
 				{:else}
 					<!-- Image-only items: high-res still -->
 					<picture>
