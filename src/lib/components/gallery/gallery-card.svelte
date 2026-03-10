@@ -41,7 +41,6 @@
 	let imgLoaded = $state(false);       // high-res still image decoded
 	let videoReady = $state(false);      // video can play through
 	let inViewport = $state(false);      // card is near viewport
-	let videoMounted = $state(false);    // video element is in DOM (never goes false)
 	let videoEl: HTMLVideoElement | undefined = $state();
 
 	// Media is "ready" when the image loads (image-only) or video can play (video items)
@@ -67,9 +66,6 @@
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				inViewport = entry.isIntersecting;
-				if (entry.isIntersecting) {
-					videoMounted = true; // mount once, never unmount
-				}
 			},
 			{ threshold: 0.01, rootMargin: '200px 0px' }
 		);
@@ -140,21 +136,19 @@
 
 				{#if item.video}
 					<!-- Video items: video only, no static image -->
-					{#if videoMounted}
-						<video
-							bind:this={videoEl}
-							src={item.video}
-							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300
-								{videoReady ? 'opacity-100' : 'opacity-0'}"
-							loop
-							muted
-							playsinline
-							preload="auto"
-							oncanplay={() => (videoReady = true)}
-						>
-							<track kind="captions" />
-						</video>
-					{/if}
+					<video
+						bind:this={videoEl}
+						src={item.video}
+						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300
+							{videoReady ? 'opacity-100' : 'opacity-0'}"
+						loop
+						muted
+						playsinline
+						preload="auto"
+						oncanplay={() => (videoReady = true)}
+					>
+						<track kind="captions" />
+					</video>
 				{:else}
 					<!-- Image-only items: high-res still -->
 					<picture>
