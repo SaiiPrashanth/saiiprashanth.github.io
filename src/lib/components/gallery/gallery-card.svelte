@@ -16,94 +16,76 @@
 
 	const { item }: { item: GalleryItem } = $props();
 
-	// Category-specific colors for hover effects
 	const getCategoryColor = (category: string): string => {
 		switch (category) {
-			case '2d':
-				return '#ef4444'; // Red
-			case 'ui':
-				return '#06b6d4'; // Cyan
-			case '3d':
-				return '#3b82f6'; // Blue
-			case 'ar':
-				return '#a855f7'; // Purple
-			case 'terrain':
-				return '#f59e0b'; // Amber
-			case 'game':
-				return '#10b981'; // Green
-			case 'particle':
-				return '#f472b6'; // Pink
-			case 'shader':
-				return '#8b5cf6'; // Violet
-			case 'tool':
-				return '#64748b'; // Slate
-			case 'rig':
-				return '#f97316'; // Orange
-			default:
-				return '#6366f1'; // Default indigo
+			case '2d': return '#ef4444';
+			case 'ui': return '#06b6d4';
+			case '3d': return '#3b82f6';
+			case 'ar': return '#a855f7';
+			case 'terrain': return '#f59e0b';
+			case 'game': return '#10b981';
+			case 'particle': return '#f472b6';
+			case 'shader': return '#8b5cf6';
+			case 'tool': return '#64748b';
+			case 'rig': return '#f97316';
+			default: return '#6366f1';
 		}
 	};
 
-	let color = getCategoryColor(item.category);
+	const color = getCategoryColor(item.category);
+	const thumbUrl = item.image.replace(/\.(webp|png|jpg)$/i, '_thumb.webp');
+	const avifUrl = item.image.replace(/\.(webp|png)$/i, '.avif');
 
-	let cardElement: HTMLElement | undefined = $state();
-	let isVisible = $state(false);    // controls whether video element is in DOM
-	let inViewport = $state(false);   // controls play/pause
-	let imgLoaded = $state(false);
-	let videoLoaded = $state(false);
-	let previewMediaLoaded = $state(false);
-	let showPreview = $state(false);
+	// ── State ──────────────────────────────────────────────────
+	let cardEl: HTMLElement | undefined = $state();
+	let imgLoaded = $state(false);       // high-res still image decoded
+	let videoReady = $state(false);      // video can play through
+	let inViewport = $state(false);      // card is near viewport
+	let videoMounted = $state(false);    // video element is in DOM (never goes false)
 	let videoEl: HTMLVideoElement | undefined = $state();
 
-	// Intersection Observer: wider rootMargin pre-mounts video before it enters view.
-	// Once a video has loaded, it stays in DOM permanently (never unmounts) so
-	// scroll-back never triggers a reload. Only unloaded cards get unmounted.
-	let hideTimer: ReturnType<typeof setTimeout> | undefined;
+	// Preview overlay
+	let showPreview = $state(false);
+	let previewReady = $state(false);
+
+	// ── Intersection Observer (video items only) ──────────────
 	$effect(() => {
-		if (!cardElement || !item.video) return;
+		if (!cardEl || !item.video) return;
 
 		const observer = new IntersectionObserver(
-			(entries) => {
-				const visible = entries[0].isIntersecting;
-				inViewport = visible;
-				if (visible) {
-					clearTimeout(hideTimer);
-					isVisible = true;
-				} else if (!videoLoaded) {
-					// Not loaded yet — may unmount, but re-check at fire time
-					hideTimer = setTimeout(() => {
-						if (!videoLoaded) isVisible = false; // only unmount if still not loaded
-					}, 2000);
+			([entry]) => {
+				inViewport = entry.isIntersecting;
+				if (entry.isIntersecting) {
+					videoMounted = true; // mount once, never unmount
 				}
-				// If videoLoaded=true, keep isVisible=true so element stays in DOM
 			},
-			{ threshold: 0.1, rootMargin: '300px 0px' }
+			{ threshold: 0.01, rootMargin: '200px 0px' }
 		);
 
-		observer.observe(cardElement);
-		return () => { observer.disconnect(); clearTimeout(hideTimer); };
+		observer.observe(cardEl);
+		return () => observer.disconnect();
 	});
 
-	// Play only when visible AND not scrolling.
-	// Play only when in viewport AND not rapid-scrolling.
+	// ── Video play/pause ──────────────────────────────────────
 	let playTimer: ReturnType<typeof setTimeout> | undefined;
+
 	$effect(() => {
-		if (!videoEl || !item.video) return;
+		if (!videoEl) return;
+
 		if (inViewport && !scrollState.isScrolling) {
-			playTimer = setTimeout(() => {
-				videoEl?.play().catch(() => {});
-			}, 250);
+			playTimer = setTimeout(() => videoEl?.play().catch(() => {}), 150);
 		} else {
 			clearTimeout(playTimer);
-			videoEl.pause();
+			if (!videoEl.paused) videoEl.pause();
 		}
+
 		return () => clearTimeout(playTimer);
 	});
 
-	// Only attach global keydown when preview is actually open
+	// ── Escape key for preview ────────────────────────────────
 	$effect(() => {
 		if (!showPreview) return;
-		const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') closePreview(); };
+		const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') showPreview = false; };
 		window.addEventListener('keydown', handler);
 		return () => window.removeEventListener('keydown', handler);
 	});
@@ -112,106 +94,82 @@
 		e.preventDefault();
 		e.stopPropagation();
 		showPreview = true;
-		previewMediaLoaded = false;
+		previewReady = false;
 	};
-
-	const closePreview = (e?: MouseEvent) => {
-		e?.stopPropagation();
-		showPreview = false;
-	};
-
-	const getThumbUrl = (url: string) => {
-		// Replace extension with _thumb.webp
-		return url.replace(/\.(webp|png|jpg)$/i, '_thumb.webp');
-	};
-
-	const getAvifUrl = (url: string) => {
-		// Replace .webp or .png extension with .avif
-		return url.replace(/\.(webp|png)$/i, '.avif');
-	};
-
-	const thumbUrl = getThumbUrl(item.image);
 </script>
 
-<div 
-	bind:this={cardElement}
-	role="presentation"
-	class="h-full"
->
+<!-- ─── Card ──────────────────────────────────────────────── -->
+<div bind:this={cardEl} role="presentation" class="h-full">
 	<FancyCard
 		{color}
 		class="flex h-full flex-col"
-		href={item.links && item.links.length > 0 ? item.links[0].to : href(`/gallery/${item.slug}`)}
-		newTab={item.links && item.links.length > 0 ? item.links[0].newTab : false}
+		href={item.links?.length ? item.links[0].to : href(`/gallery/${item.slug}`)}
+		newTab={item.links?.length ? item.links[0].newTab : false}
 		onclick={() => trackGalleryClick(item.name, item.category, `/gallery/${item.slug}`)}
 	>
 		<CardHeader class="flex w-full flex-col gap-4">
-			<div 
+			<div
 				role="presentation"
 				class="group relative aspect-video w-full overflow-hidden rounded-lg"
 			>
-				<!-- Blurred Placeholder: fades out once poster/image is loaded -->
+				<!-- Layer 1: Tiny blurred placeholder (always in DOM, fades out) -->
 				<img
 					src={thumbUrl}
 					alt=""
-					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-300 {imgLoaded ? 'opacity-0' : 'opacity-100'}"
 					aria-hidden="true"
+					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-300
+						{imgLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}"
 				/>
-				
-				<!-- High-Res Static Image: only for items without a video -->
-				{#if !item.video}
+
+				<!-- Layer 2: High-res still image (ALWAYS rendered for every item) -->
 				<picture>
-					<source srcset={getAvifUrl(item.image)} type="image/avif" />
+					<source srcset={avifUrl} type="image/avif" />
 					<source srcset={item.image} type="image/webp" />
 					<img
 						src={item.image}
 						alt={item.name}
-						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 {imgLoaded ? 'opacity-100' : 'opacity-0'}"
+						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500
+							{imgLoaded ? 'opacity-100' : 'opacity-0'}"
 						onload={() => (imgLoaded = true)}
 						onerror={() => (imgLoaded = true)}
 					/>
 				</picture>
-				{/if}
 
-				<!-- Looped Video Preview: only mounted when card is visible -->
-				{#if item.video && isVisible}
-					<!-- Hidden img to detect when the poster is ready, so blur can fade quickly -->
-					<img
-						src={item.image}
-						alt=""
-						class="sr-only"
-						aria-hidden="true"
-						onload={() => (imgLoaded = true)}
-						onerror={() => (imgLoaded = true)}
-					/>
+				<!-- Layer 3: Video (mounts once card scrolls near, never unmounts) -->
+				{#if item.video && videoMounted}
 					<video
 						bind:this={videoEl}
 						src={item.video}
-						poster={item.image}
-						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {inViewport ? 'opacity-100' : 'opacity-0'}"
+						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300
+							{videoReady && inViewport ? 'opacity-100' : 'opacity-0'}"
 						loop
 						muted
 						playsinline
 						preload="none"
-						oncanplay={() => (videoLoaded = true)}
+						oncanplay={() => (videoReady = true)}
 					>
 						<track kind="captions" />
 					</video>
 				{/if}
 
+				<!-- Layer 4: Hover color overlay (desktop only) -->
 				<div
-					class="absolute inset-0 transition-opacity duration-300 opacity-0 sm:group-hover:opacity-20 z-10"
+					class="absolute inset-0 z-10 opacity-0 transition-opacity duration-300 sm:group-hover:opacity-20"
 					style="background-color: {color};"
 				></div>
 
-				<!-- Zoom button (top-right of image) -->
+				<!-- Zoom button (desktop only) -->
 				<button
 					type="button"
 					onclick={openZoomPreview}
-					class="absolute top-2 right-2 z-20 hidden sm:flex h-8 w-8 items-center justify-center rounded-lg bg-background/80 text-foreground border border-border transition-all duration-150 hover:bg-background hover:scale-110"
+					class="absolute top-2 right-2 z-20 hidden sm:flex h-8 w-8 items-center justify-center
+						rounded-lg bg-background/80 text-foreground border border-border
+						transition-all duration-150 hover:bg-background hover:scale-110"
 					aria-label="Zoom preview"
 				>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+						class="h-4 w-4">
 						<polyline points="3 9 3 3 9 3"/>
 						<polyline points="15 3 21 3 21 9"/>
 						<polyline points="21 15 21 21 15 21"/>
@@ -223,6 +181,7 @@
 					</svg>
 				</button>
 			</div>
+
 			<div class="flex w-full flex-row items-center gap-1 overflow-hidden">
 				<CardTitle class="h-auto min-w-0 flex-1 leading-normal py-1">
 					<Tooltip>
@@ -234,8 +193,8 @@
 						</TooltipContent>
 					</Tooltip>
 				</CardTitle>
-				<Badge 
-					variant="secondary" 
+				<Badge
+					variant="secondary"
 					class={['game', 'terrain', 'particle', 'shader', 'tool', 'rig'].includes(item.category.toLowerCase()) ? 'capitalize' : 'uppercase'}
 					style="background-color: {color}; color: white; border-color: {color};"
 				>
@@ -252,40 +211,42 @@
 	</FancyCard>
 </div>
 
-<!-- Mac OS Quick Look Style Preview Overlay -->
+<!-- ─── Quick-Look Preview Overlay ────────────────────────── -->
 {#if showPreview}
 	<div class="pointer-events-auto fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 lg:p-24">
 		<!-- Backdrop -->
-		<div 
+		<div
 			role="button"
 			tabindex="0"
 			class="absolute inset-0 bg-black/40 backdrop-blur-sm animate-in fade-in duration-300 cursor-pointer"
-			onclick={closePreview}
-			onkeydown={(e) => { if (e.key === 'Enter') closePreview(); }}
+			onclick={() => (showPreview = false)}
+			onkeydown={(e) => { if (e.key === 'Enter') showPreview = false; }}
 		></div>
-		
-		<!-- Preview Window (Mac App Opening Animation) -->
-		<div 
+
+		<!-- Preview window -->
+		<div
 			out:scale={{ duration: 300, start: 0.95, easing: quintOut }}
-			class="relative aspect-video w-full max-w-5xl overflow-hidden rounded-2xl border border-white/20 bg-black/80 shadow-[0_0_80px_rgba(0,0,0,0.6)] animate-in fade-in zoom-in-75 slide-in-from-bottom-12 duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+			class="relative aspect-video w-full max-w-5xl overflow-hidden rounded-2xl border border-white/20
+				bg-black/80 shadow-[0_0_80px_rgba(0,0,0,0.6)]
+				animate-in fade-in zoom-in-75 slide-in-from-bottom-12 duration-500
+				ease-[cubic-bezier(0.34,1.56,0.64,1)]"
 		>
-			<!-- Blurred Placeholder (Preview Window) -->
+			<!-- Blurred placeholder -->
 			<img
 				src={thumbUrl}
 				alt=""
-				class="absolute inset-0 h-full w-full object-cover blur-2xl transition-opacity duration-500 {previewMediaLoaded ? 'opacity-0' : 'opacity-100'}"
 				aria-hidden="true"
+				class="absolute inset-0 h-full w-full object-cover blur-2xl transition-opacity duration-500
+					{previewReady ? 'opacity-0' : 'opacity-100'}"
 			/>
 
 			{#if item.video}
 				<video
 					src={item.video}
-					class="relative h-full w-full object-contain transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
-					autoplay
-					loop
-					muted
-					playsinline
-					oncanplay={() => (previewMediaLoaded = true)}
+					class="relative h-full w-full object-contain transition-opacity duration-500
+						{previewReady ? 'opacity-100' : 'opacity-0'}"
+					autoplay loop muted playsinline
+					oncanplay={() => (previewReady = true)}
 				>
 					<track kind="captions" />
 				</video>
@@ -293,28 +254,32 @@
 				<img
 					src={item.image}
 					alt={item.name}
-					class="relative h-full w-full object-cover transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
-					onload={() => (previewMediaLoaded = true)}
+					class="relative h-full w-full object-cover transition-opacity duration-500
+						{previewReady ? 'opacity-100' : 'opacity-0'}"
+					onload={() => (previewReady = true)}
 				/>
 			{/if}
-			
+
 			<!-- Close button -->
 			<button
 				type="button"
-				onclick={closePreview}
-				class="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-background/70 text-foreground border border-border hover:bg-background hover:scale-110 transition-all duration-150 backdrop-blur-sm"
+				onclick={(e) => { e.stopPropagation(); showPreview = false; }}
+				class="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full
+					bg-background/70 text-foreground border border-border
+					hover:bg-background hover:scale-110 transition-all duration-150 backdrop-blur-sm"
 				aria-label="Close preview"
 			>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+					class="h-4 w-4">
 					<line x1="18" y1="6" x2="6" y2="18"/>
 					<line x1="6" y1="6" x2="18" y2="18"/>
 				</svg>
 			</button>
 
-			<!-- Floating Label -->
-			<div 
-				class="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-background/80 px-6 py-2 backdrop-blur-md border border-border shadow-lg"
-			>
+			<!-- Floating label -->
+			<div class="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-background/80 px-6 py-2
+				backdrop-blur-md border border-border shadow-lg">
 				<p class="text-lg font-medium text-foreground tracking-tight">{item.name}</p>
 			</div>
 		</div>
