@@ -133,6 +133,7 @@
 			<div 
 				role="presentation"
 				class="group relative aspect-video w-full overflow-hidden rounded-lg"
+				style="contain: layout paint style;"
 			>
 				<!-- Blurred Placeholder (Tile) -->
 				<!-- Hide only when the *currently active* media has finished loading:
@@ -141,7 +142,7 @@
 				<img
 					src={thumbUrl}
 					alt=""
-					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-700 {(item.video && isVisible) ? (videoLoaded ? 'opacity-0' : 'opacity-100') : (imgLoaded ? 'opacity-0' : 'opacity-100')}"
+					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-300 {(item.video && isVisible) ? (videoLoaded ? 'opacity-0' : 'opacity-100') : (imgLoaded ? 'opacity-0' : 'opacity-100')}"
 					aria-hidden="true"
 				/>
 				
@@ -187,7 +188,7 @@
 				{/if}
 
 				<div
-					class="absolute inset-0 transition-all duration-300 opacity-0 group-hover:opacity-20 z-10"
+					class="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-20 z-10"
 					style="background-color: {color};"
 				></div>
 
@@ -195,7 +196,7 @@
 				<button
 					type="button"
 					onclick={openZoomPreview}
-					class="absolute top-2 right-2 z-20 hidden sm:flex h-8 w-8 items-center justify-center rounded-lg bg-background/70 text-foreground border border-border transition-all duration-200 hover:bg-background hover:scale-110 backdrop-blur-sm"
+					class="absolute top-2 right-2 z-20 hidden sm:flex h-8 w-8 items-center justify-center rounded-lg bg-background/80 text-foreground border border-border transition-opacity duration-150 hover:bg-background"
 					aria-label="Zoom preview"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
