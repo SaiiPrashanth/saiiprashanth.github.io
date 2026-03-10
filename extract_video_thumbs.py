@@ -81,4 +81,24 @@ for video_stem, image_stem in VIDEO_TO_IMAGE.items():
     else:
         print(f"  EXISTS {out_thumb}")
 
+    # --- 3. Full-size avif (better compression, eliminates 404 from getAvifUrl) ---
+    out_avif = os.path.join(IMAGE_DIR, image_stem + ".avif")
+    if not os.path.exists(out_avif):
+        cmd = [
+            "ffmpeg", "-y",
+            "-i", out_webp,          # convert from the already-extracted webp
+            "-c:v", "libsvtav1",     # SVT-AV1 is much faster than libaom
+            "-crf", "38",
+            "-preset", "8",          # fastest preset
+            "-pix_fmt", "yuv420p",
+            out_avif
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode == 0:
+            print(f"  OK    {out_avif}")
+        else:
+            print(f"  FAIL  {out_avif}\n{result.stderr[-300:]}")
+    else:
+        print(f"  EXISTS {out_avif}")
+
 print("\nDone.")
