@@ -42,7 +42,7 @@ const items: Array<GalleryItem> = [
 		name: 'Astron',
 		description: 'A classic arcade style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics based movement and retro vector graphics.',
 		shortDescription: 'Arcade style space shooter with retro vector graphics.',
-		image: `${base}/gallery/Images/Astron_3.png`,
+		image: `${base}/gallery/Images/Astron_3.webp`,
 		video: `${base}/gallery/video/Astron.mp4`,
 		tags: ['javascript', 'arcade-game', 'retro', 'game-development', 'html5-canvas', 'space-shooter', '2d-physics'],
 		category: 'game',
@@ -50,7 +50,7 @@ const items: Array<GalleryItem> = [
 			{ to: 'https://saiiprashanth.itch.io/astron', label: 'Itch.io', newTab: true }
 		],
 		screenshots: [
-			{ src: `${base}/gallery/Images/Astron_3.png`, label: 'Astron Gameplay' }
+			{ src: `${base}/gallery/Images/Astron_3.webp`, label: 'Astron Gameplay' }
 		]
 	},
 	{
