@@ -172,7 +172,6 @@
 						class="relative h-full w-full object-cover transition-opacity duration-700 {imgLoaded ? 'opacity-100' : 'opacity-0'}"
 						onload={() => (imgLoaded = true)}
 						onerror={() => (imgLoaded = true)}
-						loading="lazy"
 					/>
 				</picture>
 
