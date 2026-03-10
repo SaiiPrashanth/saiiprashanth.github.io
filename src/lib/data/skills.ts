@@ -1,7 +1,6 @@
 import type { Skill, SkillCategory } from './types';
 import { omit, type StringWithAutoComplete } from '$lib/utils';
 import Assets from './assets';
-import svelteMd from './md/svelte.md?raw';
 
 const defineSkillCategory = <S extends string>(data: SkillCategory<S>): SkillCategory<S> => data;
 
