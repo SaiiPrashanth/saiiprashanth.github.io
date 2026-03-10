@@ -10,8 +10,8 @@
 	import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 	import Muted from '../ui/typography/muted.svelte';
 	import { trackGalleryClick } from '$lib/utils/analytics';
-	import { scale, fade } from 'svelte/transition';
-	import { quintOut, cubicOut } from 'svelte/easing';
+	import { scale } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	const { item }: { item: GalleryItem } = $props();
 
@@ -53,6 +53,7 @@
 	let isHovered = $state(false);
 	let showPreview = $state(false);
 	let hoverTimer: ReturnType<typeof setTimeout>;
+	let supportsHover: boolean | undefined; // cached once per component
 
 	// Intersection Observer to only play videos when in view
 	$effect(() => {
@@ -76,7 +77,8 @@
 
 	const handleMouseEnter = (e: MouseEvent) => {
 		// Only run preview logic on devices that support hover (Desktop)
-		if (window.matchMedia('(hover: hover)').matches) {
+		if (supportsHover === undefined) supportsHover = window.matchMedia('(hover: hover)').matches;
+		if (supportsHover) {
 			isHovered = true;
 			lastX = e.clientX;
 			lastY = e.clientY;
@@ -208,7 +210,7 @@
 						loop
 						muted
 						playsinline
-						preload="metadata"
+						preload="none"
 						oncanplay={() => (videoLoaded = true)}
 					>
 						<track kind="captions" />
