@@ -1,4 +1,4 @@
-const CACHE_NAME = 'game-design-portfolio-v1';
+const CACHE_NAME = 'saiiprashanth-portfolio-v2';
 const STATIC_ASSETS = [
 	'/',
 	'/manifest.json',
@@ -50,7 +50,7 @@ self.addEventListener('fetch', (event) => {
 
 				// Cache images and static assets
 				if (
-					event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp|css|js|woff|woff2|ttf|eot)$/i)
+					event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp|avif|css|js|woff|woff2|ttf|eot)$/i)
 				) {
 					const responseToCache = response.clone();
 					caches.open(CACHE_NAME).then((cache) => {

@@ -1,0 +1,17 @@
+{
+	"name": "Sai Prashanth - Portfolio",
+	"short_name": "Sai Prashanth",
+	"description": "Game Producer & Game Programmer portfolio showcasing games, tools, shaders, and 3D art.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#09090b",
+	"theme_color": "#09090b",
+	"icons": [
+		{
+			"src": "/Logo.png",
+			"sizes": "any",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	]
+}

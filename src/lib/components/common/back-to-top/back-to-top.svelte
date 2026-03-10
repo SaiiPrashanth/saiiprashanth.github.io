@@ -36,7 +36,7 @@
 {#if showButton && isMainPage}
 	<button
 		onclick={scrollToTop}
-		class="fixed bottom-6 right-6 z-40 p-2 text-foreground/60 hover:text-foreground transition-all duration-200 hover:-translate-y-1"
+		class="hidden sm:block fixed bottom-6 right-6 z-40 p-2 text-foreground/60 hover:text-foreground transition-all duration-200 hover:-translate-y-1"
 		aria-label="Scroll to top"
 	>
 		<Icon icon="i-carbon-arrow-up" className="text-3xl" />
