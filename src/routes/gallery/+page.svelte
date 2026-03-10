@@ -7,13 +7,16 @@
 	import Toggle from '$lib/components/ui/toggle/toggle.svelte';
 	import GalleryData from '$lib/data/gallery';
 	import { scrollState } from '$lib/utils/scroll-state.svelte';
+	import { createGalleryObserver } from '$lib/utils/gallery-observer';
+
+	// Single shared IntersectionObserver for all gallery cards
+	const galleryObserver = createGalleryObserver();
 
 	// Single scroll listener — only flags rapid scrolling (speed > 150px between events).
-	// Slow/normal scrolling keeps videos playing; fast fling shows thumbnails.
 	onMount(() => {
 		let lastY = window.scrollY;
 		let stopTimer: ReturnType<typeof setTimeout>;
-		const SPEED_THRESHOLD = 150; // px between scroll events to be considered "rapid"
+		const SPEED_THRESHOLD = 150;
 
 		const onScroll = () => {
 			const delta = Math.abs(window.scrollY - lastY);
@@ -31,6 +34,7 @@
 			window.removeEventListener('scroll', onScroll);
 			clearTimeout(stopTimer);
 			scrollState.isScrolling = false;
+			galleryObserver.destroy();
 		};
 	});
 
