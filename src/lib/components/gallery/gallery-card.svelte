@@ -150,15 +150,13 @@
 				role="presentation"
 				class="group relative aspect-video w-full overflow-hidden rounded-lg"
 			>
-				<!-- Blurred Placeholder: shows until video (or static image for non-video items) loads -->
-				{#if item.video ? !videoLoaded : !imgLoaded}
+				<!-- Blurred Placeholder: fades out once the real media loads -->
 				<img
 					src={thumbUrl}
 					alt=""
-					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl"
+					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-300 {(item.video ? videoLoaded : imgLoaded) ? 'opacity-0' : 'opacity-100'}"
 					aria-hidden="true"
 				/>
-				{/if}
 				
 				<!-- High-Res Static Image: only for items without a video -->
 				{#if !item.video}
@@ -168,7 +166,7 @@
 					<img
 						src={item.image}
 						alt={item.name}
-						class="relative h-full w-full object-cover transition-opacity duration-700 {imgLoaded ? 'opacity-100' : 'opacity-0'}"
+						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 {imgLoaded ? 'opacity-100' : 'opacity-0'}"
 						onload={() => (imgLoaded = true)}
 						onerror={() => (imgLoaded = true)}
 					/>
