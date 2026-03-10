@@ -70,8 +70,10 @@
 					clearTimeout(hideTimer);
 					isVisible = true;
 				} else if (!videoLoaded) {
-					// Never loaded yet — safe to unmount after a delay
-					hideTimer = setTimeout(() => { isVisible = false; }, 2000);
+					// Not loaded yet — may unmount, but re-check at fire time
+					hideTimer = setTimeout(() => {
+						if (!videoLoaded) isVisible = false; // only unmount if still not loaded
+					}, 2000);
 				}
 				// If videoLoaded=true, keep isVisible=true so element stays in DOM
 			},
