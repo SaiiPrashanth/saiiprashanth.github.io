@@ -44,10 +44,13 @@
 	let videoMounted = $state(false);    // video element is in DOM (never goes false)
 	let videoEl: HTMLVideoElement | undefined = $state();
 
+	// Media is "ready" when the image loads (image-only) or video can play (video items)
+	let mediaReady = $derived(item.video ? videoReady : imgLoaded);
+
 	// Hide blur thumb from DOM entirely after fade-out to free GPU layer
 	let thumbHidden = $state(false);
 	$effect(() => {
-		if (imgLoaded) {
+		if (mediaReady) {
 			const t = setTimeout(() => (thumbHidden = true), 400);
 			return () => clearTimeout(t);
 		}
@@ -130,39 +133,41 @@
 					alt=""
 					aria-hidden="true"
 					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-300
-						{imgLoaded ? 'opacity-0' : 'opacity-100'}"
+						{mediaReady ? 'opacity-0' : 'opacity-100'}"
 				/>
 				{/if}
 
-				<!-- Layer 2: High-res still image (ALWAYS rendered for every item) -->
-				<picture>
-					<source srcset={avifUrl} type="image/avif" />
-					<source srcset={item.image} type="image/webp" />
-					<img
-						src={item.image}
-						alt={item.name}
-						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500
-							{imgLoaded ? 'opacity-100' : 'opacity-0'}"
-						onload={() => (imgLoaded = true)}
-						onerror={() => (imgLoaded = true)}
-					/>
-				</picture>
-
-				<!-- Layer 3: Video (mounts once card scrolls near, never unmounts) -->
-				{#if item.video && videoMounted}
-					<video
-						bind:this={videoEl}
-						src={item.video}
-						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300
-							{videoReady && inViewport ? 'opacity-100' : 'opacity-0'}"
-						loop
-						muted
-						playsinline
-						preload="none"
-						oncanplay={() => (videoReady = true)}
-					>
-						<track kind="captions" />
-					</video>
+				{#if item.video}
+					<!-- Video items: video only, no static image -->
+					{#if videoMounted}
+						<video
+							bind:this={videoEl}
+							src={item.video}
+							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300
+								{videoReady ? 'opacity-100' : 'opacity-0'}"
+							loop
+							muted
+							playsinline
+							preload="auto"
+							oncanplay={() => (videoReady = true)}
+						>
+							<track kind="captions" />
+						</video>
+					{/if}
+				{:else}
+					<!-- Image-only items: high-res still -->
+					<picture>
+						<source srcset={avifUrl} type="image/avif" />
+						<source srcset={item.image} type="image/webp" />
+						<img
+							src={item.image}
+							alt={item.name}
+							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500
+								{imgLoaded ? 'opacity-100' : 'opacity-0'}"
+							onload={() => (imgLoaded = true)}
+							onerror={() => (imgLoaded = true)}
+						/>
+					</picture>
 				{/if}
 
 				<!-- Layer 4: Hover color overlay (desktop only) -->
