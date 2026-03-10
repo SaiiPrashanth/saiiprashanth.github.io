@@ -36,6 +36,8 @@
 				return '#8b5cf6'; // Violet
 			case 'tool':
 				return '#64748b'; // Slate
+			case 'rig':
+				return '#f97316'; // Orange
 			default:
 				return '#6366f1'; // Default indigo
 		}
@@ -43,12 +45,29 @@
 
 	let color = getCategoryColor(item.category);
 
+	let cardElement: HTMLElement | undefined = $state();
+	let isVisible = $state(false);
 	let imgLoaded = $state(false);
 	let videoLoaded = $state(false);
 	let previewMediaLoaded = $state(false);
 	let isHovered = $state(false);
 	let showPreview = $state(false);
 	let hoverTimer: ReturnType<typeof setTimeout>;
+
+	// Intersection Observer to only play videos when in view
+	$effect(() => {
+		if (!cardElement || !item.video) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				isVisible = entries[0].isIntersecting;
+			},
+			{ threshold: 0.1 }
+		);
+
+		observer.observe(cardElement);
+		return () => observer.disconnect();
+	});
 
 	// Velocity tracking for "flick to close"
 	let lastX = 0;
@@ -126,6 +145,7 @@
 <svelte:window onmousemove={handleGlobalMouseMove} onscroll={handleScroll} />
 
 <div 
+	bind:this={cardElement}
 	role="presentation"
 	class="h-full"
 >
@@ -147,14 +167,14 @@
 				<img
 					src={thumbUrl}
 					alt=""
-					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-700 {(imgLoaded || videoLoaded)
+					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-700 {(imgLoaded || (videoLoaded && isVisible))
 						? 'opacity-0'
 						: 'opacity-100'}"
 					aria-hidden="true"
 				/>
 				
-			<!-- High-Res Static Image (Only loaded if there is no video preview) -->
-			{#if !item.video}
+			<!-- High-Res Static Image (Loaded if no video OR video is not in view) -->
+			{#if !item.video || !isVisible}
 				<picture>
 					<source srcset={getAvifUrl(item.image)} type="image/avif" />
 					<source srcset={item.image} type="image/webp" />
@@ -169,19 +189,31 @@
 				</picture>
 			{/if}
 
-			<!-- Looped Video Preview -->
-			{#if item.video}
-				<video
-					src={item.video}
-					class="absolute inset-0 h-full w-full object-cover transition-all duration-700 {videoLoaded ? 'opacity-100' : 'opacity-0'} {isHovered ? 'scale-110' : 'scale-100'}"
-					autoplay
-					loop
-					muted
-					playsinline
-					oncanplay={() => (videoLoaded = true)}
-				>
-					<track kind="captions" />
-				</video>
+			<!-- Looped Video/GIF Preview -->
+			{#if item.video && isVisible}
+				{#if item.video.toLowerCase().endsWith('.gif')}
+					<img
+						src={item.video}
+						alt={item.name}
+						class="absolute inset-0 h-full w-full object-cover transition-all duration-700 {videoLoaded ? 'opacity-100' : 'opacity-0'} {isHovered ? 'scale-110' : 'scale-100'}"
+						onload={() => (videoLoaded = true)}
+						loading="lazy"
+					/>
+				{:else}
+					<video
+						src={item.video}
+						poster={item.image}
+						class="absolute inset-0 h-full w-full object-cover transition-all duration-700 {videoLoaded ? 'opacity-100' : 'opacity-0'} {isHovered ? 'scale-110' : 'scale-100'}"
+						autoplay
+						loop
+						muted
+						playsinline
+						preload="metadata"
+						oncanplay={() => (videoLoaded = true)}
+					>
+						<track kind="captions" />
+					</video>
+				{/if}
 			{/if}
 
 				<div
@@ -202,7 +234,7 @@
 				</CardTitle>
 				<Badge 
 					variant="secondary" 
-					class={['game', 'terrain', 'particle', 'shader', 'tool'].includes(item.category.toLowerCase()) ? 'capitalize' : 'uppercase'}
+					class={['game', 'terrain', 'particle', 'shader', 'tool', 'rig'].includes(item.category.toLowerCase()) ? 'capitalize' : 'uppercase'}
 					style="background-color: {color}; color: white; border-color: {color};"
 				>
 					{item.category}
@@ -240,17 +272,26 @@
 			/>
 
 			{#if item.video}
-				<video
-					src={item.video}
-					class="relative h-full w-full object-contain transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
-					autoplay
-					loop
-					muted
-					playsinline
-					oncanplay={() => (previewMediaLoaded = true)}
-				>
-					<track kind="captions" />
-				</video>
+				{#if item.video.endsWith('.gif')}
+					<img
+						src={item.video}
+						alt={item.name}
+						class="relative h-full w-full object-contain transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
+						onload={() => (previewMediaLoaded = true)}
+					/>
+				{:else}
+					<video
+						src={item.video}
+						class="relative h-full w-full object-contain transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
+						autoplay
+						loop
+						muted
+						playsinline
+						oncanplay={() => (previewMediaLoaded = true)}
+					>
+						<track kind="captions" />
+					</video>
+				{/if}
 			{:else}
 				<img
 					src={item.image}
