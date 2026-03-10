@@ -150,8 +150,8 @@
 				role="presentation"
 				class="group relative aspect-video w-full overflow-hidden rounded-lg"
 			>
-				<!-- Blurred Placeholder: only in DOM while image/video hasn't loaded -->
-				{#if (item.video && inViewport) ? !videoLoaded : !imgLoaded}
+				<!-- Blurred Placeholder: shows until the static image loads -->
+				{#if !imgLoaded}
 				<img
 					src={thumbUrl}
 					alt=""
@@ -160,8 +160,8 @@
 				/>
 				{/if}
 				
-				<!-- High-Res Static Image (always in DOM, hidden when video is active) -->
-				<picture class="{item.video && inViewport ? 'opacity-0' : ''}">
+				<!-- High-Res Static Image: visible until video is loaded and playing -->
+				<picture class="{item.video && inViewport && videoLoaded ? 'opacity-0' : ''}">
 					<source srcset={getAvifUrl(item.image)} type="image/avif" />
 					<source srcset={item.image} type="image/webp" />
 					<img
