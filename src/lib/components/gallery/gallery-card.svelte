@@ -70,6 +70,14 @@
 		return () => observer.disconnect();
 	});
 
+	// Reset videoLoaded each time the video enters the viewport so the
+	// placeholder stays visible until the new <video> element is ready.
+	$effect(() => {
+		if (isVisible && item.video) {
+			videoLoaded = false;
+		}
+	});
+
 	// Velocity tracking for "flick to close"
 	let lastX = 0;
 	let lastY = 0;
@@ -166,12 +174,13 @@
 				class="group relative aspect-video w-full overflow-hidden rounded-lg cursor-zoom-in"
 			>
 				<!-- Blurred Placeholder (Tile) -->
+				<!-- Hide only when the *currently active* media has finished loading:
+				     - no video / video off-screen → wait for static image
+				     - video on-screen           → wait for video -->
 				<img
 					src={thumbUrl}
 					alt=""
-					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-700 {(imgLoaded || (videoLoaded && isVisible))
-						? 'opacity-0'
-						: 'opacity-100'}"
+					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-700 {(!item.video || !isVisible) ? (imgLoaded ? 'opacity-0' : 'opacity-100') : (videoLoaded ? 'opacity-0' : 'opacity-100')}"
 					aria-hidden="true"
 				/>
 				
