@@ -11,7 +11,7 @@ const items: Array<GalleryItem> = [
 		description: 'A physics based puzzle game in Unity 2D where players solve environmental challenges to feed a hungry Kirby.',
 		shortDescription: 'Physics based puzzle game with Kirby.',
 		image: `${base}/gallery/Images/HK_1.webp`,
-		video: `${base}/gallery/video/HK.gif`,
+		video: `${base}/gallery/video/HK.mp4`,
 		tags: ['c-sharp', 'mobile-game', 'casual-game', 'unity-2d', 'cut-the-rope', 'physics-puzzle'],
 		category: 'game',
 		links: [
@@ -43,7 +43,7 @@ const items: Array<GalleryItem> = [
 		description: 'A classic arcade style space shooter built with vanilla JavaScript and HTML5 Canvas, featuring physics based movement and retro vector graphics.',
 		shortDescription: 'Arcade style space shooter with retro vector graphics.',
 		image: `${base}/gallery/Images/Astron_3.png`,
-		video: `${base}/gallery/video/Astron.gif`,
+		video: `${base}/gallery/video/Astron.mp4`,
 		tags: ['javascript', 'arcade-game', 'retro', 'game-development', 'html5-canvas', 'space-shooter', '2d-physics'],
 		category: 'game',
 		links: [
@@ -59,7 +59,7 @@ const items: Array<GalleryItem> = [
 		description: 'A fast paced infinite arcade runner in Unity featuring vibrant cel shaded graphics.',
 		shortDescription: 'Fast paced infinite arcade runner with cel shaded graphics.',
 		image: `${base}/gallery/Images/BT1.webp`,
-		video: `${base}/gallery/video/BT.gif`,
+		video: `${base}/gallery/video/BT.mp4`,
 		tags: ['c-sharp', 'unity', 'arcade', 'infinite-runner', 'cel-shading', 'stylized-art', 'water-shader'],
 		category: 'game',
 		links: [

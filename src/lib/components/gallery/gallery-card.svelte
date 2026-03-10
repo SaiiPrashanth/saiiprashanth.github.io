@@ -166,29 +166,19 @@
 
 				<!-- Looped Video Preview: only mounted when card is visible -->
 				{#if item.video && isVisible}
-					{#if item.video.toLowerCase().endsWith('.gif')}
-						<img
-							src={item.video}
-							alt={item.name}
-							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {isVisible && videoLoaded && !scrollState.isScrolling ? 'opacity-100' : 'opacity-0'}"
-							onload={() => (videoLoaded = true)}
-							loading="lazy"
-						/>
-					{:else}
-						<video
-							bind:this={videoEl}
-							src={item.video}
-							poster={item.image}
+					<video
+						bind:this={videoEl}
+						src={item.video}
+						poster={item.image}
 						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {isVisible && videoLoaded && !scrollState.isScrolling ? 'opacity-100' : 'opacity-0'}"
-							loop
-							muted
-							playsinline
-							preload="none"
-							oncanplay={() => (videoLoaded = true)}
-						>
-							<track kind="captions" />
-						</video>
-					{/if}
+						loop
+						muted
+						playsinline
+						preload="none"
+						oncanplay={() => (videoLoaded = true)}
+					>
+						<track kind="captions" />
+					</video>
 				{/if}
 
 				<div
