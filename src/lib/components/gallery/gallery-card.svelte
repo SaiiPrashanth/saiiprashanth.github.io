@@ -54,15 +54,18 @@
 	let showPreview = $state(false);
 	let videoEl: HTMLVideoElement | undefined = $state();
 
-	// Intersection Observer to only play videos when in view
+	// Intersection Observer: wider rootMargin so video mounts before card fully in view
+	// and doesn't unmount the instant it scrolls out (reduces churn).
 	$effect(() => {
 		if (!cardElement || !item.video) return;
 
 		const observer = new IntersectionObserver(
 			(entries) => {
-				isVisible = entries[0].isIntersecting;
+				const visible = entries[0].isIntersecting;
+				if (!visible) videoLoaded = false; // reset so placeholder shows on re-entry
+				isVisible = visible;
 			},
-			{ threshold: 0.1, rootMargin: '-40px 0px' }
+			{ threshold: 0.1, rootMargin: '200px 0px' }
 		);
 
 		observer.observe(cardElement);
@@ -122,6 +125,7 @@
 	bind:this={cardElement}
 	role="presentation"
 	class="h-full"
+	style="content-visibility: auto; contain-intrinsic-size: auto 420px;"
 >
 	<FancyCard
 		{color}
@@ -136,16 +140,15 @@
 				class="group relative aspect-video w-full overflow-hidden rounded-lg"
 				style="contain: layout paint style;"
 			>
-				<!-- Blurred Placeholder (Tile) -->
-				<!-- Hide only when the *currently active* media has finished loading:
-				     - no video / video off-screen → wait for static image
-				     - video on-screen           → wait for video -->
+				<!-- Blurred Placeholder: only in DOM while image/video hasn't loaded -->
+				{#if (item.video && isVisible) ? !videoLoaded : !imgLoaded}
 				<img
 					src={thumbUrl}
 					alt=""
-					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-300 {(item.video && isVisible) ? (videoLoaded ? 'opacity-0' : 'opacity-100') : (imgLoaded ? 'opacity-0' : 'opacity-100')}"
+					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl"
 					aria-hidden="true"
 				/>
+				{/if}
 				
 				<!-- High-Res Static Image (always in DOM, hidden when video is active) -->
 				<picture class="{item.video && isVisible ? 'opacity-0' : ''}">
@@ -161,8 +164,8 @@
 					/>
 				</picture>
 
-				<!-- Looped Video Preview (always in DOM, play/pause via JS) -->
-				{#if item.video}
+				<!-- Looped Video Preview: only mounted when card is visible -->
+				{#if item.video && isVisible}
 					{#if item.video.toLowerCase().endsWith('.gif')}
 						<img
 							src={item.video}
