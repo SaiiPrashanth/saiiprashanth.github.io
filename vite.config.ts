@@ -21,15 +21,7 @@ export default defineConfig({
 			output: {
 				entryFileNames: 'assets/[name]-[hash].js',
 				chunkFileNames: 'assets/[name]-[hash].js',
-				assetFileNames: 'assets/[name]-[hash].[ext]',
-				manualChunks: (id) => {
-					if (id.includes('node_modules')) {
-						if (id.includes('bits-ui') || id.includes('svelte-radix')) return 'ui-vendor';
-						if (id.includes('@sveltejs') || id.includes('svelte')) return 'svelte-vendor';
-						if (id.includes('embla-carousel')) return 'carousel-vendor';
-						return 'vendor';
-					}
-				}
+				assetFileNames: 'assets/[name]-[hash].[ext]'
 			}
 		}
 	}
