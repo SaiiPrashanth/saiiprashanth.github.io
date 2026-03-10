@@ -10,6 +10,7 @@
 	import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 	import Muted from '../ui/typography/muted.svelte';
 	import { trackGalleryClick } from '$lib/utils/analytics';
+	import { scrollState } from '$lib/utils/scroll-state.svelte';
 	import { scale } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 
@@ -68,12 +69,12 @@
 		return () => observer.disconnect();
 	});
 
-	// Debounced play: wait 250ms before starting decode so rapid scroll-through
-	// never triggers concurrent play on many videos. Pause is always immediate.
+	// Play only when visible AND not scrolling.
+	// Pause immediately on scroll; only start decode 250ms after scroll stops.
 	let playTimer: ReturnType<typeof setTimeout> | undefined;
 	$effect(() => {
 		if (!videoEl || !item.video) return;
-		if (isVisible) {
+		if (isVisible && !scrollState.isScrolling) {
 			playTimer = setTimeout(() => {
 				videoEl?.play().catch(() => {});
 			}, 250);
@@ -166,7 +167,7 @@
 						<img
 							src={item.video}
 							alt={item.name}
-							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 {isVisible && videoLoaded ? 'opacity-100' : 'opacity-0'}"
+							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {isVisible && videoLoaded && !scrollState.isScrolling ? 'opacity-100' : 'opacity-0'}"
 							onload={() => (videoLoaded = true)}
 							loading="lazy"
 						/>
@@ -175,7 +176,7 @@
 							bind:this={videoEl}
 							src={item.video}
 							poster={item.image}
-							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 {isVisible && videoLoaded ? 'opacity-100' : 'opacity-0'}"
+						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {isVisible && videoLoaded && !scrollState.isScrolling ? 'opacity-100' : 'opacity-0'}"
 							loop
 							muted
 							playsinline
@@ -196,7 +197,7 @@
 				<button
 					type="button"
 					onclick={openZoomPreview}
-					class="absolute top-2 right-2 z-20 hidden sm:flex h-8 w-8 items-center justify-center rounded-lg bg-background/80 text-foreground border border-border transition-opacity duration-150 hover:bg-background"
+					class="absolute top-2 right-2 z-20 hidden sm:flex h-8 w-8 items-center justify-center rounded-lg bg-background/80 text-foreground border border-border transition-all duration-150 hover:bg-background hover:scale-110"
 					aria-label="Zoom preview"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">

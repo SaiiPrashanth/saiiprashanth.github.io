@@ -1,10 +1,28 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import EmptyResult from '$lib/components/common/empty-result/empty-result.svelte';
 	import SearchPage from '$lib/components/common/search-page/search-page.svelte';
 	import GalleryCard from '$lib/components/gallery/gallery-card.svelte';
 	import Icon from '$lib/components/ui/icon/icon.svelte';
 	import Toggle from '$lib/components/ui/toggle/toggle.svelte';
 	import GalleryData from '$lib/data/gallery';
+	import { scrollState } from '$lib/utils/scroll-state.svelte';
+
+	// Single scroll listener — updates shared state so all cards react together.
+	onMount(() => {
+		let timer: ReturnType<typeof setTimeout>;
+		const onScroll = () => {
+			scrollState.isScrolling = true;
+			clearTimeout(timer);
+			timer = setTimeout(() => { scrollState.isScrolling = false; }, 300);
+		};
+		window.addEventListener('scroll', onScroll, { passive: true });
+		return () => {
+			window.removeEventListener('scroll', onScroll);
+			clearTimeout(timer);
+			scrollState.isScrolling = false;
+		};
+	});
 
 	interface CategoryFilter {
 		slug: string;
