@@ -47,16 +47,17 @@
 	let color = getCategoryColor(item.category);
 
 	let cardElement: HTMLElement | undefined = $state();
-	let isVisible = $state(false);
+	let isVisible = $state(false);    // controls whether video element is in DOM
+	let inViewport = $state(false);   // controls play/pause
 	let imgLoaded = $state(false);
 	let videoLoaded = $state(false);
 	let previewMediaLoaded = $state(false);
 	let showPreview = $state(false);
 	let videoEl: HTMLVideoElement | undefined = $state();
 
-	// Intersection Observer: wider rootMargin so video mounts before card fully in view.
-	// Unmount is delayed 1.5s so mobile inertia scroll over-shoots don't cause
-	// constant video destroy/recreate churn.
+	// Intersection Observer: wider rootMargin pre-mounts video before it enters view.
+	// Once a video has loaded, it stays in DOM permanently (never unmounts) so
+	// scroll-back never triggers a reload. Only unloaded cards get unmounted.
 	let hideTimer: ReturnType<typeof setTimeout> | undefined;
 	$effect(() => {
 		if (!cardElement || !item.video) return;
@@ -64,18 +65,17 @@
 		const observer = new IntersectionObserver(
 			(entries) => {
 				const visible = entries[0].isIntersecting;
+				inViewport = visible;
 				if (visible) {
 					clearTimeout(hideTimer);
 					isVisible = true;
-				} else {
-					// Delay unmount so brief mobile over-scrolls don't reload video
-					hideTimer = setTimeout(() => {
-						videoLoaded = false;
-						isVisible = false;
-					}, 1500);
+				} else if (!videoLoaded) {
+					// Never loaded yet — safe to unmount after a delay
+					hideTimer = setTimeout(() => { isVisible = false; }, 2000);
 				}
+				// If videoLoaded=true, keep isVisible=true so element stays in DOM
 			},
-			{ threshold: 0.1, rootMargin: '200px 0px' }
+			{ threshold: 0.1, rootMargin: '300px 0px' }
 		);
 
 		observer.observe(cardElement);
@@ -83,11 +83,11 @@
 	});
 
 	// Play only when visible AND not scrolling.
-	// Pause immediately on scroll; only start decode 250ms after scroll stops.
+	// Play only when in viewport AND not rapid-scrolling.
 	let playTimer: ReturnType<typeof setTimeout> | undefined;
 	$effect(() => {
 		if (!videoEl || !item.video) return;
-		if (isVisible && !scrollState.isScrolling) {
+		if (inViewport && !scrollState.isScrolling) {
 			playTimer = setTimeout(() => {
 				videoEl?.play().catch(() => {});
 			}, 250);
@@ -151,7 +151,7 @@
 				style="contain: layout paint style;"
 			>
 				<!-- Blurred Placeholder: only in DOM while image/video hasn't loaded -->
-				{#if (item.video && isVisible) ? !videoLoaded : !imgLoaded}
+				{#if (item.video && inViewport) ? !videoLoaded : !imgLoaded}
 				<img
 					src={thumbUrl}
 					alt=""
@@ -161,7 +161,7 @@
 				{/if}
 				
 				<!-- High-Res Static Image (always in DOM, hidden when video is active) -->
-				<picture class="{item.video && isVisible ? 'opacity-0' : ''}">
+				<picture class="{item.video && inViewport ? 'opacity-0' : ''}">
 					<source srcset={getAvifUrl(item.image)} type="image/avif" />
 					<source srcset={item.image} type="image/webp" />
 					<img
@@ -180,7 +180,7 @@
 						bind:this={videoEl}
 						src={item.video}
 						poster={item.image}
-						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {isVisible && videoLoaded && !scrollState.isScrolling ? 'opacity-100' : 'opacity-0'}"
+						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {inViewport && videoLoaded && !scrollState.isScrolling ? 'opacity-100' : 'opacity-0'}"
 						loop
 						muted
 						playsinline
