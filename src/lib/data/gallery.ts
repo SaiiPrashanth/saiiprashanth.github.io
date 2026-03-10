@@ -1,5 +1,4 @@
 import { base } from '$app/paths';
-import Assets from './assets';
 import type { GalleryItem } from './types';
 
 const title = 'Gallery';
@@ -323,7 +322,7 @@ const items: Array<GalleryItem> = [
 		name: 'Hyperdrive VFX',
 		description: 'A high speed hyperdrive warp effect created using Unity particle systems.',
 		shortDescription: 'Unity hyperdrive warp effect.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/Hyperdrive.webp`,
 		video: `${base}/gallery/video/Hyperdrive_5s.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'space'],
 		category: 'particle'
@@ -333,7 +332,7 @@ const items: Array<GalleryItem> = [
 		name: 'Rain Particles',
 		description: 'Realistic rain and splash effects using GPU particles.',
 		shortDescription: 'Realistic Unity rain particles.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/RainParticles.webp`,
 		video: `${base}/gallery/video/RainParticles.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'environment'],
 		category: 'particle'
@@ -343,7 +342,7 @@ const items: Array<GalleryItem> = [
 		name: 'Smoke FX',
 		description: 'Volumetric smoke effect for environmental storytelling.',
 		shortDescription: 'Unity volumetric smoke effect.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/SmokeFX.webp`,
 		video: `${base}/gallery/video/SmokeFX.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'smoke'],
 		category: 'particle'
@@ -353,7 +352,7 @@ const items: Array<GalleryItem> = [
 		name: 'Spark FX',
 		description: 'Dynamic spark particles with collision and bounce physics.',
 		shortDescription: 'Unity dynamic spark particles.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/SparkFX.webp`,
 		video: `${base}/gallery/video/SparkFX.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'sparks'],
 		category: 'particle'
@@ -365,7 +364,7 @@ const items: Array<GalleryItem> = [
 		name: 'Grass Shader',
 		description: 'Stylized grass shader with wind deformation and player interaction.',
 		shortDescription: 'Stylized Unity grass shader.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/GrassShader.webp`,
 		video: `${base}/gallery/video/GrassShader.mp4`,
 		tags: ['unity', 'shader-graph', 'stylized-art', 'environment'],
 		category: 'shader'
@@ -375,7 +374,7 @@ const items: Array<GalleryItem> = [
 		name: 'Pixel Shader',
 		description: 'A post processing shader that converts 3D scenes into pixel art aesthetics.',
 		shortDescription: 'Unity pixel art post-processing shader.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/PixelShader.webp`,
 		video: `${base}/gallery/video/PixelShader.mp4`,
 		tags: ['unity', 'shader-graph', 'pixel-art', 'post-processing'],
 		category: 'shader'
@@ -385,7 +384,7 @@ const items: Array<GalleryItem> = [
 		name: 'Water Shader',
 		description: 'Advanced water shader featuring foam, refractions, and vertex waves.',
 		shortDescription: 'Advanced Unity water shader.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/WaterShader.webp`,
 		video: `${base}/gallery/video/WaterShader.mp4`,
 		tags: ['unity', 'shader-graph', 'water', 'vfx'],
 		category: 'shader'
@@ -397,7 +396,7 @@ const items: Array<GalleryItem> = [
 		name: 'Import Helper',
 		description: 'An editor tool that automates asset import settings and organization.',
 		shortDescription: 'Unity asset import automation tool.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/ImportHelper.webp`,
 		video: `${base}/gallery/video/ImportHelper.mp4`,
 		tags: ['unity', 'editor-tool', 'automation', 'utility'],
 		category: 'tool'
@@ -407,7 +406,7 @@ const items: Array<GalleryItem> = [
 		name: 'Screen Profiler',
 		description: 'A real time performance profiling tool for monitoring FPS and memory usage.',
 		shortDescription: 'Unity real-time performance profiler.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/ScreenProfiler.webp`,
 		video: `${base}/gallery/video/ScreenProfiler.mp4`,
 		tags: ['unity', 'editor-tool', 'optimization', 'profiling'],
 		category: 'tool'
@@ -417,7 +416,7 @@ const items: Array<GalleryItem> = [
 		name: 'Spline Tool',
 		description: 'A custom spline editor for creating paths and procedural geometry.',
 		shortDescription: 'Custom Unity spline editor tool.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/SplineTool.webp`,
 		video: `${base}/gallery/video/SplineTool.mp4`,
 		tags: ['unity', 'editor-tool', 'splines', 'procedural'],
 		category: 'tool'
@@ -427,7 +426,7 @@ const items: Array<GalleryItem> = [
 		name: 'Texture Toolkit',
 		description: 'A comprehensive tool for texture manipulation and channel packing within Unity.',
 		shortDescription: 'Unity texture manipulation toolkit.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/TextureToolkit.webp`,
 		video: `${base}/gallery/video/TextureToolkit.mp4`,
 		tags: ['unity', 'editor-tool', 'textures', 'utility'],
 		category: 'tool'
@@ -471,7 +470,7 @@ const items: Array<GalleryItem> = [
 		name: 'Boat Rig',
 		description: 'A physics based boat rigging system for realistic water buoyancy and movement.',
 		shortDescription: 'Physics based boat rigging in Unity.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/Boat_Rig.webp`,
 		video: `${base}/gallery/video/Boat_Rig.mp4`,
 		tags: ['unity', 'rigging', 'physics', 'buoyancy'],
 		category: 'rig'
@@ -481,7 +480,7 @@ const items: Array<GalleryItem> = [
 		name: 'Car Rig',
 		description: 'Advanced vehicle rigging with suspension physics and wheel controllers.',
 		shortDescription: 'Advanced vehicle rigging in Unity.',
-		image: Assets.Unknown.light,
+		image: `${base}/gallery/Images/Car_rig.webp`,
 		video: `${base}/gallery/video/Car_rig.mp4`,
 		tags: ['unity', 'rigging', 'physics', 'vehicle'],
 		category: 'rig'
