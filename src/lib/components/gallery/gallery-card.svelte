@@ -179,7 +179,7 @@
 						bind:this={videoEl}
 						src={item.video}
 						poster={item.image}
-						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {inViewport && videoLoaded && !scrollState.isScrolling ? 'opacity-100' : 'opacity-0'}"
+						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {inViewport && videoLoaded ? 'opacity-100' : 'opacity-0'}"
 						loop
 						muted
 						playsinline
