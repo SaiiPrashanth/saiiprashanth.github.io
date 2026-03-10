@@ -46,8 +46,8 @@
 	let videoMounted = $state(false);    // lazy mount: true once near viewport, never goes false
 	let videoEl: HTMLVideoElement | undefined = $state();
 
-	// Media is "ready" when the image loads (image-only) or video can play (video items)
-	let mediaReady = $derived(item.video ? videoReady : imgLoaded);
+	// Blur clears as soon as the still image loads (fast) for ALL items
+	let mediaReady = $derived(imgLoaded);
 
 	// Hide blur thumb from DOM entirely after fade-out to free GPU layer
 	let thumbHidden = $state(false);
@@ -134,9 +134,24 @@
 				/>
 				{/if}
 
-				{#if item.video}
-					<!-- Video items: lazy-mounted when near viewport -->
-					{#if videoMounted}
+				<!-- Layer 2: High-res still image (all items — clears blur fast) -->
+				<picture>
+					<source srcset={avifUrl} type="image/avif" />
+					<source srcset={item.image} type="image/webp" />
+					<img
+						src={item.image}
+						alt={item.name}
+						loading="lazy"
+						decoding="async"
+						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500
+							{imgLoaded ? 'opacity-100' : 'opacity-0'}"
+						onload={() => (imgLoaded = true)}
+						onerror={() => (imgLoaded = true)}
+					/>
+				</picture>
+
+				<!-- Layer 3: Video overlay (lazy-mounted, plays on top of still) -->
+				{#if item.video && videoMounted}
 					<video
 						bind:this={videoEl}
 						src={item.video}
@@ -150,21 +165,6 @@
 					>
 						<track kind="captions" />
 					</video>
-					{/if}
-				{:else}
-					<!-- Image-only items: high-res still -->
-					<picture>
-						<source srcset={avifUrl} type="image/avif" />
-						<source srcset={item.image} type="image/webp" />
-						<img
-							src={item.image}
-							alt={item.name}						loading="lazy"
-						decoding="async"							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500
-								{imgLoaded ? 'opacity-100' : 'opacity-0'}"
-							onload={() => (imgLoaded = true)}
-							onerror={() => (imgLoaded = true)}
-						/>
-					</picture>
 				{/if}
 
 				<!-- Layer 4: Hover color overlay (desktop only) -->
