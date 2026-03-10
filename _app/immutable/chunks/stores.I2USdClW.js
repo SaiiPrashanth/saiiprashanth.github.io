@@ -1,0 +1,1 @@
+import{s}from"./entry.1t2wg9RX.js";const b=()=>{const b=s;return{page:{subscribe:b.page.subscribe},navigating:{subscribe:b.navigating.subscribe},updated:b.updated}},e={subscribe:s=>b().page.subscribe(s)},i={subscribe:s=>b().navigating.subscribe(s)};export{i as n,e as p};
