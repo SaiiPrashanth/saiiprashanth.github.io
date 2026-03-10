@@ -61,21 +61,27 @@
 			(entries) => {
 				isVisible = entries[0].isIntersecting;
 			},
-			{ threshold: 0.1, rootMargin: '-40px 0px' }
+			{ threshold: 0.25, rootMargin: '0px' }
 		);
 
 		observer.observe(cardElement);
 		return () => observer.disconnect();
 	});
 
-	// Play/pause video without destroying/recreating the element
+	// Debounced play: wait 250ms before starting decode so rapid scroll-through
+	// never triggers concurrent play on many videos. Pause is always immediate.
+	let playTimer: ReturnType<typeof setTimeout> | undefined;
 	$effect(() => {
 		if (!videoEl || !item.video) return;
 		if (isVisible) {
-			videoEl.play().catch(() => {});
+			playTimer = setTimeout(() => {
+				videoEl?.play().catch(() => {});
+			}, 250);
 		} else {
+			clearTimeout(playTimer);
 			videoEl.pause();
 		}
+		return () => clearTimeout(playTimer);
 	});
 
 	// Only attach global keydown when preview is actually open
