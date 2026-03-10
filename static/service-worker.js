@@ -1,11 +1,10 @@
-const CACHE_NAME = 'saiiprashanth-portfolio-v2';
+const CACHE_NAME = 'saiiprashanth-portfolio-v3';
 const STATIC_ASSETS = [
-	'/',
 	'/manifest.json',
 	'/Logo.png'
 ];
 
-// Install event - cache static assets
+// Install event - cache only truly static assets (not HTML pages)
 self.addEventListener('install', (event) => {
 	event.waitUntil(
 		caches.open(CACHE_NAME).then((cache) => {
@@ -29,37 +28,58 @@ self.addEventListener('activate', (event) => {
 	self.clients.claim();
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event
 self.addEventListener('fetch', (event) => {
 	// Skip cross-origin requests
 	if (!event.request.url.startsWith(self.location.origin)) {
 		return;
 	}
 
-	event.respondWith(
-		caches.match(event.request).then((cachedResponse) => {
-			if (cachedResponse) {
-				return cachedResponse;
-			}
+	const url = new URL(event.request.url);
 
-			return fetch(event.request).then((response) => {
-				// Don't cache if not a success response
-				if (!response || response.status !== 200 || response.type !== 'basic') {
+	// HTML navigation: always network-first so new deploys load correctly
+	if (event.request.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname === '/') {
+		event.respondWith(
+			fetch(event.request).catch(() => caches.match(event.request))
+		);
+		return;
+	}
+
+	// Immutable hashed assets (_app/immutable/): cache-first, safe forever
+	if (url.pathname.includes('/_app/immutable/')) {
+		event.respondWith(
+			caches.match(event.request).then((cached) => {
+				if (cached) return cached;
+				return fetch(event.request).then((response) => {
+					if (response && response.status === 200) {
+						const clone = response.clone();
+						caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+					}
 					return response;
-				}
+				});
+			})
+		);
+		return;
+	}
 
-				// Cache images and static assets
-				if (
-					event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp|avif|css|js|woff|woff2|ttf|eot)$/i)
-				) {
-					const responseToCache = response.clone();
-					caches.open(CACHE_NAME).then((cache) => {
-						cache.put(event.request, responseToCache);
-					});
-				}
+	// Images and fonts: cache-first
+	if (event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp|avif|woff|woff2|ttf|eot)$/i)) {
+		event.respondWith(
+			caches.match(event.request).then((cached) => {
+				if (cached) return cached;
+				return fetch(event.request).then((response) => {
+					if (response && response.status === 200) {
+						const clone = response.clone();
+						caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+					}
+					return response;
+				});
+			})
+		);
+		return;
+	}
 
-				return response;
-			});
-		})
-	);
+	// Everything else: network only
+	event.respondWith(fetch(event.request));
 });
+
