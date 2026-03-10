@@ -325,7 +325,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/Hyperdrive.webp`,
 		video: `${base}/gallery/video/Hyperdrive_5s.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'space'],
-		category: 'particle'
+		category: 'particle',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 	{
 		slug: 'rain-particles',
@@ -335,7 +338,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/RainParticles.webp`,
 		video: `${base}/gallery/video/RainParticles.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'environment'],
-		category: 'particle'
+		category: 'particle',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 	{
 		slug: 'smoke-vfx',
@@ -345,7 +351,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/SmokeFX.webp`,
 		video: `${base}/gallery/video/SmokeFX.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'smoke'],
-		category: 'particle'
+		category: 'particle',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 	{
 		slug: 'spark-vfx',
@@ -355,7 +364,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/SparkFX.webp`,
 		video: `${base}/gallery/video/SparkFX.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'sparks'],
-		category: 'particle'
+		category: 'particle',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 
 	// --- SHADER ---
@@ -367,7 +379,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/GrassShader.webp`,
 		video: `${base}/gallery/video/GrassShader.mp4`,
 		tags: ['unity', 'shader-graph', 'stylized-art', 'environment'],
-		category: 'shader'
+		category: 'shader',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 	{
 		slug: 'pixel-shader',
@@ -377,7 +392,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/PixelShader.webp`,
 		video: `${base}/gallery/video/PixelShader.mp4`,
 		tags: ['unity', 'shader-graph', 'pixel-art', 'post-processing'],
-		category: 'shader'
+		category: 'shader',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 	{
 		slug: 'water-shader',
@@ -387,7 +405,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/WaterShader.webp`,
 		video: `${base}/gallery/video/WaterShader.mp4`,
 		tags: ['unity', 'shader-graph', 'water', 'vfx'],
-		category: 'shader'
+		category: 'shader',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 
 	// --- TOOL ---
@@ -399,7 +420,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/ImportHelper.webp`,
 		video: `${base}/gallery/video/ImportHelper.mp4`,
 		tags: ['unity', 'editor-tool', 'automation', 'utility'],
-		category: 'tool'
+		category: 'tool',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 	{
 		slug: 'screen-profiler',
@@ -409,7 +433,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/ScreenProfiler.webp`,
 		video: `${base}/gallery/video/ScreenProfiler.mp4`,
 		tags: ['unity', 'editor-tool', 'optimization', 'profiling'],
-		category: 'tool'
+		category: 'tool',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 	{
 		slug: 'spline-tool',
@@ -419,7 +446,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/SplineTool.webp`,
 		video: `${base}/gallery/video/SplineTool.mp4`,
 		tags: ['unity', 'editor-tool', 'splines', 'procedural'],
-		category: 'tool'
+		category: 'tool',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 	{
 		slug: 'texture-toolkit',
@@ -429,7 +459,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/TextureToolkit.webp`,
 		video: `${base}/gallery/video/TextureToolkit.mp4`,
 		tags: ['unity', 'editor-tool', 'textures', 'utility'],
-		category: 'tool'
+		category: 'tool',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 
 	// --- TERRAIN ---
@@ -473,7 +506,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/Boat_Rig.webp`,
 		video: `${base}/gallery/video/Boat_Rig.mp4`,
 		tags: ['unity', 'rigging', 'physics', 'buoyancy'],
-		category: 'rig'
+		category: 'rig',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 	{
 		slug: 'car-rig',
@@ -483,7 +519,10 @@ const items: Array<GalleryItem> = [
 		image: `${base}/gallery/Images/Car_rig.webp`,
 		video: `${base}/gallery/video/Car_rig.mp4`,
 		tags: ['unity', 'rigging', 'physics', 'vehicle'],
-		category: 'rig'
+		category: 'rig',
+		links: [
+			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+		]
 	},
 
 	// --- AR ---

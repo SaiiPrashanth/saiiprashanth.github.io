@@ -50,10 +50,8 @@
 	let imgLoaded = $state(false);
 	let videoLoaded = $state(false);
 	let previewMediaLoaded = $state(false);
-	let isHovered = $state(false);
 	let showPreview = $state(false);
-	let hoverTimer: ReturnType<typeof setTimeout>;
-	let supportsHover: boolean | undefined; // cached once per component
+	let videoEl: HTMLVideoElement | undefined = $state();
 
 	// Intersection Observer to only play videos when in view
 	$effect(() => {
@@ -63,80 +61,41 @@
 			(entries) => {
 				isVisible = entries[0].isIntersecting;
 			},
-			{ threshold: 0.1 }
+			{ threshold: 0.1, rootMargin: '-40px 0px' }
 		);
 
 		observer.observe(cardElement);
 		return () => observer.disconnect();
 	});
 
-	// Reset videoLoaded each time the video enters the viewport so the
-	// placeholder stays visible until the new <video> element is ready.
+	// Play/pause video without destroying/recreating the element
 	$effect(() => {
-		if (isVisible && item.video) {
-			videoLoaded = false;
+		if (!videoEl || !item.video) return;
+		if (isVisible) {
+			videoEl.play().catch(() => {});
+		} else {
+			videoEl.pause();
 		}
 	});
 
-	// Velocity tracking for "flick to close"
-	let lastX = 0;
-	let lastY = 0;
-	let lastT = 0;
-
-	const handleMouseEnter = (e: MouseEvent) => {
-		// Only run preview logic on devices that support hover (Desktop)
-		if (supportsHover === undefined) supportsHover = window.matchMedia('(hover: hover)').matches;
-		if (supportsHover) {
-			isHovered = true;
-			lastX = e.clientX;
-			lastY = e.clientY;
-			lastT = Date.now();
-
-			// Delay (600ms) to ensure user intent before popping the big window
-			hoverTimer = setTimeout(() => {
-				if (isHovered) {
-					showPreview = true;
-					previewMediaLoaded = false; // Reset for the new window
-				}
-			}, 600); 
-		}
-	};
-
-	const handleMouseLeave = () => {
-		isHovered = false;
-		showPreview = false;
-		clearTimeout(hoverTimer);
-	};
-
-	// Track mouse velocity to close window on fast movement
-	const handleGlobalMouseMove = (e: MouseEvent) => {
+	// Only attach global keydown when preview is actually open
+	$effect(() => {
 		if (!showPreview) return;
-		
-		const now = Date.now();
-		const dt = now - lastT;
-		
-		if (dt > 0) {
-			const dx = e.clientX - lastX;
-			const dy = e.clientY - lastY;
-			const dist = Math.sqrt(dx * dx + dy * dy);
-			const velocity = dist / dt; // pixels per millisecond
-			
-			// If moving faster than 1.5px/ms (a quick flick), close the preview
-			if (velocity > 1.5) {
-				handleMouseLeave();
-			}
-		}
-		
-		lastX = e.clientX;
-		lastY = e.clientY;
-		lastT = now;
+		const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') closePreview(); };
+		window.addEventListener('keydown', handler);
+		return () => window.removeEventListener('keydown', handler);
+	});
+
+	const openZoomPreview = (e: MouseEvent) => {
+		e.preventDefault();
+		e.stopPropagation();
+		showPreview = true;
+		previewMediaLoaded = false;
 	};
 
-	// Close preview if user scrolls away
-	const handleScroll = () => {
-		if (showPreview) {
-			handleMouseLeave();
-		}
+	const closePreview = (e?: MouseEvent) => {
+		e?.stopPropagation();
+		showPreview = false;
 	};
 
 	const getThumbUrl = (url: string) => {
@@ -152,8 +111,6 @@
 	const thumbUrl = getThumbUrl(item.image);
 </script>
 
-<svelte:window onmousemove={handleGlobalMouseMove} onscroll={handleScroll} />
-
 <div 
 	bind:this={cardElement}
 	role="presentation"
@@ -161,7 +118,7 @@
 >
 	<FancyCard
 		{color}
-		class="flex h-full flex-col transition-opacity duration-300 {showPreview ? 'opacity-40' : 'opacity-100'}"
+		class="flex h-full flex-col"
 		href={item.links && item.links.length > 0 ? item.links[0].to : href(`/gallery/${item.slug}`)}
 		newTab={item.links && item.links.length > 0 ? item.links[0].newTab : false}
 		onclick={() => trackGalleryClick(item.name, item.category, `/gallery/${item.slug}`)}
@@ -169,9 +126,7 @@
 		<CardHeader class="flex w-full flex-col gap-4">
 			<div 
 				role="presentation"
-				onmouseenter={handleMouseEnter}
-				onmouseleave={handleMouseLeave}
-				class="group relative aspect-video w-full overflow-hidden rounded-lg cursor-zoom-in"
+				class="group relative aspect-video w-full overflow-hidden rounded-lg"
 			>
 				<!-- Blurred Placeholder (Tile) -->
 				<!-- Hide only when the *currently active* media has finished loading:
@@ -180,57 +135,74 @@
 				<img
 					src={thumbUrl}
 					alt=""
-					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-700 {(!item.video || !isVisible) ? (imgLoaded ? 'opacity-0' : 'opacity-100') : (videoLoaded ? 'opacity-0' : 'opacity-100')}"
+					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-700 {(item.video && isVisible) ? (videoLoaded ? 'opacity-0' : 'opacity-100') : (imgLoaded ? 'opacity-0' : 'opacity-100')}"
 					aria-hidden="true"
 				/>
 				
-			<!-- High-Res Static Image (Loaded if no video OR video is not in view) -->
-			{#if !item.video || !isVisible}
-				<picture>
+				<!-- High-Res Static Image (always in DOM, hidden when video is active) -->
+				<picture class="{item.video && isVisible ? 'opacity-0' : ''}">
 					<source srcset={getAvifUrl(item.image)} type="image/avif" />
 					<source srcset={item.image} type="image/webp" />
 					<img
 						src={item.image}
 						alt={item.name}
-						class="relative h-full w-full object-cover transition-all duration-700 {imgLoaded ? 'opacity-100' : 'opacity-0'} {isHovered ? 'scale-110' : 'scale-100'}"
+						class="relative h-full w-full object-cover transition-opacity duration-700 {imgLoaded ? 'opacity-100' : 'opacity-0'}"
 						onload={() => (imgLoaded = true)}
 						onerror={() => (imgLoaded = true)}
 						loading="lazy"
 					/>
 				</picture>
-			{/if}
 
-			<!-- Looped Video/GIF Preview -->
-			{#if item.video && isVisible}
-				{#if item.video.toLowerCase().endsWith('.gif')}
-					<img
-						src={item.video}
-						alt={item.name}
-						class="absolute inset-0 h-full w-full object-cover transition-all duration-700 {videoLoaded ? 'opacity-100' : 'opacity-0'} {isHovered ? 'scale-110' : 'scale-100'}"
-						onload={() => (videoLoaded = true)}
-						loading="lazy"
-					/>
-				{:else}
-					<video
-						src={item.video}
-						poster={item.image}
-						class="absolute inset-0 h-full w-full object-cover transition-all duration-700 {videoLoaded ? 'opacity-100' : 'opacity-0'} {isHovered ? 'scale-110' : 'scale-100'}"
-						autoplay
-						loop
-						muted
-						playsinline
-						preload="none"
-						oncanplay={() => (videoLoaded = true)}
-					>
-						<track kind="captions" />
-					</video>
+				<!-- Looped Video Preview (always in DOM, play/pause via JS) -->
+				{#if item.video}
+					{#if item.video.toLowerCase().endsWith('.gif')}
+						<img
+							src={item.video}
+							alt={item.name}
+							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 {isVisible && videoLoaded ? 'opacity-100' : 'opacity-0'}"
+							onload={() => (videoLoaded = true)}
+							loading="lazy"
+						/>
+					{:else}
+						<video
+							bind:this={videoEl}
+							src={item.video}
+							poster={item.image}
+							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 {isVisible && videoLoaded ? 'opacity-100' : 'opacity-0'}"
+							loop
+							muted
+							playsinline
+							preload="none"
+							oncanplay={() => (videoLoaded = true)}
+						>
+							<track kind="captions" />
+						</video>
+					{/if}
 				{/if}
-			{/if}
 
 				<div
 					class="absolute inset-0 transition-all duration-300 opacity-0 group-hover:opacity-20 z-10"
 					style="background-color: {color};"
 				></div>
+
+				<!-- Zoom button (top-right of image) -->
+				<button
+					type="button"
+					onclick={openZoomPreview}
+					class="absolute top-2 right-2 z-20 flex h-8 w-8 items-center justify-center rounded-lg bg-background/70 text-foreground border border-border transition-all duration-200 hover:bg-background hover:scale-110 backdrop-blur-sm"
+					aria-label="Zoom preview"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+						<polyline points="3 9 3 3 9 3"/>
+						<polyline points="15 3 21 3 21 9"/>
+						<polyline points="21 15 21 21 15 21"/>
+						<polyline points="9 21 3 21 3 15"/>
+						<line x1="3" y1="3" x2="9" y2="9"/>
+						<line x1="15" y1="3" x2="21" y2="9"/>
+						<line x1="21" y1="21" x2="15" y2="15"/>
+						<line x1="3" y1="21" x2="9" y2="15"/>
+					</svg>
+				</button>
 			</div>
 			<div class="flex w-full flex-row items-center gap-1 overflow-hidden">
 				<CardTitle class="h-auto min-w-0 flex-1 leading-normal py-1">
@@ -263,10 +235,14 @@
 
 <!-- Mac OS Quick Look Style Preview Overlay -->
 {#if showPreview}
-	<div class="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 lg:p-24">
+	<div class="pointer-events-auto fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 lg:p-24">
 		<!-- Backdrop -->
 		<div 
-			class="absolute inset-0 bg-black/40 backdrop-blur-sm animate-in fade-in duration-300"
+			role="button"
+			tabindex="0"
+			class="absolute inset-0 bg-black/40 backdrop-blur-sm animate-in fade-in duration-300 cursor-pointer"
+			onclick={closePreview}
+			onkeydown={(e) => { if (e.key === 'Enter') closePreview(); }}
 		></div>
 		
 		<!-- Preview Window (Mac App Opening Animation) -->
@@ -312,6 +288,19 @@
 				/>
 			{/if}
 			
+			<!-- Close button -->
+			<button
+				type="button"
+				onclick={closePreview}
+				class="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-background/70 text-foreground border border-border hover:bg-background hover:scale-110 transition-all duration-150 backdrop-blur-sm"
+				aria-label="Close preview"
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+					<line x1="18" y1="6" x2="6" y2="18"/>
+					<line x1="6" y1="6" x2="18" y2="18"/>
+				</svg>
+			</button>
+
 			<!-- Floating Label -->
 			<div 
 				class="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-background/80 px-6 py-2 backdrop-blur-md border border-border shadow-lg"

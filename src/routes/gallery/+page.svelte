@@ -14,32 +14,37 @@
 
 	let categoryFilters: Array<CategoryFilter> = $state([
 		{ slug: 'game', name: 'Game' },
-		{ slug: '2d', name: '2D Art' },
-		{ slug: '3d', name: '3D Model' },
 		{ slug: 'particle', name: 'Particle' },
 		{ slug: 'shader', name: 'Shader' },
 		{ slug: 'tool', name: 'Tool' },
-		{ slug: 'terrain', name: 'Terrain' },
 		{ slug: 'rig', name: 'Rig' },
+		{ slug: '2d', name: '2D Art' },
+		{ slug: '3d', name: '3D Model' },
+		{ slug: 'terrain', name: 'Terrain' },
 		{ slug: 'ar', name: 'AR' },
 		{ slug: 'ui', name: 'UI' }
 	]);
 
 	let search = $state('');
 	let result = $derived(
-		GalleryData.items.filter((item) => {
-			const isFiltered =
-				categoryFilters.every((filter) => !filter.isSelected) ||
-				categoryFilters.some((filter) => filter.isSelected && filter.slug === item.category);
+		GalleryData.items
+			.filter((item) => {
+				const isFiltered =
+					categoryFilters.every((filter) => !filter.isSelected) ||
+					categoryFilters.some((filter) => filter.isSelected && filter.slug === item.category);
 
-			const isSearched =
-				search.trim().length === 0 ||
-				item.name.trim().toLowerCase().includes(search.trim().toLowerCase()) ||
-				item.description.toLowerCase().includes(search.trim().toLowerCase()) ||
-				item.tags.some((tag) => tag.toLowerCase().includes(search.trim().toLowerCase()));
+				const isSearched =
+					search.trim().length === 0 ||
+					item.name.trim().toLowerCase().includes(search.trim().toLowerCase()) ||
+					item.description.toLowerCase().includes(search.trim().toLowerCase()) ||
+					item.tags.some((tag) => tag.toLowerCase().includes(search.trim().toLowerCase()));
 
-			return isFiltered && isSearched;
-		})
+				return isFiltered && isSearched;
+			})
+			.sort((a, b) => {
+				const order = categoryFilters.map((f) => f.slug);
+				return order.indexOf(a.category) - order.indexOf(b.category);
+			})
 	);
 
 	const toggleSelected = (slug: string) => {
