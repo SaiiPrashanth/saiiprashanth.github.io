@@ -44,6 +44,15 @@
 	let videoMounted = $state(false);    // video element is in DOM (never goes false)
 	let videoEl: HTMLVideoElement | undefined = $state();
 
+	// Hide blur thumb from DOM entirely after fade-out to free GPU layer
+	let thumbHidden = $state(false);
+	$effect(() => {
+		if (imgLoaded) {
+			const t = setTimeout(() => (thumbHidden = true), 400);
+			return () => clearTimeout(t);
+		}
+	});
+
 	// Preview overlay
 	let showPreview = $state(false);
 	let previewReady = $state(false);
@@ -102,6 +111,7 @@
 <div bind:this={cardEl} role="presentation" class="h-full">
 	<FancyCard
 		{color}
+		tilt={0}
 		class="flex h-full flex-col"
 		href={item.links?.length ? item.links[0].to : href(`/gallery/${item.slug}`)}
 		newTab={item.links?.length ? item.links[0].newTab : false}
@@ -111,15 +121,18 @@
 			<div
 				role="presentation"
 				class="group relative aspect-video w-full overflow-hidden rounded-lg"
+				style="contain: layout style paint;"
 			>
-				<!-- Layer 1: Tiny blurred placeholder (always in DOM, fades out) -->
+				<!-- Layer 1: Tiny blurred placeholder (removed from DOM after fade) -->
+				{#if !thumbHidden}
 				<img
 					src={thumbUrl}
 					alt=""
 					aria-hidden="true"
 					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-300
-						{imgLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}"
+						{imgLoaded ? 'opacity-0' : 'opacity-100'}"
 				/>
+				{/if}
 
 				<!-- Layer 2: High-res still image (ALWAYS rendered for every item) -->
 				<picture>
