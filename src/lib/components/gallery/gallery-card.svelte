@@ -150,11 +150,11 @@
 				role="presentation"
 				class="group relative aspect-video w-full overflow-hidden rounded-lg"
 			>
-				<!-- Blurred Placeholder: fades out once the real media loads -->
+				<!-- Blurred Placeholder: fades out once poster/image is loaded -->
 				<img
 					src={thumbUrl}
 					alt=""
-					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-300 {(item.video ? videoLoaded : imgLoaded) ? 'opacity-0' : 'opacity-100'}"
+					class="absolute inset-0 h-full w-full scale-110 object-cover blur-xl transition-opacity duration-300 {imgLoaded ? 'opacity-0' : 'opacity-100'}"
 					aria-hidden="true"
 				/>
 				
@@ -175,11 +175,20 @@
 
 				<!-- Looped Video Preview: only mounted when card is visible -->
 				{#if item.video && isVisible}
+					<!-- Hidden img to detect when the poster is ready, so blur can fade quickly -->
+					<img
+						src={item.image}
+						alt=""
+						class="sr-only"
+						aria-hidden="true"
+						onload={() => (imgLoaded = true)}
+						onerror={() => (imgLoaded = true)}
+					/>
 					<video
 						bind:this={videoEl}
 						src={item.video}
 						poster={item.image}
-						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {inViewport && videoLoaded ? 'opacity-100' : 'opacity-0'}"
+						class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 {inViewport ? 'opacity-100' : 'opacity-0'}"
 						loop
 						muted
 						playsinline
