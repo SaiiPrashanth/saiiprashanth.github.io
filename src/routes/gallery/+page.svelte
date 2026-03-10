@@ -13,15 +13,16 @@
 	}
 
 	let categoryFilters: Array<CategoryFilter> = $state([
+		{ slug: 'game', name: 'Game' },
 		{ slug: '2d', name: '2D Art' },
 		{ slug: '3d', name: '3D Model' },
-		{ slug: 'ar', name: 'AR' },
-		{ slug: 'game', name: 'Game' },
-		{ slug: 'terrain', name: 'Terrain' },
-		{ slug: 'ui', name: 'UI' },
 		{ slug: 'particle', name: 'Particle' },
 		{ slug: 'shader', name: 'Shader' },
-		{ slug: 'tool', name: 'Tool' }
+		{ slug: 'tool', name: 'Tool' },
+		{ slug: 'terrain', name: 'Terrain' },
+		{ slug: 'rig', name: 'Rig' },
+		{ slug: 'ar', name: 'AR' },
+		{ slug: 'ui', name: 'UI' }
 	]);
 
 	let search = $state('');
