@@ -87,6 +87,20 @@ const items: Array<Education> = [
 		subjects: ['Game Design', 'Unreal Engine', 'Level Design', 'Game Production'],
 		color: '#9333ea',
 		link: 'https://www.coursera.org/account/accomplishments/records/JR2UWVNQO1Z9'
+	},
+	{
+		degree: 'NISM Mutual Funds Series V-A Certification',
+		description: 'Certification demonstrating knowledge of mutual fund regulations, products, and distribution practices as prescribed by the Securities and Exchange Board of India (SEBI).',
+		location: 'NISM',
+		logo: Assets.NISM,
+		name: 'NISM Mutual Funds V-A',
+		organization: 'SEBI',
+		period: { from: new Date(2025, 0, 1) },
+		shortDescription: 'SEBI-mandated mutual fund distributor certification.',
+		slug: 'nism-mf-va',
+		subjects: ['Mutual Funds', 'Risk Profiling', 'Compliance', 'Fund Distribution', 'Finance'],
+		color: '#1d4ed8',
+		link: ''
 	}
 ];
 
