@@ -9,22 +9,27 @@ export default defineConfig({
 		minify: 'terser',
 		terserOptions: {
 			compress: {
-				drop_console: true, // Remove console.logs in production
+				drop_console: true,
 				passes: 2
 			},
 			format: {
-				comments: false // Remove comments
+				comments: false
 			}
 		},
-		// CSS code splitting per route
 		cssCodeSplit: true,
-		// Optimize chunk sizes
 		rollupOptions: {
 			output: {
-				// Better caching with content-based hashes
 				entryFileNames: 'assets/[name]-[hash].js',
 				chunkFileNames: 'assets/[name]-[hash].js',
-				assetFileNames: 'assets/[name]-[hash].[ext]'
+				assetFileNames: 'assets/[name]-[hash].[ext]',
+				manualChunks: (id) => {
+					if (id.includes('node_modules')) {
+						if (id.includes('bits-ui') || id.includes('svelte-radix')) return 'ui-vendor';
+						if (id.includes('@sveltejs') || id.includes('svelte')) return 'svelte-vendor';
+						if (id.includes('embla-carousel')) return 'carousel-vendor';
+						return 'vendor';
+					}
+				}
 			}
 		}
 	}

@@ -102,7 +102,7 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'decipher',
-		name: 'Decipher: Escape Room',
+		name: 'Decipher',
 		description: 'A single-player escape room puzzle game where players decode cryptic ciphers and solve interconnected logic puzzles across multiple rooms to escape before time runs out.',
 		shortDescription: 'Escape room puzzle game with cipher-based challenges.',
 		image: `${base}/gallery/Images/Decipher.webp`,
@@ -332,7 +332,7 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'rain-particles',
-		name: 'Rain Particles',
+		name: 'Rain FX',
 		description: 'A stylized rain VFX system built in Unity. Features directional rainfall with surface splash sub-emitters, stylized ripple decals on wet surfaces, and adjustable density and wind direction for varied weather moods.',
 		shortDescription: 'Stylized Unity rain with splash sub-emitters and ripples.',
 		image: `${base}/gallery/Images/RainParticles.webp`,
@@ -358,7 +358,7 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'spark-vfx',
-		name: 'Spark FX',
+		name: 'Friction Spark FX',
 		description: 'A dynamic spark and ember VFX system in Unity. Particles physics-collide with surfaces, bounce with energy loss, and fade with heat-mapped color shifting from white-hot to dim orange.',
 		shortDescription: 'Unity sparks with surface collision and color shifting.',
 		image: `${base}/gallery/Images/SparkFX.webp`,
@@ -373,7 +373,7 @@ const items: Array<GalleryItem> = [
 	// --- SHADER ---
 	{
 		slug: 'grass-shader',
-		name: 'Grass Shader',
+		name: 'Interactive Grass Shader',
 		description: 'A stylized grass shader built in Unity Shader Graph. Grass blades bend procedurally in the wind using sine-wave vertex displacement, and flatten dynamically around the player using a world-space interaction radius.',
 		shortDescription: 'Unity grass shader with wind and player interaction.',
 		image: `${base}/gallery/Images/GrassShader.webp`,
@@ -386,7 +386,7 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'pixel-shader',
-		name: 'Pixel Shader',
+		name: 'Pixelation Shader',
 		description: 'A full-screen post-processing shader in Unity that downsamples the render texture to a configurable pixel grid and applies palette quantization, recreating the look of classic retro pixel art in real time.',
 		shortDescription: 'Unity post-process shader for real-time pixel art rendering.',
 		image: `${base}/gallery/Images/PixelShader.webp`,
@@ -399,7 +399,7 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'water-shader',
-		name: 'Water Shader',
+		name: 'Waterfall Shader',
 		description: 'An advanced water surface shader built in Unity Shader Graph. Features Gerstner vertex waves, screen-space refraction, depth-based color absorption, animated foam at shorelines, and normal map blending for surface detail.',
 		shortDescription: 'Unity water shader with waves, foam, and refraction.',
 		image: `${base}/gallery/Images/WaterShader.webp`,
@@ -414,7 +414,7 @@ const items: Array<GalleryItem> = [
 	// --- TOOL ---
 	{
 		slug: 'import-helper-tool',
-		name: 'Import Helper',
+		name: 'Asset Validator',
 		description: 'A Unity Editor import pipeline tool that enforces best practices automatically on asset import. Validates naming conventions, checks polygon counts against configurable budgets, and flags assets missing required LOD levels — all before they land in the project.',
 		shortDescription: 'Unity import tool that checks naming, poly count, and LODs.',
 		image: `${base}/gallery/Images/ImportHelper.webp`,
@@ -427,7 +427,7 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'screen-profiler',
-		name: 'Scene Profiler',
+		name: 'Real-Time Scene Profiler',
 		description: 'A Unity Editor tool that analyses the active scene in real time, reporting per-mesh polygon counts, total scene triangle budget, draw calls, material counts, and LOD coverage — helping identify heavy assets before they hit performance budgets.',
 		shortDescription: 'Unity tool for real-time scene polygon and mesh metrics.',
 		image: `${base}/gallery/Images/ScreenProfiler.webp`,
@@ -501,8 +501,8 @@ const items: Array<GalleryItem> = [
 	{
 		slug: 'boat-rig',
 		name: 'Boat Rig',
-		description: 'A simple vehicle rig created in Maya. Uses a centralised body controller with suspension joints, individual door and hatch rigs, a front-wheel steering controller, and a single central controller that drives all four wheels rotating together.',
-		shortDescription: 'Maya vehicle rig with suspension, doors, and wheel controllers.',
+		description: 'A boat rig created in Maya. Features a centralised hull controller, individual hatch and cabin rigs with open/close controls, a buoyancy simulation controller for rocking motion, and a single master controller that drives the propeller rotation.',
+		shortDescription: 'Maya boat rig with hull, hatches, buoyancy, and propeller controls.',
 		image: `${base}/gallery/Images/Boat_Rig.webp`,
 		video: `${base}/gallery/video/Boat_Rig.mp4`,
 		tags: ['unity', 'rigging', 'physics', 'buoyancy'],
