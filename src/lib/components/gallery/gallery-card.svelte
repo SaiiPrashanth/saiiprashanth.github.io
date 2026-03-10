@@ -137,7 +137,6 @@
 	bind:this={cardElement}
 	role="presentation"
 	class="h-full"
-	style="content-visibility: auto; contain-intrinsic-size: auto 420px;"
 >
 	<FancyCard
 		{color}
@@ -150,7 +149,6 @@
 			<div 
 				role="presentation"
 				class="group relative aspect-video w-full overflow-hidden rounded-lg"
-				style="contain: layout paint style;"
 			>
 				<!-- Blurred Placeholder: only in DOM while image/video hasn't loaded -->
 				{#if (item.video && inViewport) ? !videoLoaded : !imgLoaded}
