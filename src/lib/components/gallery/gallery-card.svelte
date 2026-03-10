@@ -150,8 +150,8 @@
 				role="presentation"
 				class="group relative aspect-video w-full overflow-hidden rounded-lg"
 			>
-				<!-- Blurred Placeholder: shows until the static image loads -->
-				{#if !imgLoaded}
+				<!-- Blurred Placeholder: shows until video (or static image for non-video items) loads -->
+				{#if item.video ? !videoLoaded : !imgLoaded}
 				<img
 					src={thumbUrl}
 					alt=""
@@ -160,8 +160,9 @@
 				/>
 				{/if}
 				
-				<!-- High-Res Static Image: visible until video is loaded and playing -->
-				<picture class="{item.video && inViewport && videoLoaded ? 'opacity-0' : ''}">
+				<!-- High-Res Static Image: only for items without a video -->
+				{#if !item.video}
+				<picture>
 					<source srcset={getAvifUrl(item.image)} type="image/avif" />
 					<source srcset={item.image} type="image/webp" />
 					<img
@@ -172,6 +173,7 @@
 						onerror={() => (imgLoaded = true)}
 					/>
 				</picture>
+				{/if}
 
 				<!-- Looped Video Preview: only mounted when card is visible -->
 				{#if item.video && isVisible}
@@ -269,26 +271,17 @@
 			/>
 
 			{#if item.video}
-				{#if item.video.endsWith('.gif')}
-					<img
-						src={item.video}
-						alt={item.name}
-						class="relative h-full w-full object-contain transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
-						onload={() => (previewMediaLoaded = true)}
-					/>
-				{:else}
-					<video
-						src={item.video}
-						class="relative h-full w-full object-contain transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
-						autoplay
-						loop
-						muted
-						playsinline
-						oncanplay={() => (previewMediaLoaded = true)}
-					>
-						<track kind="captions" />
-					</video>
-				{/if}
+				<video
+					src={item.video}
+					class="relative h-full w-full object-contain transition-opacity duration-500 {previewMediaLoaded ? 'opacity-100' : 'opacity-0'}"
+					autoplay
+					loop
+					muted
+					playsinline
+					oncanplay={() => (previewMediaLoaded = true)}
+				>
+					<track kind="captions" />
+				</video>
 			{:else}
 				<img
 					src={item.image}
