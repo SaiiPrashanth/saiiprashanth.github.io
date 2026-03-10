@@ -61,7 +61,7 @@
 			(entries) => {
 				isVisible = entries[0].isIntersecting;
 			},
-			{ threshold: 0.25, rootMargin: '0px' }
+			{ threshold: 0.1, rootMargin: '-40px 0px' }
 		);
 
 		observer.observe(cardElement);
