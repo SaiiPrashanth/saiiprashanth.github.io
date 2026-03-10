@@ -8,18 +8,28 @@
 	import GalleryData from '$lib/data/gallery';
 	import { scrollState } from '$lib/utils/scroll-state.svelte';
 
-	// Single scroll listener — updates shared state so all cards react together.
+	// Single scroll listener — only flags rapid scrolling (speed > 150px between events).
+	// Slow/normal scrolling keeps videos playing; fast fling shows thumbnails.
 	onMount(() => {
-		let timer: ReturnType<typeof setTimeout>;
+		let lastY = window.scrollY;
+		let stopTimer: ReturnType<typeof setTimeout>;
+		const SPEED_THRESHOLD = 150; // px between scroll events to be considered "rapid"
+
 		const onScroll = () => {
-			scrollState.isScrolling = true;
-			clearTimeout(timer);
-			timer = setTimeout(() => { scrollState.isScrolling = false; }, 300);
+			const delta = Math.abs(window.scrollY - lastY);
+			lastY = window.scrollY;
+
+			if (delta > SPEED_THRESHOLD) {
+				scrollState.isScrolling = true;
+			}
+
+			clearTimeout(stopTimer);
+			stopTimer = setTimeout(() => { scrollState.isScrolling = false; }, 200);
 		};
 		window.addEventListener('scroll', onScroll, { passive: true });
 		return () => {
 			window.removeEventListener('scroll', onScroll);
-			clearTimeout(timer);
+			clearTimeout(stopTimer);
 			scrollState.isScrolling = false;
 		};
 	});
