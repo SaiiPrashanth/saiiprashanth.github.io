@@ -11,6 +11,7 @@
 	import Muted from '../ui/typography/muted.svelte';
 	import { trackGalleryClick } from '$lib/utils/analytics';
 	import { scrollState } from '$lib/utils/scroll-state.svelte';
+	import { getGalleryObserver } from '$lib/utils/gallery-observer';
 	import { scale } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 
@@ -35,6 +36,7 @@
 	const color = getCategoryColor(item.category);
 	const thumbUrl = item.image.replace(/\.(webp|png|jpg)$/i, '_thumb.webp');
 	const avifUrl = item.image.replace(/\.(webp|png)$/i, '.avif');
+	const observer = item.video ? getGalleryObserver() : undefined;
 
 	// ── State ──────────────────────────────────────────────────
 	let cardEl: HTMLElement | undefined = $state();
@@ -60,22 +62,16 @@
 	let showPreview = $state(false);
 	let previewReady = $state(false);
 
-	// ── Intersection Observer (video items only) ──────────────
-	// IO fires immediately for elements already in viewport, so this is
-	// uniform for first-visible cards and scrolled-into-view cards.
+	// ── Shared Intersection Observer (video items only) ──────
 	$effect(() => {
-		if (!cardEl || !item.video) return;
+		if (!cardEl || !observer) return;
 
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				inViewport = entry.isIntersecting;
-				if (entry.isIntersecting) videoMounted = true;
-			},
-			{ threshold: 0.01, rootMargin: '200px 0px' }
-		);
+		observer.observe(cardEl, {
+			onEnter: () => { inViewport = true; videoMounted = true; },
+			onLeave: () => { inViewport = false; }
+		});
 
-		observer.observe(cardEl);
-		return () => observer.disconnect();
+		return () => { if (cardEl) observer.unobserve(cardEl); };
 	});
 
 	// ── Video play/pause ──────────────────────────────────────
@@ -149,7 +145,7 @@
 						loop
 						muted
 						playsinline
-						preload="auto"
+						preload="metadata"
 						oncanplay={() => (videoReady = true)}
 					>
 						<track kind="captions" />
@@ -162,8 +158,8 @@
 						<source srcset={item.image} type="image/webp" />
 						<img
 							src={item.image}
-							alt={item.name}
-							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500
+							alt={item.name}						loading="lazy"
+						decoding="async"							class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500
 								{imgLoaded ? 'opacity-100' : 'opacity-0'}"
 							onload={() => (imgLoaded = true)}
 							onerror={() => (imgLoaded = true)}
