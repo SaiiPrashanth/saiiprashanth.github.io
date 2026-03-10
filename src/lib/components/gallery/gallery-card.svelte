@@ -84,7 +84,8 @@
 	$effect(() => {
 		if (!videoEl) return;
 
-		if (inViewport && !scrollState.isScrolling) {
+		// videoReady is read here so the effect re-runs when canplay fires
+		if (inViewport && videoReady && !scrollState.isScrolling) {
 			playTimer = setTimeout(() => videoEl?.play().catch(() => {}), 150);
 		} else {
 			clearTimeout(playTimer);
