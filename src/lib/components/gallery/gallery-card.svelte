@@ -108,7 +108,7 @@
 </script>
 
 <!-- ─── Card ──────────────────────────────────────────────── -->
-<div bind:this={cardEl} role="presentation" class="h-full">
+<div bind:this={cardEl} role="presentation" class="h-full" style="content-visibility: auto; contain-intrinsic-size: auto 400px;">
 	<FancyCard
 		{color}
 		tilt={0}
