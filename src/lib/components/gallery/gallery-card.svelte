@@ -54,22 +54,32 @@
 	let showPreview = $state(false);
 	let videoEl: HTMLVideoElement | undefined = $state();
 
-	// Intersection Observer: wider rootMargin so video mounts before card fully in view
-	// and doesn't unmount the instant it scrolls out (reduces churn).
+	// Intersection Observer: wider rootMargin so video mounts before card fully in view.
+	// Unmount is delayed 1.5s so mobile inertia scroll over-shoots don't cause
+	// constant video destroy/recreate churn.
+	let hideTimer: ReturnType<typeof setTimeout> | undefined;
 	$effect(() => {
 		if (!cardElement || !item.video) return;
 
 		const observer = new IntersectionObserver(
 			(entries) => {
 				const visible = entries[0].isIntersecting;
-				if (!visible) videoLoaded = false; // reset so placeholder shows on re-entry
-				isVisible = visible;
+				if (visible) {
+					clearTimeout(hideTimer);
+					isVisible = true;
+				} else {
+					// Delay unmount so brief mobile over-scrolls don't reload video
+					hideTimer = setTimeout(() => {
+						videoLoaded = false;
+						isVisible = false;
+					}, 1500);
+				}
 			},
 			{ threshold: 0.1, rootMargin: '200px 0px' }
 		);
 
 		observer.observe(cardElement);
-		return () => observer.disconnect();
+		return () => { observer.disconnect(); clearTimeout(hideTimer); };
 	});
 
 	// Play only when visible AND not scrolling.
@@ -182,7 +192,7 @@
 				{/if}
 
 				<div
-					class="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-20 z-10"
+					class="absolute inset-0 transition-opacity duration-300 opacity-0 sm:group-hover:opacity-20 z-10"
 					style="background-color: {color};"
 				></div>
 
