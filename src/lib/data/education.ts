@@ -5,32 +5,18 @@ const title = 'Certifications';
 
 const items: Array<Education> = [
 	{
-		degree: 'Google Project Management Professional Certification',
-		description: 'Professional certification demonstrating expertise in project management methodologies and best practices.',
-		location: 'Coursera',
-		logo: Assets.Google,
-		name: 'Google Project Management',
-		organization: 'Google',
+		degree: 'Game Developer Certificate',
+		description: 'Professional certificate validating game development knowledge and skills.',
+		location: 'Credly',
+		logo: Assets.UnityTech,
+		name: 'Game Developer Certificate',
+		organization: 'Unity Technologies',
 		period: { from: new Date(2024, 0, 1) },
-		shortDescription: 'Project management and agile methodologies certification.',
-		slug: 'google-pm',
-		subjects: ['Project Management', 'Agile', 'Scrum', 'Leadership'],
-		color: '#4285f4',
-		link: 'https://www.coursera.org/account/accomplishments/specialization/48GB3HOCHIZZ'
-	},
-	{
-		degree: 'Agile with Atlassian Jira',
-		description: 'Certification in agile project management using Atlassian Jira for team collaboration and workflow optimization.',
-		location: 'Coursera',
-		logo: Assets.Atlassian,
-		name: 'Agile with Jira',
-		organization: 'Atlassian',
-		period: { from: new Date(2024, 0, 1) },
-		shortDescription: 'Agile workflow and Jira project management certification.',
-		slug: 'agile-jira',
-		subjects: ['Agile', 'Jira', 'Scrum', 'Kanban'],
-		color: '#0052cc',
-		link: 'https://www.coursera.org/account/accomplishments/records/D8KSKB6S48AY'
+		shortDescription: 'Game development certificate issued through Credly.',
+		slug: 'game-developer-certificate',
+		subjects: ['Game Development', 'Unity', 'C#'],
+		color: '#00bcd4',
+		link: 'https://www.credly.com/badges/3828ce86-cf77-4ed7-bae9-3bfd2379b7a7/public_url'
 	},
 	{
 		degree: 'Unity Certified Game Developer Certification',
@@ -45,20 +31,6 @@ const items: Array<Education> = [
 		subjects: ['Unity', 'C#', 'Game Development', '3D Graphics', 'Game Design'],
 		color: '#00bcd4',
 		link: 'https://drive.google.com/file/d/1DjxAGJ8Jrhbh4aapllE1CQWb9iF_Dsdn/view?usp=sharing'
-	},
-	{
-		degree: 'Electronic Arts - Product Management Job Simulation',
-		description: 'Completed EA product management simulation covering game production, stakeholder management, and product lifecycle.',
-		location: 'Forage',
-		logo: Assets.ElectronicArts,
-		name: 'EA Product Management',
-		organization: 'Electronic Arts',
-		period: { from: new Date(2024, 0, 1) },
-		shortDescription: 'Game production and product management simulation.',
-		slug: 'ea-product-mgmt',
-		subjects: ['Product Management', 'Game Production', 'Stakeholder Management'],
-		color: '#ff0000',
-		link: 'https://www.theforage.com/completion-certificates/j43dGscQHtJJ57N54/5genWYpfo5b57G7yv_j43dGscQHtJJ57N54_8aLi6e7FfZQZDxdog_1768660084981_completion_certificate.pdf '
 	},
 	{
 		degree: 'Game Design and Development Specialization',
@@ -87,6 +59,48 @@ const items: Array<Education> = [
 		subjects: ['Game Design', 'Unreal Engine', 'Level Design', 'Game Production'],
 		color: '#9333ea',
 		link: 'https://www.coursera.org/account/accomplishments/records/JR2UWVNQO1Z9'
+	},
+	{
+		degree: 'Google Project Management Professional Certification',
+		description: 'Professional certification demonstrating expertise in project management methodologies and best practices.',
+		location: 'Coursera',
+		logo: Assets.Google,
+		name: 'Google Project Management',
+		organization: 'Google',
+		period: { from: new Date(2024, 0, 1) },
+		shortDescription: 'Project management and agile methodologies certification.',
+		slug: 'google-pm',
+		subjects: ['Project Management', 'Agile', 'Scrum', 'Leadership'],
+		color: '#4285f4',
+		link: 'https://www.coursera.org/account/accomplishments/specialization/48GB3HOCHIZZ'
+	},
+	{
+		degree: 'Electronic Arts - Product Management Job Simulation',
+		description: 'Completed EA product management simulation covering game production, stakeholder management, and product lifecycle.',
+		location: 'Forage',
+		logo: Assets.ElectronicArts,
+		name: 'EA Product Management',
+		organization: 'Electronic Arts',
+		period: { from: new Date(2024, 0, 1) },
+		shortDescription: 'Game production and product management simulation.',
+		slug: 'ea-product-mgmt',
+		subjects: ['Product Management', 'Game Production', 'Stakeholder Management'],
+		color: '#ff0000',
+		link: 'https://www.theforage.com/completion-certificates/j43dGscQHtJJ57N54/5genWYpfo5b57G7yv_j43dGscQHtJJ57N54_8aLi6e7FfZQZDxdog_1768660084981_completion_certificate.pdf '
+	},
+	{
+		degree: 'Agile with Atlassian Jira',
+		description: 'Certification in agile project management using Atlassian Jira for team collaboration and workflow optimization.',
+		location: 'Coursera',
+		logo: Assets.Atlassian,
+		name: 'Agile with Jira',
+		organization: 'Atlassian',
+		period: { from: new Date(2024, 0, 1) },
+		shortDescription: 'Agile workflow and Jira project management certification.',
+		slug: 'agile-jira',
+		subjects: ['Agile', 'Jira', 'Scrum', 'Kanban'],
+		color: '#0052cc',
+		link: 'https://www.coursera.org/account/accomplishments/records/D8KSKB6S48AY'
 	},
 ];
 
