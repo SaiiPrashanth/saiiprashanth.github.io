@@ -321,7 +321,7 @@ const items: Array<GalleryItem> = [
 		slug: 'hyperdrive-vfx',
 		name: 'Hyperdrive VFX',
 		description: 'A high-speed hyperdrive warp jump effect built with Unity\'s particle system. Uses streaking light trails, radial distortion, and layered glow to simulate the visual sensation of faster-than-light travel.',
-		shortDescription: 'Unity particle hyperdrive warp jump effect.',
+		shortDescription: 'Unity particle hyperdrive warp effect.',
 		image: `${base}/gallery/Images/Hyperdrive.webp`,
 		video: `${base}/gallery/video/Hyperdrive_5s.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'space'],
@@ -332,7 +332,7 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'rain-particles',
-		name: 'Rain FX',
+		name: 'Rain VFX',
 		description: 'A stylized rain VFX system built in Unity. Features directional rainfall with surface splash sub-emitters, stylized ripple decals on wet surfaces, and adjustable density and wind direction for varied weather moods.',
 		shortDescription: 'Stylized Unity rain with splash sub-emitters and ripples.',
 		image: `${base}/gallery/Images/RainParticles.webp`,
@@ -345,7 +345,7 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'smoke-vfx',
-		name: 'Smoke FX',
+		name: 'Smoke VFX',
 		description: 'A layered smoke VFX system in Unity combining soft particle billboards, flipbook animation, and additive blending. Designed for chimneys, vents, and atmospheric environmental effects.',
 		shortDescription: 'Layered Unity smoke VFX with flipbook animation.',
 		image: `${base}/gallery/Images/SmokeFX.webp`,
@@ -358,9 +358,9 @@ const items: Array<GalleryItem> = [
 	},
 	{
 		slug: 'spark-vfx',
-		name: 'Friction Spark FX',
+		name: 'Friction Spark VFX',
 		description: 'A dynamic spark and ember VFX system in Unity. Particles physics-collide with surfaces, bounce with energy loss, and fade with heat-mapped color shifting from white-hot to dim orange.',
-		shortDescription: 'Unity sparks with surface collision and color shifting.',
+		shortDescription: 'Unity sparks with surface collision and sub-emitters.',
 		image: `${base}/gallery/Images/SparkFX.webp`,
 		video: `${base}/gallery/video/SparkFX.mp4`,
 		tags: ['unity', 'vfx', 'particle-system', 'sparks'],
@@ -422,7 +422,7 @@ const items: Array<GalleryItem> = [
 		tags: ['unity', 'editor-tool', 'automation', 'utility'],
 		category: 'tool',
 		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+			{ to: 'https://github.com/SaiiPrashanth/Asset_Validator', label: 'GitHub', newTab: true }
 		]
 	},
 	{
@@ -435,7 +435,7 @@ const items: Array<GalleryItem> = [
 		tags: ['unity', 'editor-tool', 'optimization', 'profiling'],
 		category: 'tool',
 		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+			{ to: 'https://github.com/SaiiPrashanth/Realtime_Scene_Profiler', label: 'GitHub', newTab: true }
 		]
 	},
 	{
@@ -448,7 +448,7 @@ const items: Array<GalleryItem> = [
 		tags: ['unity', 'editor-tool', 'splines', 'procedural'],
 		category: 'tool',
 		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+			{ to: 'https://github.com/SaiiPrashanth/Spline_Tool', label: 'GitHub', newTab: true }
 		]
 	},
 	{
@@ -461,7 +461,7 @@ const items: Array<GalleryItem> = [
 		tags: ['unity', 'editor-tool', 'textures', 'utility'],
 		category: 'tool',
 		links: [
-			{ to: 'https://www.artstation.com/saiiprashanth', label: 'View on ArtStation', newTab: true }
+			{ to: 'https://github.com/SaiiPrashanth/Texture_Toolbox', label: 'GitHub', newTab: true }
 		]
 	},
 
@@ -502,7 +502,7 @@ const items: Array<GalleryItem> = [
 		slug: 'boat-rig',
 		name: 'Boat Rig',
 		description: 'A boat rig created in Maya. Features a centralised hull controller, individual hatch and cabin rigs with open/close controls, a buoyancy simulation controller for rocking motion, and a single master controller that drives the propeller rotation.',
-		shortDescription: 'Maya boat rig with hull, hatches, buoyancy, and propeller controls.',
+		shortDescription: 'Maya boat rig with hull, doors, buoyancy, and propeller controls.',
 		image: `${base}/gallery/Images/Boat_Rig.webp`,
 		video: `${base}/gallery/video/Boat_Rig.mp4`,
 		tags: ['unity', 'rigging', 'physics', 'buoyancy'],

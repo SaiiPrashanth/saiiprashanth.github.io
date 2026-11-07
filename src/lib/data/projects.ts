@@ -206,6 +206,86 @@ const items: Array<Project> = [
 		skills: getSkills('python', '3dsmax', 'unreal'),
 		type: 'Tool Development',
 		screenshots: []
+	},
+	{
+		slug: 'asset-validator',
+		color: '#f97316',
+		description:
+			'The [Asset Validator](#) is a [Unity Editor](#) import pipeline tool that automatically validates imported [3D models](#) and [textures](#) against configurable pipeline standards. It flags [polygon count violations](#), [naming convention errors](#), [missing LOD levels](#), and texture spec issues — catching problems at import time before they propagate into the project.\n\nValidation rules are driven by a scriptable configuration asset, making the thresholds and naming conventions fully adjustable per project without modifying any code. Every failed check surfaces directly in the Editor as a console warning or error, keeping the feedback loop tight and the pipeline clean.',
+		shortDescription:
+			'Unity Editor tool for automated asset validation and pipeline enforcement.',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Asset_Validator', label: 'GitHub', newTab: true }
+		],
+		logo: Assets.Unity,
+		name: 'Asset Validator',
+		period: {
+			from: new Date(2025, 0, 1),
+			to: new Date(2025, 2, 1)
+		},
+		skills: getSkills('unity', 'csharp'),
+		type: 'Tool Development',
+		screenshots: []
+	},
+	{
+		slug: 'realtime-scene-profiler',
+		color: '#22c55e',
+		description:
+			'The [Realtime Scene Profiler](#) is a [Unity Editor](#) window that scans the active scene and displays [per-object](#) and [scene-wide performance statistics](#) — triangle counts, vertex counts, material counts, and estimated memory — all updated live as objects are added or removed.\n\nA colour-coded [Scene View overlay](#) highlights heavy meshes directly in the viewport, making it immediately obvious which assets are dominating the budget. The tool auto-refreshes on scene changes so the data stays accurate without requiring a manual rescan.',
+		shortDescription:
+			'Unity Editor scene profiler with live stats and color-coded viewport overlay.',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Realtime_Scene_Profiler', label: 'GitHub', newTab: true }
+		],
+		logo: Assets.Unity,
+		name: 'Realtime Scene Profiler',
+		period: {
+			from: new Date(2025, 0, 1),
+			to: new Date(2025, 2, 1)
+		},
+		skills: getSkills('unity', 'csharp'),
+		type: 'Tool Development',
+		screenshots: []
+	},
+	{
+		slug: 'texture-toolbox',
+		color: '#8b5cf6',
+		description:
+			'The [Texture Toolbox](#) is a [Unity Editor](#) window for [batch-processing](#) entire texture folders in one pass. Operations include [resize](#), [format conversion](#), [power-of-two padding](#), [mipmap control](#), [RGBA channel packing](#), and [texture atlas generation](#) — covering the full range of pipeline prep tasks that would otherwise require manual texture-by-texture edits.\n\nAll operations are non-destructive and configurable per-run. The tool processes folders recursively and reports results per-asset, making it straightforward to validate that every texture in a batch met the target specification.',
+		shortDescription:
+			'Unity Editor tool for batch texture processing, channel packing, and atlas generation.',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Texture_Toolbox', label: 'GitHub', newTab: true }
+		],
+		logo: Assets.Unity,
+		name: 'Texture Toolbox',
+		period: {
+			from: new Date(2025, 0, 1),
+			to: new Date(2025, 2, 1)
+		},
+		skills: getSkills('unity', 'csharp'),
+		type: 'Tool Development',
+		screenshots: []
+	},
+	{
+		slug: 'spline-tool',
+		color: '#06b6d4',
+		description:
+			'The [Spline Tool](#) is a [Unity MonoBehaviour](#) that distributes any [prefab](#) along a [parabolic spline](#) defined by two anchor points in the scene. Sag depth, instance count, path alignment, and forward-axis orientation are all exposed in the Inspector for real-time authoring feedback.\n\n[Scene View gizmos](#) draw the spline arc and instance positions live as parameters are adjusted, giving level designers immediate visual confirmation of the result without entering Play mode. The tool is well-suited to any repeated scene element that needs to follow a natural curve — cables, fence lines, bridge planks, or road barriers.',
+		shortDescription:
+			'Unity spline tool for distributing prefabs along a configurable parabolic path.',
+		links: [
+			{ to: 'https://github.com/SaiiPrashanth/Spline_Tool', label: 'GitHub', newTab: true }
+		],
+		logo: Assets.Unity,
+		name: 'Spline Tool',
+		period: {
+			from: new Date(2025, 0, 1),
+			to: new Date(2025, 2, 1)
+		},
+		skills: getSkills('unity', 'csharp'),
+		type: 'Tool Development',
+		screenshots: []
 	}
 ];
 

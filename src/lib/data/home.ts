@@ -11,7 +11,7 @@ const hero: {
 } = {
 	title: `${BaseData.fullName},`,
 	description:
-		'Aspiring Game Producer with a Technical Art background, passionate about game development processes and supporting creative teams to bring their best ideas to life.',
+		'Aspiring Technical Artist with a strong foundation in both 3D art pipelines and scripting. Seeking to bridge the gap between artists and programmers by developing efficient workflows, troubleshooting asset integration and ensuring artistic vision is achieved within technical constraints.',
 	links: [
 		{ label: 'GitHub', href: 'https://github.com/SaiiPrashanth', icon: 'i-carbon-logo-github' },
 		{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/saiiprashanth/', icon: 'i-carbon-logo-linkedin' },
