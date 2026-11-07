@@ -10,7 +10,7 @@
 		<link rel="preconnect" href="https://www.google-analytics.com" />
 		
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="/Logo.png" id="favicon" />
+		<link rel="icon" type="image/png" href="/TechArt/Logo.png" id="favicon" />
 		<link rel="manifest" href="/manifest.json" />
 		
 		<!-- Preload critical fonts only -->
@@ -53,7 +53,7 @@
 					ctx.drawImage(img, 0, 0);
 					favicon.href = canvas.toDataURL('image/png');
 				};
-				img.src = '/Logo.png';
+				img.src = '/TechArt/Logo.png';
 			}
 			
 			// Run on load
@@ -70,32 +70,33 @@
 			// Register service worker
 			if ('serviceWorker' in navigator) {
 				window.addEventListener('load', () => {
-					navigator.serviceWorker.register('/service-worker.js')
+					navigator.serviceWorker.register('/TechArt/service-worker.js')
 						.catch(() => {});
 				});
 			}
 		</script>
 		
-		<link rel="modulepreload" href="/_app/immutable/entry/start.Cvl8ZX0n.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/entry.BYbkvzBM.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/index-client.DXUrDPts.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/paths.nhb_U1F5.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.sfzeGNHt.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/disclose-version.mflYbLDr.js">
+		<link rel="modulepreload" href="/TechArt/_app/immutable/entry/start.Ds-p_Oqz.js">
+		<link rel="modulepreload" href="/TechArt/_app/immutable/chunks/entry.plKYoOZ5.js">
+		<link rel="modulepreload" href="/TechArt/_app/immutable/chunks/index-client.DXUrDPts.js">
+		<link rel="modulepreload" href="/TechArt/_app/immutable/chunks/paths.RbpFlEzX.js">
+		<link rel="modulepreload" href="/TechArt/_app/immutable/entry/app.CeXKgaj3.js">
+		<link rel="modulepreload" href="/TechArt/_app/immutable/chunks/disclose-version.mflYbLDr.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
 			<script>
 				{
-					__sveltekit_phllsl = {
-						base: ""
+					__sveltekit_1dkidht = {
+						base: "/TechArt",
+						assets: "/TechArt"
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.Cvl8ZX0n.js"),
-						import("/_app/immutable/entry/app.sfzeGNHt.js")
+						import("/TechArt/_app/immutable/entry/start.Ds-p_Oqz.js"),
+						import("/TechArt/_app/immutable/entry/app.CeXKgaj3.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});
