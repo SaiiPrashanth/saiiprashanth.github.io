@@ -20,7 +20,7 @@
 		systemPrefersMode.query();
 	}
 
-	const defaultDescription = 'Detail oriented Game Programmer focused on mechanics implementation and game feel. Portfolio showcasing C++, C#, Unity, and Unreal Engine projects with technical implementations and gameplay systems.';
+	const defaultDescription = 'Detail oriented Technical Game Artist focused on mechanics implementation and game feel. Portfolio showcasing Unity and Unreal Engine projects with technical implementations, shaders, VFX, and tools.';
 	const siteUrl = 'https://saiiprashanth.github.io'; // Update with your actual domain
 
 	// Page transition state
@@ -53,7 +53,7 @@
 	<title>{$page.data.title || `${BaseData.fullName} - Technical Game Artist Portfolio`}</title>
 	<meta name="description" content={$page.data.description || defaultDescription} />
 	<meta name="author" content={BaseData.fullName} />
-	<meta name="keywords" content="Technical Game Artist, Game Programmer, Technical Art, Game Development, Unity, Unreal Engine, C++, C#, Shaders, VFX, Tools, Game Design, Portfolio" />
+	<meta name="keywords" content="Technical Game Artist, Technical Art, Game Development, Unity, Unreal Engine, Shaders, VFX, Tools, Game Design, Portfolio" />
 	
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
