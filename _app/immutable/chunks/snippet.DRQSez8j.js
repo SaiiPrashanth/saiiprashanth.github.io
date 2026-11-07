@@ -1,0 +1,1 @@
+import{e as s,E as a,h as n,j as o,k as e,o as i,q as r}from"./index-client.CxTo1-yR.js";function t(t,l,...c){var f,j=t,k=o;s(()=>{k!==(k=l())&&(f&&(e(f),f=null),f=n(()=>k(j,...c)))},a),i&&(j=r)}export{t as s};
