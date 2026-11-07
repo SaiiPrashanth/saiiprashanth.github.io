@@ -5,20 +5,6 @@ const title = 'Certifications';
 
 const items: Array<Education> = [
 	{
-		degree: 'Game Developer Certificate',
-		description: 'Professional certificate validating game development knowledge and skills.',
-		location: 'Credly',
-		logo: Assets.UnityTech,
-		name: 'Game Developer Certificate',
-		organization: 'Unity Technologies',
-		period: { from: new Date(2024, 0, 1) },
-		shortDescription: 'Game development certificate issued through Credly.',
-		slug: 'game-developer-certificate',
-		subjects: ['Game Development', 'Unity', 'C#'],
-		color: '#00bcd4',
-		link: 'https://www.credly.com/badges/3828ce86-cf77-4ed7-bae9-3bfd2379b7a7/public_url'
-	},
-	{
 		degree: 'Unity Certified Game Developer Certification',
 		description: 'Professional certification validating comprehensive Unity game development skills. Candidate status with estimated completion in February 2026.',
 		location: '',
@@ -30,7 +16,7 @@ const items: Array<Education> = [
 		slug: 'unity-certified',
 		subjects: ['Unity', 'C#', 'Game Development', '3D Graphics', 'Game Design'],
 		color: '#00bcd4',
-		link: 'https://drive.google.com/file/d/1DjxAGJ8Jrhbh4aapllE1CQWb9iF_Dsdn/view?usp=sharing'
+		link: 'https://www.credly.com/badges/3828ce86-cf77-4ed7-bae9-3bfd2379b7a7/public_url'
 	},
 	{
 		degree: 'Game Design and Development Specialization',
