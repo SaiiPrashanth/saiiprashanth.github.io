@@ -7,7 +7,7 @@ import EducationData from '$lib/data/education';
 import GalleryData from '$lib/data/gallery';
 
 const siteUrl = 'https://saiiprashanth.github.io'; // Update with your actual domain
-const basePath = '/GameDesign'; // SvelteKit base path
+const basePath = ''; // The site is served from the root GitHub Pages domain
 
 export const prerender = true;
 

@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://saiiprashanth.github.io/GameDesign/sitemap.xml
+Sitemap: https://saiiprashanth.github.io/sitemap.xml
 
 # Disallow admin/build artifacts
 Disallow: /_app/
