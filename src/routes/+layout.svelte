@@ -8,11 +8,17 @@
 	import '../app.css';
 	import '../markdown.css';
 	import { ModeWatcher } from 'mode-watcher';
+	import { systemPrefersMode } from 'mode-watcher';
+	import { browser } from '$app/environment';
 	import { page, navigating } from '$app/stores';
 	import { afterNavigate } from '$app/navigation';
 	import BaseData from '$lib/data/base';
 
 	let { children } = $props();
+
+	if (browser) {
+		systemPrefersMode.query();
+	}
 
 	const defaultDescription = 'Detail oriented Game Programmer focused on mechanics implementation and game feel. Portfolio showcasing C++, C#, Unity, and Unreal Engine projects with technical implementations and gameplay systems.';
 	const siteUrl = 'https://saiiprashanth.github.io'; // Update with your actual domain
